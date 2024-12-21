@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
       
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -55,7 +58,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -106,6 +116,42 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -680,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../signal-analysis/intro/main.md" class="md-nav__link">
+      <a href="../../../signal-analysis/intro/main/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -764,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly-language/intro/main.md" class="md-nav__link">
+      <a href="../../../assembly-language/intro/main/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1113,135 +1159,243 @@
 
 <h1 id="linux">Linux 实验</h1>
 <h2 id="_1">实验五</h2>
-<p>练习一：</p>
-<pre><code class="language-bash">#!/bin/bash
-#criptName: vartest.sh
-# To test Positional Parameters &amp; Special Parameters.
-echo &quot;Hello,$USER,the output of this script are as follows:&quot;
-echo &quot;The script name is                    : $(basename $0)&quot;
-echo &quot;The first param of the script is      : $1&quot;
-echo &quot;The second param of the script is     : $2&quot;
-echo &quot;The tenth param of the script is      : ${10}&quot;
-echo &quot;All the params you input are          : $@&quot;
-echo &quot;All the params you input are          : $*&quot;
-echo &quot;The number of the params you input are: $#&quot;
-echo &quot;The process ID for this script is     : $$&quot;
-echo &quot;The exit status of this script is     : $?&quot;
-
-IFS='|'
-echo &quot;Command-Line Arguments Demo&quot;
-echo &quot;* All args displayed using \$@ positional parameter *&quot;
-echo $@
-echo &quot;* All args displayed using \$* positional parameter *&quot;
-echo $*
-
-echo '* All args displayed using &quot;$@&quot; positional parameter *'
-echo &quot;$@&quot;     
-echo '* All args displayed using &quot;$*&quot; positional parameter *'
-echo &quot;$*&quot;    
-</code></pre>
-<p>练习二：</p>
-<pre><code class="language-bash">#!/bin/bash
-#test position arguments ($* and $@ different)
-echo 'This is $* example:'
-for i in &quot;$*&quot;
-    do
-        echo $i
-    done
-
-echo 'This is $@ example:'
-for i in &quot;$@&quot;
-    do
-        echo $i
-    done
-</code></pre>
-<p>练习三：</p>
-<pre><code class="language-bash">#!/bin/bash
-#Show position arguments context.(for)
-dir=$1;shift
-if [ -d $dir ]
-then 
-    cd $dir
-    for name
-    do
-        if [ -f $name ]
-        then  cat $name
-              echo &quot;End of ${dir}/$name&quot;
-        fi
-    done
-else echo &quot;Bad directory name:$dir&quot;
-fi
-</code></pre>
-<p>练习四：</p>
-<pre><code class="language-bash">#!/bin/bash
-#Show position arguments context.(while )
-dir=$1;shift
-if [ -d $dir ]
-then 
-    cd $dir
-    while [ $1 ]
-    do
-        if [ -f $1 ]
-        then  cat $1
-              echo &quot;End of ${dir}/$1&quot;
-        fi
-    shift
-    done
-else echo &quot;Bad directory name:$dir&quot;
-fi
-</code></pre>
-<p>练习五：</p>
-<pre><code class="language-bash">#!/bin/bash
-##filename:useronline.sh
-#judge weather $1 login with you in the same computer.
-if [ $# -eq 1 ]
-then 
-    if  who|grep ^$1 &gt; /dev/null
-    then    echo &quot;$1 is active.&quot;
-    else    echo &quot;$1 is not active.&quot;
-    fi
-else
-    echo &quot;Usage:$0 &lt;username&gt;&quot;
-    exit
-fi
-</code></pre>
-<p>练习六：</p>
-<pre><code class="language-bash">#!/bin/bash
-## filename: until-user_online_to_write.sh
-username=$1
-if [ $# -lt 1 ] 
-    then echo &quot;Usage: `basename $0` &lt;username&gt; [&lt;message&gt;]&quot;
-    exit 1
-fi
-
-if grep &quot;^$username:&quot; /etc/passwd &gt; /dev/null 
-    then  :
-else
-    echo &quot;$username is not a user on this system.&quot;
-    exit  2
-fi
-
-until who|grep &quot;$username&quot; &gt; /dev/null 
-do
-    echo &quot;$username is not logged on.&quot;
-    sleep 6
-done
-shift; msg=$*
-[[ X&quot;$msg&quot; == &quot;X&quot; ]] &amp;&amp;  msg=&quot;Hello,$username&quot;
-echo &quot;$msg&quot;|write $username
-</code></pre>
-<p>练习七：</p>
-<pre><code class="language-bash">#!/bin/bash
-##filename:which-pi-like.sh
-echo &quot;which is your preferred PI?&quot;
-read -p &quot;Arduino,pcDuino,RaspberryPi,Cubieboard,OrangePi,BananaPi: &quot; pi
-case $pi in
-    [Aa]*|[Pp]*)    echo &quot;You selected Arduion/pcDuino.&quot;    ;;
-    [Bb]*|[Cc]*|[Oo]*)  echo &quot;You selected Cubieboard/Banana Pi/Orange Pi.&quot; ;;
-    [Rr]*)      echo &quot;You selected Raspberry Pi.&quot;   ;;
-    *)      echo &quot;I don't know which PI you like.&quot;  ;;
-esac
-</code></pre>
+<p>练习一：
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-0-2"><span class="c1">#criptName: vartest.sh</span>
+</span><span id="__span-0-3"><span class="c1"># To test Positional Parameters &amp; Special Parameters.</span>
+</span><span id="__span-0-4"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello,</span><span class="nv">$USER</span><span class="s2">,the output of this script are as follows:&quot;</span>
+</span><span id="__span-0-5"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The script name is                    : </span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$0</span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-0-6"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The first param of the script is      : </span><span class="nv">$1</span><span class="s2">&quot;</span>
+</span><span id="__span-0-7"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The second param of the script is     : </span><span class="nv">$2</span><span class="s2">&quot;</span>
+</span><span id="__span-0-8"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The tenth param of the script is      : </span><span class="si">${</span><span class="nv">10</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-0-9"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;All the params you input are          : </span><span class="nv">$@</span><span class="s2">&quot;</span>
+</span><span id="__span-0-10"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;All the params you input are          : </span><span class="nv">$*</span><span class="s2">&quot;</span>
+</span><span id="__span-0-11"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The number of the params you input are: </span><span class="nv">$#</span><span class="s2">&quot;</span>
+</span><span id="__span-0-12"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The process ID for this script is     : </span><span class="nv">$$</span><span class="s2">&quot;</span>
+</span><span id="__span-0-13"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The exit status of this script is     : </span><span class="nv">$?</span><span class="s2">&quot;</span>
+</span><span id="__span-0-14">
+</span><span id="__span-0-15"><span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;|&#39;</span>
+</span><span id="__span-0-16"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Command-Line Arguments Demo&quot;</span>
+</span><span id="__span-0-17"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;* All args displayed using \$@ positional parameter *&quot;</span>
+</span><span id="__span-0-18"><span class="nb">echo</span><span class="w"> </span><span class="nv">$@</span>
+</span><span id="__span-0-19"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;* All args displayed using \$* positional parameter *&quot;</span>
+</span><span id="__span-0-20"><span class="nb">echo</span><span class="w"> </span><span class="nv">$*</span>
+</span><span id="__span-0-21">
+</span><span id="__span-0-22"><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;* All args displayed using &quot;$@&quot; positional parameter *&#39;</span>
+</span><span id="__span-0-23"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w">     </span>
+</span><span id="__span-0-24"><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;* All args displayed using &quot;$*&quot; positional parameter *&#39;</span>
+</span><span id="__span-0-25"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span><span class="w">    </span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>练习二：
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-1-2"><span class="c1">#test position arguments ($* and $@ different)</span>
+</span><span id="__span-1-3"><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;This is $* example:&#39;</span>
+</span><span id="__span-1-4"><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span>
+</span><span id="__span-1-5"><span class="w">    </span><span class="k">do</span>
+</span><span id="__span-1-6"><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span>
+</span><span id="__span-1-7"><span class="w">    </span><span class="k">done</span>
+</span><span id="__span-1-8">
+</span><span id="__span-1-9"><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;This is $@ example:&#39;</span>
+</span><span id="__span-1-10"><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+</span><span id="__span-1-11"><span class="w">    </span><span class="k">do</span>
+</span><span id="__span-1-12"><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span>
+</span><span id="__span-1-13"><span class="w">    </span><span class="k">done</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>练习三：
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-2-2"><span class="c1">#Show position arguments context.(for)</span>
+</span><span id="__span-2-3"><span class="nv">dir</span><span class="o">=</span><span class="nv">$1</span><span class="p">;</span><span class="nb">shift</span>
+</span><span id="__span-2-4"><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">$dir</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-2-5"><span class="k">then</span><span class="w"> </span>
+</span><span id="__span-2-6"><span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$dir</span>
+</span><span id="__span-2-7"><span class="w">    </span><span class="k">for</span><span class="w"> </span>name
+</span><span id="__span-2-8"><span class="w">    </span><span class="k">do</span>
+</span><span id="__span-2-9"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$name</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-2-10"><span class="w">        </span><span class="k">then</span><span class="w">  </span>cat<span class="w"> </span><span class="nv">$name</span>
+</span><span id="__span-2-11"><span class="w">              </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;End of </span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2">/</span><span class="nv">$name</span><span class="s2">&quot;</span>
+</span><span id="__span-2-12"><span class="w">        </span><span class="k">fi</span>
+</span><span id="__span-2-13"><span class="w">    </span><span class="k">done</span>
+</span><span id="__span-2-14"><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Bad directory name:</span><span class="nv">$dir</span><span class="s2">&quot;</span>
+</span><span id="__span-2-15"><span class="k">fi</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>练习四：
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-3-2"><span class="c1">#Show position arguments context.(while )</span>
+</span><span id="__span-3-3"><span class="nv">dir</span><span class="o">=</span><span class="nv">$1</span><span class="p">;</span><span class="nb">shift</span>
+</span><span id="__span-3-4"><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">$dir</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-3-5"><span class="k">then</span><span class="w"> </span>
+</span><span id="__span-3-6"><span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$dir</span>
+</span><span id="__span-3-7"><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-3-8"><span class="w">    </span><span class="k">do</span>
+</span><span id="__span-3-9"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-3-10"><span class="w">        </span><span class="k">then</span><span class="w">  </span>cat<span class="w"> </span><span class="nv">$1</span>
+</span><span id="__span-3-11"><span class="w">              </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;End of </span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2">/</span><span class="nv">$1</span><span class="s2">&quot;</span>
+</span><span id="__span-3-12"><span class="w">        </span><span class="k">fi</span>
+</span><span id="__span-3-13"><span class="w">    </span><span class="nb">shift</span>
+</span><span id="__span-3-14"><span class="w">    </span><span class="k">done</span>
+</span><span id="__span-3-15"><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Bad directory name:</span><span class="nv">$dir</span><span class="s2">&quot;</span>
+</span><span id="__span-3-16"><span class="k">fi</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>练习五：
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-4-2"><span class="c1">##filename:useronline.sh</span>
+</span><span id="__span-4-3"><span class="c1">#judge weather $1 login with you in the same computer.</span>
+</span><span id="__span-4-4"><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-4-5"><span class="k">then</span><span class="w"> </span>
+</span><span id="__span-4-6"><span class="w">    </span><span class="k">if</span><span class="w">  </span>who<span class="p">|</span>grep<span class="w"> </span>^<span class="nv">$1</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</span><span id="__span-4-7"><span class="w">    </span><span class="k">then</span><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> is active.&quot;</span>
+</span><span id="__span-4-8"><span class="w">    </span><span class="k">else</span><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> is not active.&quot;</span>
+</span><span id="__span-4-9"><span class="w">    </span><span class="k">fi</span>
+</span><span id="__span-4-10"><span class="k">else</span>
+</span><span id="__span-4-11"><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage:</span><span class="nv">$0</span><span class="s2"> &lt;username&gt;&quot;</span>
+</span><span id="__span-4-12"><span class="w">    </span><span class="nb">exit</span>
+</span><span id="__span-4-13"><span class="k">fi</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>练习六：
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-5-2"><span class="c1">## filename: until-user_online_to_write.sh</span>
+</span><span id="__span-5-3"><span class="nv">username</span><span class="o">=</span><span class="nv">$1</span>
+</span><span id="__span-5-4"><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-lt<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span>
+</span><span id="__span-5-5"><span class="w">    </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage: `basename </span><span class="nv">$0</span><span class="s2">` &lt;username&gt; [&lt;message&gt;]&quot;</span>
+</span><span id="__span-5-6"><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-5-7"><span class="k">fi</span>
+</span><span id="__span-5-8">
+</span><span id="__span-5-9"><span class="k">if</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;^</span><span class="nv">$username</span><span class="s2">:&quot;</span><span class="w"> </span>/etc/passwd<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span>
+</span><span id="__span-5-10"><span class="w">    </span><span class="k">then</span><span class="w">  </span>:
+</span><span id="__span-5-11"><span class="k">else</span>
+</span><span id="__span-5-12"><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$username</span><span class="s2"> is not a user on this system.&quot;</span>
+</span><span id="__span-5-13"><span class="w">    </span><span class="nb">exit</span><span class="w">  </span><span class="m">2</span>
+</span><span id="__span-5-14"><span class="k">fi</span>
+</span><span id="__span-5-15">
+</span><span id="__span-5-16"><span class="k">until</span><span class="w"> </span>who<span class="p">|</span>grep<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$username</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span>
+</span><span id="__span-5-17"><span class="k">do</span>
+</span><span id="__span-5-18"><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$username</span><span class="s2"> is not logged on.&quot;</span>
+</span><span id="__span-5-19"><span class="w">    </span>sleep<span class="w"> </span><span class="m">6</span>
+</span><span id="__span-5-20"><span class="k">done</span>
+</span><span id="__span-5-21">shift<span class="p">;</span><span class="w"> </span><span class="nv">msg</span><span class="o">=</span><span class="nv">$*</span>
+</span><span id="__span-5-22"><span class="o">[[</span><span class="w"> </span>X<span class="s2">&quot;</span><span class="nv">$msg</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;X&quot;</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">  </span><span class="nv">msg</span><span class="o">=</span><span class="s2">&quot;Hello,</span><span class="nv">$username</span><span class="s2">&quot;</span>
+</span><span id="__span-5-23"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$msg</span><span class="s2">&quot;</span><span class="p">|</span>write<span class="w"> </span><span class="nv">$username</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>练习七：
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-6-2"><span class="c1">##filename:which-pi-like.sh</span>
+</span><span id="__span-6-3"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;which is your preferred PI?&quot;</span>
+</span><span id="__span-6-4"><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Arduino,pcDuino,RaspberryPi,Cubieboard,OrangePi,BananaPi: &quot;</span><span class="w"> </span>pi
+</span><span id="__span-6-5"><span class="k">case</span><span class="w"> </span><span class="nv">$pi</span><span class="w"> </span><span class="k">in</span>
+</span><span id="__span-6-6"><span class="w">    </span><span class="o">[</span>Aa<span class="o">]</span>*<span class="p">|</span><span class="o">[</span>Pp<span class="o">]</span>*<span class="o">)</span><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;You selected Arduion/pcDuino.&quot;</span><span class="w">    </span><span class="p">;;</span>
+</span><span id="__span-6-7"><span class="w">    </span><span class="o">[</span>Bb<span class="o">]</span>*<span class="p">|</span><span class="o">[</span>Cc<span class="o">]</span>*<span class="p">|</span><span class="o">[</span>Oo<span class="o">]</span>*<span class="o">)</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;You selected Cubieboard/Banana Pi/Orange Pi.&quot;</span><span class="w"> </span><span class="p">;;</span>
+</span><span id="__span-6-8"><span class="w">    </span><span class="o">[</span>Rr<span class="o">]</span>*<span class="o">)</span><span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;You selected Raspberry Pi.&quot;</span><span class="w">   </span><span class="p">;;</span>
+</span><span id="__span-6-9"><span class="w">    </span>*<span class="o">)</span><span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;I don&#39;t know which PI you like.&quot;</span><span class="w">  </span><span class="p">;;</span>
+</span><span id="__span-6-10"><span class="k">esac</span>
+</span></code></pre></div></td></tr></table></div></p>
 
 
 
@@ -1288,7 +1442,7 @@ esac
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
