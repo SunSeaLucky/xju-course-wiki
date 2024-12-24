@@ -912,6 +912,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#z_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      z 变换的性质与定理
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -991,6 +1000,15 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       常用模拟滤波器的设计方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iir" class="md-nav__link">
+    <span class="md-ellipsis">
+      无限长单位脉冲响应 IIR 数字滤波器的设计
     </span>
   </a>
   
@@ -1527,6 +1545,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#z_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      z 变换的性质与定理
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1606,6 +1633,15 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       常用模拟滤波器的设计方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iir" class="md-nav__link">
+    <span class="md-ellipsis">
+      无限长单位脉冲响应 IIR 数字滤波器的设计
     </span>
   </a>
   
@@ -1805,6 +1841,19 @@
 </ul>
 <p><img alt="典型 z 变换" src="../8.png" /></p>
 <h4 id="z_1">z 逆变换</h4>
+<ul>
+<li>部分分式法</li>
+<li>幂级数法（长除法，也就是硬除）</li>
+</ul>
+<h4 id="z_2">z 变换的性质与定理</h4>
+<ul>
+<li>线性：<span class="arithmatex">\(Z\left[ax(n)+by(n)\right]=aX(z)+bY(z)\quad\left(R_1&lt;\left|z\right|&lt;R_2\right)\)</span>，收敛域取交集</li>
+<li>位移性：<span class="arithmatex">\(Z\left[x(n-n_0)\right]=z^{-n_0}X(z)\)</span>，收敛域只会影响 <span class="arithmatex">\(z=0\)</span> 和 <span class="arithmatex">\(z=\infty\)</span> 处</li>
+<li>尺度变换：<span class="arithmatex">\(Z[a^nx(n)]=X(\frac{z}{a})~~~(R_{x1}&lt;\left|\frac{z}{a}\right|&lt;R_{x2})\)</span></li>
+<li>序列线性加权：<span class="arithmatex">\({Z}\left[nx(n)\right]=-z\frac{\mathrm{d}X\left(z\right)}{\mathrm{d}z}\quad\left(R_{x1}&lt;\left|z\right|&lt;R_{x2}\right)\)</span></li>
+<li>初值定理：<span class="arithmatex">\(x(0)=\lim_{z\to\infty}X(z)\)</span></li>
+<li>终值定理：<span class="arithmatex">\(\lim_{n\to\infty}x(n)=\lim_{z\to1}(z-1)X(z)\)</span></li>
+</ul>
 <h2 id="5-dft">5 离散傅里叶变换（DFT）</h2>
 <hr />
 <h2 id="6-fft">6 快速傅里叶变换（FFT）</h2>
@@ -1858,11 +1907,32 @@
 <li><span class="arithmatex">\(\left|H(\mathrm{j}\Omega)\right|^2=\frac{1}{1+\left(\Omega/\Omega_\mathrm{c}\right)^{2N}}\)</span></li>
 <li>具有单调下降的幅频特性</li>
 <li>最大平坦性 <span class="arithmatex">\(|H(\mathrm{j}\Omega)|^2\)</span> 在 $\Omega=0 $ 点的 <span class="arithmatex">\(1\)</span> 到 <span class="arithmatex">\(2N-1\)</span> 阶导数为零</li>
-<li>3dB 不变性 不管 N 为多少，所有的特性曲线都通过 -3dB 点，或者说衰减为 3dB</li>
+<li>3dB 不变性 不管 N 为多少，所有的特性曲线都通过 -3dB 点，或者说衰减为 3dB    </li>
 </ul>
 </li>
-<li>Chebyshev 低通逼近<ul>
-<li>幅频特性在通带或阻带内有波动，可以提高选择性</li>
+<li>Butterworth 模拟低通滤波器的设计步骤<ul>
+<li>步骤 1：确定模拟滤波器的阶数 <span class="arithmatex">\(N\)</span>，<span class="arithmatex">\(N\geq\frac{\lg(\frac{10^{0.1A_s}-1}{10^{0.1A_p}-1})}{2\lg(\Omega_s/\Omega_p)}\)</span></li>
+<li>步骤 2：确定模拟滤波器的 <span class="arithmatex">\(3dB\)</span> 截频 <span class="arithmatex">\(\Omega_c\)</span>，<span class="arithmatex">\(\frac{\Omega_\mathrm{p}}{(10^{0.1A_\mathrm{p}}-1)^{\frac{1}{2N}}}\leq\Omega_\mathrm{c}\leq\frac{\Omega_\mathrm{s}}{(10^{0.1A_\mathrm{s}}-1)^{\frac{1}{2N}}}\)</span></li>
+<li>*步骤 3：计算模拟滤波器的系统函数极点</li>
+<li>*步骤 4：得到模拟低通滤波器的系统函数 <span class="arithmatex">\(H_L(s)\)</span></li>
+<li>其中，步骤 3、4，也可以通过查表法得到</li>
+</ul>
+</li>
+</ul>
+<h4 id="iir">无限长单位脉冲响应 <code>IIR</code> 数字滤波器的设计</h4>
+<ul>
+<li>脉冲响应不变法（线性变换）<ul>
+<li>对应关系：<span class="arithmatex">\(H(s)=\sum\limits_{i=1}^{N}\frac{A}{s-p_i}\)</span> 和 <span class="arithmatex">\(H(z)=\sum\limits^{N}_{i=1}\frac{TA_i}{1-e^{p_iT} z^{-1}}\)</span></li>
+<li>由上面的式子可知，求出 <span class="arithmatex">\(A_i\)</span> 和 <span class="arithmatex">\(p_i\)</span> 是写出两种式子的关键</li>
+<li>优点：时域逼近良好，线性</li>
+<li>缺点：频率响应的混叠失真，只适用于限带的模拟滤波器（<strong>低通、带通</strong>）</li>
+</ul>
+</li>
+<li>双线性变换法（非线性变换，<span class="arithmatex">\(tan\)</span> 函数）<ul>
+<li>对应关系：<span class="arithmatex">\(H\left(z\right)=H_{a}\left(s\right)|_{s=\frac{2}{T}\frac{1-z^{-1}}{1+z^{-1}}}=H_{a}\left(\frac{2}{T}\frac{1-z^{-1}}{1+z^{-1}}\right)\)</span></li>
+<li>不用分式展开，比较友好</li>
+<li>优点：避免了混叠失真（以引入非线性为代价），能直接用于设计低通、带通、高通、带阻滤波器，保持原有的幅频性能</li>
+<li>缺点：转换前后的频率呈非线性关系（可以通过频率预畸变减轻），产生相频特性失真</li>
 </ul>
 </li>
 </ul>
