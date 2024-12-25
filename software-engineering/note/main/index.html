@@ -572,6 +572,39 @@
         <li class="md-nav__item">
   <a href="#_21" class="md-nav__link">
     <span class="md-ellipsis">
+      软件实现
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="软件实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      编码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      软件测试基础
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
       名词解释一览表
     </span>
   </a>
@@ -579,7 +612,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
+  <a href="#_25" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -1529,6 +1562,39 @@
         <li class="md-nav__item">
   <a href="#_21" class="md-nav__link">
     <span class="md-ellipsis">
+      软件实现
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="软件实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      编码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      软件测试基础
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
       名词解释一览表
     </span>
   </a>
@@ -1536,7 +1602,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
+  <a href="#_25" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -1796,7 +1862,133 @@
 </li>
 </ul>
 <h4 id="_20">程序复杂程度的定量度量</h4>
-<h2 id="_21">名词解释一览表</h2>
+<ul>
+<li>McCabe<ul>
+<li>流图 “退化”的程序流程图，仅描绘程序的控制流程，不表现对数据的具体操作及循环、选择的条件。</li>
+<li>环形复杂度 <span class="arithmatex">\(V(G)\)</span> = 流图中的区域数；</li>
+<li>[最准] 环形复杂度 <span class="arithmatex">\(V(G)\)</span> ＝ 边－点 + 2</li>
+<li>环形复杂度 <span class="arithmatex">\(V(G)\)</span> ＝ 判定结点＋1</li>
+<li>实践表明，模块规模以 <span class="arithmatex">\(V(G)\leq 10\)</span> 为宜。</li>
+</ul>
+</li>
+<li>Halstead 方法<ul>
+<li>程序长度 = 程序中运算符出现的总次数 + 操作数出现的总次数</li>
+<li>预测程序长度 = <span class="arithmatex">\(n_1\log_2{n_1}+n_2\log_2{n_2}\)</span>，其中 <span class="arithmatex">\(n_1\)</span> 为的不同运算符（包括关键字）的个数，<span class="arithmatex">\(n_2\)</span> 为不同操作数（变量和常量）的个数。</li>
+<li>预测错误个数 <span class="arithmatex">\(E = N \log_2{(n1+n2)} / 3000\)</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="_21">软件实现</h2>
+<ul>
+<li>编码：把软件设计结果翻译成程序</li>
+<li>测试：检测程序并改正错误的过程</li>
+<li>编码和测试统称为<strong>实现</strong></li>
+</ul>
+<h4 id="_22">编码</h4>
+<ul>
+<li>选择程序设计语言</li>
+<li>编码风格<ul>
+<li>文档</li>
+<li>数据说明</li>
+<li>语句构造</li>
+<li>输入/输出</li>
+<li>效率<ul>
+<li>程序运行时间</li>
+<li>存储器效率</li>
+<li>输入/输出效率</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="_23">软件测试基础</h4>
+<ul>
+<li>软件测试的目标<ul>
+<li>测试是为了发现程序中的错误</li>
+<li>好的测试是极可能发现迄今为止尚未发现的错误</li>
+<li>成功的测试是发现了至今为止尚未发现的错误</li>
+</ul>
+</li>
+<li>测试的定义：为了发现程序中的错误而执行程序的过程</li>
+<li>软件测试准则<ul>
+<li>所有测试都应该能追溯到用户需求</li>
+<li>应该远在测试前就制定出测试计划</li>
+<li>把 Pareto 原理应用到软件测试中</li>
+<li>应该从“小规模”测试开始，并逐步进行“大规模”测试</li>
+<li>穷举测试是不可能的；因此，测试只能证明程序中有错误，不能证明程序中没有错误</li>
+<li>为了达到最佳测试效果，应该由独立的第三方从事测试工作</li>
+</ul>
+</li>
+<li>测试方法<ul>
+<li>黑盒测试（也称功能测试） 如果已经知道软件应该具有的功能，可以通过测试来检验每个功能是否都能正常使用</li>
+<li>白盒测试（也称结构测试） 如果知道软件内部工作过程，可以通过测试来检验软件内部动作是否按照规格说明书的规定正常进行</li>
+</ul>
+</li>
+<li>软件测试的步骤<ul>
+<li>模块测试 模块测试又称单元测试，它把每个模块作为单独的实体来测试</li>
+<li>子系统测试 子系统测试是把经过单元测试的模块放在一起形成一个子系统来测试</li>
+<li>系统测试 系统测试是把经过测试的子系统装配成一个完整的系统来测试</li>
+<li>验收测试 验收测试把软件系统作为单一的实体进行测试（利用用户的实际数据测试）</li>
+<li>平行运行 平行运行是同时运行新开发出来的系统和将被它取代的旧系统，以便比较新旧两个系统的处理结果</li>
+</ul>
+</li>
+<li>测试阶段的信息流
+<img alt="alt text" src="../image-19.png" /></li>
+<li>黑盒测试技术<ul>
+<li>定义：测试对象看做一个黑盒子，测试人员完全不考虑程序内部的逻辑结构和内部特性，只依据程序的需求规格说明书，检查程序的功能是否符合它的功能说明，又叫做<em>功能测试</em>或<em>数据驱动测试</em>。    </li>
+<li>等价划分<ul>
+<li>如果将所有可能的输入数据（有效的和无效的）划分为若干个等价类，就可以假定用每一个等价类中的代表值作为测试用例来进行测试时，等价于用该类中所有值进行了测试</li>
+<li>如果某输入条件规定了输入的范围，那么可以划分为一个有效的等价类和两个无效的等价类。</li>
+<li>如果规定了输入数据的个数，则类似地也可以划分出一个有效等价类和两个无效等价类。</li>
+<li>如果输入条件规定了输入值的集合，或者规定了“必须如何”的条件，这时可确立一个有效等价类和一个无效等价类。</li>
+<li>如果规定了输入数据为整型，则可以划分出正整数、负整数、零3个有效等价类。</li>
+<li>如果输入条件是一个布尔量，则可以确定一个有效等价类和一个无效等价类。</li>
+<li>如果程序的处理对象是表格，则可以应该使用空表，以及含一项或多项的表。</li>
+<li>如果某个输入条件规定了一组可能的值，且程序可以对不同的值作出不同的处理，那么可以为每种值确定一个有效的等价类，同时还有一个无效等价类</li>
+<li>如果规定了输入数据必须遵守的规则，则可以确立一个有效等价类（符合规则）和若干个无效等价类（从不同角度违反规则）。</li>
+</ul>
+</li>
+<li>边界值分析</li>
+<li>错误推测：错误推测法在很大程度上靠直觉和经验进行。列举出程序中可能的错误和容易发生错误的特殊情况，且根据它们选择测试方案。进一步测试时要着重测试哪些发现了较多错误的组合情况。</li>
+<li>实用测试策略<ul>
+<li>任何情况下都进行边界值分析</li>
+<li>必要时用等价划分法补充测试方案</li>
+<li>必要时再用错误推测法补充测试方案</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>调试<ul>
+<li>调试过程 调试是在测试发现错误之后排除错误的过程</li>
+<li>调试途径 <ul>
+<li>蛮干法 打印内存内容，寻找错误，效率最低</li>
+<li>回溯法 从出问题的程序段人工回溯，直到找到错误</li>
+<li>原因排除法<ul>
+<li>对分查找</li>
+<li>归纳</li>
+<li>演绎</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>软件可靠性<ul>
+<li>对于故障可修复系统，应同时用可靠性、可用性：<ul>
+<li>可靠性 程序在给定<strong>时间间隔内</strong>，按照规格说明书的规定成功地运行的概率</li>
+<li>可用性 程序在给定<strong>时间点</strong>，按照规格说明书的规定成功地运行的概率</li>
+</ul>
+</li>
+<li>稳态可用性：<span class="arithmatex">\(A_{ss}=\frac{T_{up}}{T_{up}+T_{down}}\)</span></li>
+<li>估计故障总数的方法<ul>
+<li>植入故障法（很像生物中的<em>标志重捕法</em>）：<span class="arithmatex">\(\hat{N}=\frac{n}{n_s}N_s\)</span></li>
+<li>分别测试法：<span class="arithmatex">\(\hat{B}_0=\frac{B_2}{b_c}B_1\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_24">名词解释一览表</h2>
 <table>
 <thead>
 <tr>
@@ -1811,7 +2003,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_22">错题</h2>
+<h2 id="_25">错题</h2>
 <ol>
 <li><code>CMMI</code> 标准的 5 个级别分别是完成级、管理级、定义级、量化管理级和（优化级）。
 A. 初始级

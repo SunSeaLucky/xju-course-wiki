@@ -891,6 +891,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      32 位指令及其编程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       错题
@@ -1236,6 +1245,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      32 位指令及其编程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       错题
@@ -1297,16 +1315,17 @@
 <li>储存器寻址：<strong>直接寻址</strong>（指令中直接包含了有效地址，如：mov ax, [1000H]）；<strong>寄存器间接寻址</strong>（指令中给出寄存器名，寄存器中存放有效地址，如：mov ax, [bx]）；<strong>寄存器相对寻址</strong>(指令中给出寄存器名和偏移量，寄存器中存放基地址，如：mov ax, [bx+10H])；<strong>基址变址寻址</strong>（指令中给出基址寄存器、变址寄存器和偏移量，如：mov ax, [bx+si]）；<strong>相对基址变址寻址</strong>（指令中给出基址寄存器、变址寄存器、偏移量和段寄存器，如：mov ax, [bx+si+10H]）。</li>
 </ul>
 </li>
+<li>隐含寻址方式</li>
 </ul>
 <h2 id="8086">8086 的指令系统</h2>
 <p><strong>全几把是各种指令，简要记下有哪些，具体含义翻教材。</strong></p>
 <ul>
-<li>数据传送指令：mov、xchg、xlat；</li>
+<li>数据传送指令：mov、xchg(reg &harr; reg/mem 或 reg/mem &harr; reg)、xlat(al &larr; ds:[bx+al])；</li>
 <li>堆栈操作指令：push、pop（注意 push 的时候地址减少，pop 的时候地址增加）；</li>
 <li>标志传送指令：lahf、sahf、pushf、popf；</li>
 <li>地址传送指令：lea、lds、les；</li>
 <li>算术运算指令：add、adc、inc、sub、sbb、dec、neg、cmp、mul、imul、div、idiv；</li>
-<li>符号拓展指令：cbw、cwd；</li>
+<li>符号拓展指令：cbw（拓展到 AX）、cwd（拓展到 DX）；</li>
 <li>逻辑运算指令：and、or、xor、not、test；</li>
 <li>移位指令：shl、shr、sal、sar、rol、ror、rcl、rcr；</li>
 <li>控制转移指令：jmp，太多了，可查 55 页表 2-3。</li>
@@ -1439,6 +1458,22 @@
 </li>
 </ol>
 <p><img alt="可执行文件的开发过程" src="../1.png" /></p>
+<h2 id="32">32 位指令及其编程</h2>
+<ul>
+<li>实方式<ul>
+<li>寻址 1MB 物理存储空间</li>
+<li>分段最大是 64KB</li>
+<li>可以使用 32 位寄存器和 32 位操作数</li>
+<li>可以采用 32 位寻址方式</li>
+</ul>
+</li>
+<li>保护方式<ul>
+<li>具有段式存储管理功能</li>
+<li>具有页式存储管理功能</li>
+<li>寻址 4GB 物理存储空间</li>
+</ul>
+</li>
+</ul>
 <h2 id="_5">错题</h2>
 <hr />
 <p>1 设 CL=4，AL=0C8H，执行 SAR AL，CL 后，AL 中的数据是 【 0FCH 】</p>
