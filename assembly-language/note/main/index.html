@@ -891,6 +891,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本汇编语言程序设计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本汇编语言程序设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      串操作类指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序的参数传递
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序的嵌套、递归和重入
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#32" class="md-nav__link">
     <span class="md-ellipsis">
       32 位指令及其编程
@@ -900,7 +942,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -1245,6 +1287,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本汇编语言程序设计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本汇编语言程序设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      串操作类指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序的参数传递
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序的嵌套、递归和重入
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#32" class="md-nav__link">
     <span class="md-ellipsis">
       32 位指令及其编程
@@ -1254,7 +1338,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -1324,7 +1408,24 @@
 <li>堆栈操作指令：push、pop（注意 push 的时候地址减少，pop 的时候地址增加）；</li>
 <li>标志传送指令：lahf、sahf、pushf、popf；</li>
 <li>地址传送指令：lea、lds、les；</li>
-<li>算术运算指令：add、adc、inc、sub、sbb、dec、neg、cmp、mul、imul、div、idiv；</li>
+<li>算术运算指令：add、adc、inc、sub、sbb、dec、cmp<ul>
+<li>neg：用 0 减去操作数（会导致 <code>CF=1</code>），结果相当于按位取反加 1</li>
+<li>mul r8(16)/m8(16),<ul>
+<li>ax &larr; al(x) * r8(16)/m8(16)</li>
+</ul>
+</li>
+<li>imul r8(16)/m8(16) <ul>
+<li>ax &larr; al(x) * r8(16)/m8(16)</li>
+</ul>
+</li>
+<li>div r8(16)/m8(16)<ul>
+<li>al(ax) &larr; ax(dx.ax) 除 r8(16)/m8(16) 的商</li>
+<li>ah(dx) &larr; ax(dx.ax) 除 r8(16)/m8(16) 的余数</li>
+</ul>
+</li>
+<li>idiv</li>
+</ul>
+</li>
 <li>符号拓展指令：cbw（拓展到 AX）、cwd（拓展到 DX）；</li>
 <li>逻辑运算指令：and、or、xor、not、test；</li>
 <li>移位指令：shl、shr、sal、sar、rol、ror、rcl、rcr；</li>
@@ -1368,7 +1469,7 @@
 <li>利用 PF：JP、JPE、JNP、JPO</li>
 <li>利用 CF：JC、JB、JNAE、JNC、JNB、JAE</li>
 <li>比较无符号数时用 Above 和 Blow，而有符号数时用 Greater 和 Less。</li>
-<li>循环指令：LOOP(CX!=0)、LOOPZ/LOOPE(CX!=0 \&amp;\&amp; ZF=1)、LOOPNZ/LOOPNE(CX!=0 \&amp;\&amp; ZF=0)、JCXZ(CX!=0)</li>
+<li>循环指令：LOOP(CX!=0)、LOOPZ/LOOPE(CX!=0 &amp;&amp; ZF=1)、LOOPNZ/LOOPNE(CX!=0 &amp;&amp; ZF=0)、JCXZ(CX!=0)</li>
 </ul>
 <p><strong>子程序指令</strong></p>
 <p>CALL、RET</p>
@@ -1458,6 +1559,43 @@
 </li>
 </ol>
 <p><img alt="可执行文件的开发过程" src="../1.png" /></p>
+<h2 id="_5">基本汇编语言程序设计</h2>
+<h4 id="_6">串操作类指令</h4>
+<ul>
+<li>串传送<ul>
+<li>MOVSB es:[di] &larr; ds:[si], si &larr; si+1, di &larr; di+1</li>
+<li>MOVSW es:[di] &larr; ds:[si], si &larr; si+2, di &larr; di+2</li>
+<li>常用重复前缀：REP</li>
+</ul>
+</li>
+<li>串存储<ul>
+<li>STOSB es:[di] &larr; al, di &larr; di+1</li>
+<li>STOSW es:[di] &larr; ax, di &larr; di+2</li>
+<li>常用重复前缀：REP</li>
+</ul>
+</li>
+<li>串读取<ul>
+<li>LODSB al, ds:[si], si &larr; si+1</li>
+<li>LODSW ax, ds:[si], si &larr; si+2</li>
+<li>常用重复前缀：REP</li>
+</ul>
+</li>
+<li>串比较<ul>
+<li>CMPSB ds:[si]-es:[di], si+1, di+1</li>
+<li>CMPSW ds:[si]-es:[di], si+2, di+2</li>
+<li>常用重复前缀：REPZ</li>
+</ul>
+</li>
+</ul>
+<h4 id="_7">子程序的参数传递</h4>
+<p>寄存器传递、变量传递、栈传递</p>
+<h4 id="_8">子程序的嵌套、递归和重入</h4>
+<ul>
+<li>嵌套 子程序内包含有子程序的调用</li>
+<li>递归 子程序调用自身</li>
+<li>重入 子程序被中断后，又被终端服务程序所调用。能够重入的子程序称为<em>可重入子程序</em>。</li>
+<li>子程序近调用时，入栈 2B，出栈 2B，而子程序远调用时，入栈 4B，出栈 4B。</li>
+</ul>
 <h2 id="32">32 位指令及其编程</h2>
 <ul>
 <li>实方式<ul>
@@ -1474,7 +1612,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_5">错题</h2>
+<h2 id="_9">错题</h2>
 <hr />
 <p>1 设 CL=4，AL=0C8H，执行 SAR AL，CL 后，AL 中的数据是 【 0FCH 】</p>
 <p>A、0FCH </p>

@@ -605,7 +605,7 @@
         <li class="md-nav__item">
   <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
-      名词解释一览表
+      维护
     </span>
   </a>
   
@@ -613,6 +613,24 @@
       
         <li class="md-nav__item">
   <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      名词八股
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念八股
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -1595,7 +1613,7 @@
         <li class="md-nav__item">
   <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
-      名词解释一览表
+      维护
     </span>
   </a>
   
@@ -1603,6 +1621,24 @@
       
         <li class="md-nav__item">
   <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      名词八股
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念八股
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -1639,7 +1675,20 @@
 <li><strong>软件工程三要素</strong> 方法、工具、过程</li>
 <li><strong>软件生命周期</strong> 软件定义（问题定义、可行性研究、需求分析）、软件开发（总体设计、详细设计、编码和单元测试、综合测试）、运行维护（维护）</li>
 <li><strong>软件维护分类</strong> 预防性维护、改正性维护、适应性维护、完善性维护</li>
-<li><strong>[重要] 软件过程</strong> 瀑布模型 &rArr; 快速原型模型 &rArr; 增量模型 &rArr; 螺旋模型（强调<strong>风险分析</strong>） &rArr; 喷泉模型（面向对象，联想一下瀑布模型，刚好相反） &rArr; Rational 统一过程（面向对象） &rArr; 敏捷过程与极限编程 &rArr; 微软过程 &rArr; <code>PSP/TSP</code></li>
+<li><strong>[重要] 软件过程</strong> <ul>
+<li>瀑布模型：<img alt="alt text" src="../image-20.png" /></li>
+<li>V 模型：<img alt="alt text" src="../image-21.png" /></li>
+<li>W 模型：<img alt="alt text" src="../image-22.png" /></li>
+<li>快速原型模型：<img alt="alt text" src="../image-23.png" /></li>
+<li>增量模型：<img alt="alt text" src="../image-24.png" /></li>
+<li>螺旋模型 强调<strong>风险分析</strong>：<img alt="alt text" src="../image-25.png" /></li>
+<li>喷泉模型 面向对象模型，联想一下瀑布模型，刚好相反：<img alt="alt text" src="../image-26.png" /></li>
+<li>Rational 统一过程 面向对象模型</li>
+<li>敏捷过程与极限编程</li>
+<li>微软过程</li>
+<li><code>PSP/TSP</code></li>
+</ul>
+</li>
 </ul>
 <h2 id="_3">可行性研究</h2>
 <ul>
@@ -1934,6 +1983,70 @@
 </li>
 <li>测试阶段的信息流
 <img alt="alt text" src="../image-19.png" /></li>
+<li>软件测试的步骤<ul>
+<li>单元测试<ul>
+<li>集中对源代码实现的每个程序单元进行测试，检查各个程序模块是否正确地实现了程序规定的功能。（往往采用白盒测试技术）</li>
+<li>过程<ul>
+<li>测试重点</li>
+<li>代码审查</li>
+<li>计算机测试<ul>
+<li>驱动程序：相当于“主程序”，用来把测试数据传送给被测试的模块，并打印有关结果</li>
+<li>存根程序：用来代替被测试模块所调用的模块，相当于“虚拟子程序”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>集成测试<ul>
+<li>把已经测试过的程序模块组装起来，进行集成测试，主要对设计相关的软件体系结构的构造进行测试</li>
+<li>种类<ul>
+<li>非渐增式测试方法</li>
+<li>渐增式测试方法<ul>
+<li>自顶向下集成，需要存根程序，不需要驱动程序<ul>
+<li>深度优先策略</li>
+<li>宽度优先策略</li>
+</ul>
+</li>
+<li>自底向上集成，不需要存根程序，需要驱动程序</li>
+</ul>
+</li>
+<li>回归测试，保证由于调试或其他原因引起的程序变化，不会导致额外错误的测试活动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>确认测试（有效性测试）<ul>
+<li>要检查已实现的软件是否满足了软件需求规格说明书中确定的各种需求，以及软件配置是否完全、正确。（往往采用黑盒测试技术，以用户为主）</li>
+<li>种类<ul>
+<li>Alpha 测试</li>
+<li>Beat 测试</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>系统测试<ul>
+<li>把已经经过确认的软件纳入到实际运行环境中，与系统中其他成分组合在一起进行测试</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>白盒测试技术<ul>
+<li>如果知道软件内部工作过程，可以通过测试来检验软件内部动作是否按照规格说明书的规定正常进行</li>
+<li>逻辑覆盖<ul>
+<li>语句覆盖（最弱）</li>
+<li>判定覆盖（覆盖判定的所有结果即可，通常是让表达式的值是 <code>True</code> 和 <code>False</code> ）</li>
+<li>条件覆盖（保证每一个变量都被 <code>toggle</code> 过，通常是让所有的变量的值是 <code>True</code> 和 <code>False</code> ）</li>
+<li>判定/条件覆盖（判定覆盖和条件覆盖的组合）</li>
+<li>条件组合覆盖（<span class="arithmatex">\(2^n\)</span>）</li>
+<li>点覆盖</li>
+<li>边覆盖</li>
+<li>路径覆盖（所有路径走一遍，注意和判定覆盖的区别）</li>
+</ul>
+</li>
+<li>控制结构测试</li>
+</ul>
+</li>
 <li>黑盒测试技术<ul>
 <li>定义：测试对象看做一个黑盒子，测试人员完全不考虑程序内部的逻辑结构和内部特性，只依据程序的需求规格说明书，检查程序的功能是否符合它的功能说明，又叫做<em>功能测试</em>或<em>数据驱动测试</em>。    </li>
 <li>等价划分<ul>
@@ -1988,7 +2101,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="_24">名词解释一览表</h2>
+<h2 id="_24">维护</h2>
+<ul>
+<li>软件维护的定义：在软件已经交付之后，为了改正错误或满足新的需要而修改软件的过程</li>
+<li>软件维护的特点</li>
+<li>软件维护过程</li>
+</ul>
+<h2 id="_25">名词八股</h2>
 <table>
 <thead>
 <tr>
@@ -1999,13 +2118,77 @@
 <tbody>
 <tr>
 <td>软件工程</td>
-<td></td>
+<td>软件工程就是为了经济地获得可靠的且能在实际机器上有效地运行的软件，而建立和使用完善的<strong>工程原理</strong>。</td>
+</tr>
+<tr>
+<td>耦合</td>
+<td>对模块间接口的复杂程度（即进入或访问模块某点的复杂程度、通过接口的数据的复杂程度）的度量</td>
+</tr>
+<tr>
+<td>内聚</td>
+<td>模块内各个元素彼此结合的紧密程度，是信息隐藏和局部化概念的自然扩展</td>
+</tr>
+<tr>
+<td>黑盒测试</td>
+<td>也称<em>功能测试</em>，测试对象看做一个黑盒子，测试人员完全不考虑程序内部的逻辑结构和内部特性，只依据程序的需求规格说明书，检查程序的功能是否符合它的功能说明</td>
+</tr>
+<tr>
+<td>白盒测试</td>
+<td>也称<em>结构测试</em> ，如果知道软件内部工作过程，可以通过测试来检验软件内部动作是否按照规格说明书的规定正常进行</td>
+</tr>
+<tr>
+<td>测试用例</td>
+<td>是为某个特殊目标而编制的一组测试输入、执行条件以及预期结果，以便测试某个程序路径或核实是否满足某个特定要求</td>
+</tr>
+<tr>
+<td>变换流</td>
+<td>信息沿输入通路进入系统，由外部形式变换为内部形式，经过处理后输出到输出通路</td>
+</tr>
+<tr>
+<td>事务流</td>
+<td>数据是以事务为中心的，数据沿输入通路到达一个处理 <span class="arithmatex">\(T\)</span>，这个处理根据输入数据的类型在若干个动作序列中选出一个来执行</td>
+</tr>
+<tr>
+<td>单元测试</td>
+<td>集中对源代码实现的每个程序单元进行测试，检查各个程序模块是否正确地实现了程序规定的功能。（往往采用白盒测试技术）</td>
+</tr>
+<tr>
+<td>集成测试</td>
+<td>把已经测试过的程序模块组装起来，进行集成测试，主要对设计相关的软件体系结构的构造进行测试</td>
+</tr>
+<tr>
+<td>确认测试（有效性测试）</td>
+<td>要检查已实现的软件是否满足了软件需求规格说明书中确定的各种需求，以及软件配置是否完全、正确</td>
+</tr>
+<tr>
+<td>系统测试</td>
+<td>把已经经过确认的软件纳入到实际运行环境中，与系统中其他成分组合在一起进行测试</td>
+</tr>
+<tr>
+<td>软件维护</td>
+<td>在软件已经交付之后，为了改正错误或满足新的需要而修改软件的过程</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_25">错题</h2>
+<h2 id="_26">概念八股</h2>
 <ol>
-<li><code>CMMI</code> 标准的 5 个级别分别是完成级、管理级、定义级、量化管理级和（优化级）。
+<li>一个设计好的软件结构，通常顶层扇出比较高，中层扇出比较少，底层有高扇出</li>
+<li>当项目中有 <span class="arithmatex">\(n\)</span> 人时，沟通渠道最多有 <span class="arithmatex">\(\frac{n(n-1)}{2}\)</span> 种</li>
+<li>面向对象设计准则在逻辑上的 4 部分：问题域部分、人机交互子系统、任务管理子系统、数据管理子系统</li>
+<li>工程专家 <span class="arithmatex">\(B.~W.~Boehm\)</span> 的 7 条软工原理：<ul>
+<li>用分阶段的生命周期计划严格管理</li>
+<li>坚持进行阶段评审</li>
+<li>实行严格的产品控制</li>
+<li>采用现代程序设计技术</li>
+<li>软件工程结果应能清楚审查</li>
+<li>开发小组人员应少而精</li>
+<li>承认不断改进工程实践的必要性</li>
+</ul>
+</li>
+</ol>
+<h2 id="_27">错题</h2>
+<ol>
+<li><code>CMMI</code> 标准的 5 个级别分别初始级、管理级、定义级、量化管理级和（优化级）。
 A. 初始级
 B. 可重复级
 C. 优化级

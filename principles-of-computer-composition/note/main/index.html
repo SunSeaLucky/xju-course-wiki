@@ -915,6 +915,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="输入、输出（I/O）系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU 与外设之间的信息交换方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      程序查询方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1614,6 +1638,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="输入、输出（I/O）系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU 与外设之间的信息交换方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      程序查询方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1669,7 +1717,7 @@
 <li>原码 <span class="arithmatex">\(\rightleftharpoons\)</span> 补码：从最低位直到遇到的第一个 1 的这段序列不变，其余位<strong>除了符号位</strong>均取反</li>
 <li>移码表示法：移码常用于表示浮点数的阶码（指数部分）， <span class="arithmatex">\([e]_y=2^k+e_{acutal~number}\)</span> ，符号位的规律和原码、补码相反</li>
 <li>IEEE 754 标准：<strong>31(S，符号)、30-23(E，阶码)、22-0(M，数值)</strong>，其中，<span class="arithmatex">\(E=e_{acutal~number}+127\)</span>，为什么是 +127？因为当 <span class="arithmatex">\(E=255\)</span> 时，被用来表示特殊数值了</li>
-<li>在 IEEE 754 标准中，当 <span class="arithmatex">\(0&lt;E&lt;255\)</span> 时，表示规格化数，否则一定不是规格化数，具体是啥查书 22 页</li>
+<li>在 IEEE 754 标准中，当 <span class="arithmatex">\(0&lt;E&lt;255\)</span> 时，表示规格化数，否则一定不是规格化数，具体是啥查书 22 页    </li>
 </ul>
 </li>
 </ul>
@@ -1812,6 +1860,40 @@
 <li><strong>异步总线定时协定</strong> 后一事件出现在总线上的时刻取决于前一事件出现的时刻，即建立在应答式或互锁机制基础上</li>
 </ul>
 <h2 id="io">输入、输出（I/O）系统</h2>
+<h4 id="cpu">CPU 与外设之间的信息交换方式</h4>
+<ul>
+<li>通过<em>I/O 接口</em>与外设交互</li>
+<li>端口 接口内可直接被 CPU 访问的<em>寄存器</em>，下面都是端口：<ul>
+<li>命令口 接口内可接收来自主控设备的控制命令的<em>寄存器</em></li>
+<li>状态口 接口内向 CPU 报告 I/O 设备的工作状态的<em>寄存器</em></li>
+<li>数据口 接口内在外设和总线间交换数据的缓冲寄存器</li>
+</ul>
+</li>
+<li>端口的编址方式<ul>
+<li>统一编址方式</li>
+<li>I/O 独立编址方式</li>
+</ul>
+</li>
+<li>I/O 接口与外设间的数据传送方式<ul>
+<li>无条件传送方式</li>
+<li>应答方式</li>
+<li>同步传送方式</li>
+</ul>
+</li>
+<li>CPU 与 I/O 接口之间的数据传送方式<ul>
+<li>无条件传送方式</li>
+<li>程序查询方式<ul>
+<li>主要由程序实现</li>
+<li>电路简单，缺点是 CPU 要等得太久</li>
+</ul>
+</li>
+<li>程序中断方式 主要由程序实现</li>
+<li>直接内容访问（DMA）方式 主要由硬件实现</li>
+<li>通道和输入/输出处理器 主要由硬件实现</li>
+</ul>
+</li>
+</ul>
+<h4 id="_22">程序查询方式</h4>
 
 
 
