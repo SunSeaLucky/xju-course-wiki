@@ -933,6 +933,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级汇编语言程序设计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级汇编语言程序设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      宏结构程序设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOS 功能调用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#32" class="md-nav__link">
     <span class="md-ellipsis">
       32 位指令及其编程
@@ -942,7 +975,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -1329,6 +1362,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级汇编语言程序设计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高级汇编语言程序设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      宏结构程序设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOS 功能调用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#32" class="md-nav__link">
     <span class="md-ellipsis">
       32 位指令及其编程
@@ -1338,7 +1404,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -1427,7 +1493,11 @@
 </ul>
 </li>
 <li>符号拓展指令：cbw（拓展到 AX）、cwd（拓展到 DX）；</li>
-<li>逻辑运算指令：and、or、xor、not、test；</li>
+<li>逻辑运算指令<ul>
+<li>影响标志位：and、or、xor、test、neg</li>
+<li>不影响标志位：not</li>
+</ul>
+</li>
 <li>移位指令：shl、shr、sal、sar、rol、ror、rcl、rcr；</li>
 <li>控制转移指令：jmp，太多了，可查 55 页表 2-3。</li>
 <li>循环指令：loop、loopz、loopnz；</li>
@@ -1441,7 +1511,13 @@
 <li>CF 和 OF 的区别：CF 表示无符号整数运算结果是否超出范围，超出范围后加上进位或借位运算结果依然<strong>正确</strong>；OF 表示有符号整数运算结果是否超出范围，超出范围后加上进位或借位运算结果<strong>不正确</strong>。</li>
 <li>SF：符号标志，结果的最高位。</li>
 <li>ZF：零标志，结果是否为 0。</li>
-<li>PF：奇偶标志，运算结果低八位中 1 的个数为 0 或者偶数时，PF=1；否则 PF=0。</li>
+<li>
+<p>PF：奇偶标志，运算结果低八位中 1 的个数为 0 或者偶数时，PF=1；否则 PF=0。</p>
+</li>
+<li>
+<p>判断是否影响标志位原则：是否发生了<strong>算数、测试、比较、移数</strong>，发生了往往是影响标志位的</p>
+</li>
+<li>特殊指令 <code>INC</code> 和 <code>DEC</code> 不会影响 <code>CF</code>。</li>
 </ul>
 <p><strong>算术指令</strong></p>
 <ul>
@@ -1488,34 +1564,30 @@
 </ul>
 <h2 id="_3">汇编语言程序格式</h2>
 <h4 id="_4">程序格式</h4>
-<ol>
-<li>
-<p>简化段定义
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="na">.model</span><span class="w"> </span><span class="no">small</span>
+<ul>
+<li>简化段定义</li>
+</ul>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="na">.model</span><span class="w"> </span><span class="no">small</span>
 </span><span id="__span-0-2"><span class="na">.stack</span>
 </span><span id="__span-0-3"><span class="na">.data</span>
-</span><span id="__span-0-4"><span class="na">...</span>
-</span><span id="__span-0-5"><span class="na">.code</span>
-</span><span id="__span-0-6"><span class="na">...</span>
-</span><span id="__span-0-7"><span class="na">.startup</span>
-</span><span id="__span-0-8"><span class="na">...</span>
-</span><span id="__span-0-9"><span class="na">.exit</span><span class="w"> </span><span class="mi">0</span>
-</span><span id="__span-0-10"><span class="na">...</span>
-</span><span id="__span-0-11"><span class="nf">end</span>
-</span></code></pre></div></td></tr></table></div></p>
-</li>
-<li>
-<p>完整段定义
+</span><span id="__span-0-4"><span class="w">    </span><span class="c1">; 数据定义</span>
+</span><span id="__span-0-5"><span class="na">.code</span><span class="w">   </span>
+</span><span id="__span-0-6"><span class="w">    </span><span class="no">.startup</span>
+</span><span id="__span-0-7"><span class="w">    </span><span class="c1">; 代码定义</span>
+</span><span id="__span-0-8"><span class="w">    </span><span class="na">.exit</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-0-9"><span class="nf">end</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>完整段定义</li>
+</ul>
 <div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1529,40 +1601,69 @@
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="nf">stack</span><span class="w"> </span><span class="no">segment</span><span class="w"> </span><span class="no">stack</span>
-</span><span id="__span-1-2"><span class="w">    </span><span class="nf">db</span><span class="w"> </span><span class="mi">256</span><span class="w"> </span><span class="no">dup</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="nf">stack</span><span class="w"> </span><span class="no">segment</span><span class="w"> </span><span class="no">stack</span>
+</span><span id="__span-1-2"><span class="w">    </span><span class="c1">; 堆栈段定义</span>
 </span><span id="__span-1-3"><span class="nf">stack</span><span class="w"> </span><span class="no">ends</span>
-</span><span id="__span-1-4">
-</span><span id="__span-1-5"><span class="nf">data</span><span class="w"> </span><span class="no">segment</span>
-</span><span id="__span-1-6"><span class="w">    </span><span class="c1">; 数据定义</span>
-</span><span id="__span-1-7"><span class="nf">data</span><span class="w"> </span><span class="no">ends</span>
-</span><span id="__span-1-8">
-</span><span id="__span-1-9"><span class="nf">code</span><span class="w"> </span><span class="no">segment</span>
-</span><span id="__span-1-10"><span class="w">    </span><span class="nf">assume</span><span class="w"> </span><span class="no">cs</span><span class="p">:</span><span class="no">code</span><span class="p">,</span><span class="w"> </span><span class="no">ds</span><span class="p">:</span><span class="no">data</span><span class="p">,</span><span class="w"> </span><span class="no">ss</span><span class="p">:</span><span class="no">stack</span>
-</span><span id="__span-1-11"><span class="w">    </span><span class="c1">; 代码定义</span>
-</span><span id="__span-1-12"><span class="nf">code</span><span class="w"> </span><span class="no">ends</span>
-</span><span id="__span-1-13">
-</span><span id="__span-1-14"><span class="w">    </span><span class="nl">start:</span><span class="w">        </span><span class="c1">; 程序入口</span>
-</span><span id="__span-1-15"><span class="w">        </span><span class="c1">; 程序代码</span>
-</span><span id="__span-1-16"><span class="w">        </span><span class="c1">; 程序结束</span>
-</span><span id="__span-1-17"><span class="w">        </span><span class="nf">mov</span><span class="w"> </span><span class="no">ax</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="no">c00h</span>
-</span><span id="__span-1-18"><span class="w">        </span><span class="nf">int</span><span class="w"> </span><span class="mi">21</span><span class="no">h</span>
-</span><span id="__span-1-19">
-</span><span id="__span-1-20"><span class="nf">end</span><span class="w"> </span><span class="no">start</span>
-</span></code></pre></div></td></tr></table></div></p>
-</li>
-</ol>
+</span><span id="__span-1-4"><span class="nf">data</span><span class="w"> </span><span class="no">segment</span>
+</span><span id="__span-1-5"><span class="w">    </span><span class="c1">; 数据定义</span>
+</span><span id="__span-1-6"><span class="nf">data</span><span class="w"> </span><span class="no">ends</span>
+</span><span id="__span-1-7"><span class="nf">code</span><span class="w"> </span><span class="no">segment</span>
+</span><span id="__span-1-8"><span class="w">    </span><span class="nf">assume</span><span class="w"> </span><span class="no">cs</span><span class="p">:</span><span class="no">code</span><span class="p">,</span><span class="w"> </span><span class="no">ds</span><span class="p">:</span><span class="no">data</span><span class="p">,</span><span class="w"> </span><span class="no">ss</span><span class="p">:</span><span class="no">stack</span>
+</span><span id="__span-1-9"><span class="nl">start:</span><span class="w"> </span><span class="c1">; 程序入口</span>
+</span><span id="__span-1-10"><span class="w">    </span><span class="c1">; 程序代码    </span>
+</span><span id="__span-1-11"><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">ax</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="no">c00h</span>
+</span><span id="__span-1-12"><span class="w">    </span><span class="nf">int</span><span class="w"> </span><span class="mi">21</span><span class="no">h</span>
+</span><span id="__span-1-13"><span class="nf">code</span><span class="w"> </span><span class="no">ends</span>
+</span><span id="__span-1-14"><span class="w">    </span><span class="nf">end</span><span class="w"> </span><span class="no">start</span>
+</span></code></pre></div></td></tr></table></div>
 <p><img alt="可执行文件的开发过程" src="../1.png" /></p>
+<ul>
+<li>伪操作</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>伪操作名</th>
+<th>格式</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EQU</td>
+<td>名字 EQU 表达式</td>
+<td>给名字赋值</td>
+</tr>
+<tr>
+<td>=</td>
+<td>名字 = 表达式</td>
+<td>同上，但允许重复赋值</td>
+</tr>
+<tr>
+<td>LABEL</td>
+<td>名字 LABEL 表达式</td>
+<td>定义变量或标号的类型</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>LABEL</code> 的使用示例：</li>
+</ul>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="nf">AGAINF</span><span class="w"> </span><span class="no">LABEL</span><span class="w"> </span><span class="no">FAR</span>
+</span><span id="__span-2-2"><span class="nl">AGAIN:</span><span class="w"> </span><span class="nf">PUSH</span><span class="w"> </span><span class="no">BX</span>
+</span></code></pre></div></td></tr></table></div>
 <h2 id="_5">基本汇编语言程序设计</h2>
 <h4 id="_6">串操作类指令</h4>
 <ul>
-<li>串传送<ul>
+<li>源操作数用寄存器 <code>SI</code> 间接寻址，默认在数据段 <code>DS</code> 中，即 <code>DS:[SI]</code>，允许段超越</li>
+<li>目的操作数用寄存器 <code>DI</code> 间接寻址，默认在数据段 <code>ES</code> 中，即 <code>ES:[DI]</code>，不允许段超越</li>
+<li>
+<p>每执行一次串操作，源指针 <code>SI</code> 和目的指针 <code>DI</code> 都自动递增或递减</p>
+</li>
+<li>
+<p>串传送</p>
+<ul>
 <li>MOVSB es:[di] &larr; ds:[si], si &larr; si+1, di &larr; di+1</li>
 <li>MOVSW es:[di] &larr; ds:[si], si &larr; si+2, di &larr; di+2</li>
 <li>常用重复前缀：REP</li>
@@ -1586,6 +1687,11 @@
 <li>常用重复前缀：REPZ</li>
 </ul>
 </li>
+<li>串扫描（用 <code>AL</code> 或 <code>AX</code> 的内容减去目的数据串，以比较两者的关系）<ul>
+<li>SCASB ; al-es:[di], di &larr; di<span class="arithmatex">\(\pm\)</span>1</li>
+<li>SCASW ; ax-es:[di], di &larr; di<span class="arithmatex">\(\pm\)</span>2</li>
+</ul>
+</li>
 </ul>
 <h4 id="_7">子程序的参数传递</h4>
 <p>寄存器传递、变量传递、栈传递</p>
@@ -1595,6 +1701,76 @@
 <li>递归 子程序调用自身</li>
 <li>重入 子程序被中断后，又被终端服务程序所调用。能够重入的子程序称为<em>可重入子程序</em>。</li>
 <li>子程序近调用时，入栈 2B，出栈 2B，而子程序远调用时，入栈 4B，出栈 4B。</li>
+</ul>
+<h2 id="_9">高级汇编语言程序设计</h2>
+<h4 id="_10">宏结构程序设计</h4>
+<ul>
+<li>定义</li>
+</ul>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="nf">macro</span><span class="w">  </span><span class="no">macro_name</span><span class="w"> </span><span class="no">arg1</span><span class="p">,</span><span class="w"> </span><span class="no">arg2</span><span class="p">,</span><span class="w"> </span><span class="no">...</span>
+</span><span id="__span-3-2"><span class="w">    </span><span class="c1">; 宏代码</span>
+</span><span id="__span-3-3"><span class="nf">endm</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>调用</li>
+</ul>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="nf">macro_name</span><span class="w"> </span><span class="no">arg1</span><span class="p">,</span><span class="w"> </span><span class="no">arg2</span><span class="p">,</span><span class="w"> </span><span class="no">...</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>宏定义允许嵌套、递归</li>
+<li>宏参数<ul>
+<li>数量 <span class="arithmatex">\(\in[0, +\infty)\)</span>，实际上肯定不是 <span class="arithmatex">\(+\infty\)</span>，主要是我也不知道是多少</li>
+<li>类型 可以是常数、变量、存储单元、指令、表达式</li>
+<li>传参 使用 <code>&amp;</code> 做变量替换。传字符串时有空格则要使用一对 <code>&lt;&gt;</code> 包裹。如果字符串中本身就有 <code>&lt;&gt;</code>，则使用 <code>!</code> 进行转义。传表达式时用 <code>%</code>，如 <code>%(1+2)</code></li>
+<li>宏中的标号要加上 <code>local</code> 关键字</li>
+</ul>
+</li>
+<li>重复汇编
+<code>repear</code> 型：
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="na">rep</span><span class="nf">eat</span><span class="w"> </span><span class="no">count</span>
+</span><span id="__span-5-2"><span class="w">    </span><span class="c1">; 重复执行的代码</span>
+</span><span id="__span-5-3"><span class="nf">endm</span>
+</span></code></pre></div></td></tr></table></div>
+<code>for</code> 型：
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="nf">for</span><span class="w"> </span><span class="err">形参</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;实参表&gt;</span>
+</span><span id="__span-6-2"><span class="w">    </span><span class="c1">; 重复执行的代码</span>
+</span><span id="__span-6-3"><span class="nf">endm</span>
+</span></code></pre></div></td></tr></table></div>
+<code>forc</code> 型：
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="nf">forc</span><span class="w"> </span><span class="err">形参</span><span class="p">,</span><span class="w"> </span><span class="err">字符串</span>
+</span><span id="__span-7-2"><span class="w">    </span><span class="c1">; 重复执行的代码</span>
+</span><span id="__span-7-3"><span class="nf">endm</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>条件汇编
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="nf">ifxx</span><span class="w"> </span><span class="no">expression</span>
+</span><span id="__span-8-2"><span class="w">    </span><span class="c1">; 条件成立时执行的代码</span>
+</span><span id="__span-8-3"><span class="err">[</span><span class="nf">else</span>
+</span><span id="__span-8-4"><span class="w">    </span><span class="c1">; 条件不成立时执行的代码]</span>
+</span><span id="__span-8-5"><span class="nf">endif</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h4 id="dos">DOS 功能调用</h4>
+<ul>
+<li>步骤：<ul>
+<li>将调用参数装入指定寄存器</li>
+<li>如需功能号，将它装入 <code>AH</code></li>
+<li>如需子功能号，将它装入 <code>AL</code></li>
+<li>按中断类型号调用 <code>DOS</code> 或 <code>BIOS</code> 中断（<code>DOS</code> 功能调用 <code>INT 21H</code> ）</li>
+<li>检查返回参数是否正确</li>
+</ul>
+</li>
 </ul>
 <h2 id="32">32 位指令及其编程</h2>
 <ul>
@@ -1612,7 +1788,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_9">错题</h2>
+<h2 id="_11">错题</h2>
 <hr />
 <p>1 设 CL=4，AL=0C8H，执行 SAR AL，CL 后，AL 中的数据是 【 0FCH 】</p>
 <p>A、0FCH </p>

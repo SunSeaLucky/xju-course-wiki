@@ -936,6 +936,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      程序中断方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      DMA 方式
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1659,6 +1677,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      程序中断方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      DMA 方式
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1894,7 +1930,72 @@
 </li>
 </ul>
 <h4 id="_22">程序查询方式</h4>
-<p>l</p>
+<ul>
+<li>由程序实现</li>
+<li>接口<ul>
+<li>设备选择电路</li>
+<li>数据缓冲寄存器</li>
+<li>设备状态标志</li>
+</ul>
+</li>
+<li>轮询设备</li>
+</ul>
+<h4 id="_23">程序中断方式</h4>
+<ul>
+<li>中断的基本概念<ul>
+<li>中断是一种程序随机切换的方式，有时也统称为<em>异常</em>。但不是所有的中断都是随机发生的，比如软中断。</li>
+</ul>
+</li>
+<li>中断服务程序入口地址的获取<ul>
+<li>向量中断</li>
+<li>查询中断</li>
+</ul>
+</li>
+<li>程序中断方式的基本 I/O 接口<ul>
+<li>RD，准备就绪触发器</li>
+<li>EI，允许中断触发器，可以产生中断禁止，从设备的角度禁止中断</li>
+<li>IR，中断请求触发器</li>
+<li>IM，中断屏蔽触发器，可以产生中断屏蔽，从 <code>CPU</code> 的角度屏蔽所有中断</li>
+</ul>
+</li>
+<li>单级中断</li>
+<li>多级中断</li>
+</ul>
+<h4 id="dma">DMA 方式</h4>
+<ul>
+<li>DMA 的基本概念<ul>
+<li>直接内存访问（DMA）是一种数据传送方式，它允许 <code>CPU</code> 直接访问外设的内存，而不需要 <code>CPU</code> 介入</li>
+</ul>
+</li>
+<li>DMA 的基本操作<ul>
+<li>外围设备发出 DMA 请求</li>
+<li>CPU 响应请求，把 CPU 工作改成 DMA 操作方式，DMA 接管总线</li>
+<li>DMA 寻址并传送数据</li>
+<li>DMA 向 CPU 报告操作结果</li>
+</ul>
+</li>
+<li>DMA 传送方式<ul>
+<li>成组连续传送（一次只传送一组数据，CPU 空闲时再传送下一组数据，占用 CPU 大量周期）</li>
+<li>周期挪用方式（一个个地、分散的地占用 CPU 的周期）</li>
+<li>透明 DMA 方式（半个半个地占用 CPU 的周期）</li>
+</ul>
+</li>
+<li>DMA 控制器的基本组成<ul>
+<li>内存地址计数器</li>
+<li>字计数器</li>
+<li>数据缓冲寄存器</li>
+<li>DMA 请求标志</li>
+<li>控制/状态逻辑</li>
+<li>中断机构</li>
+</ul>
+</li>
+<li>DMA 数据传送过程<ul>
+<li>传送前预处理</li>
+<li>正式传送</li>
+<li>传送后处理</li>
+</ul>
+</li>
+</ul>
 
 
 
