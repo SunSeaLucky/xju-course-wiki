@@ -1083,7 +1083,7 @@
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
-      串操作类指令
+      循环程序设计
     </span>
   </a>
   
@@ -1092,7 +1092,7 @@
           <li class="md-nav__item">
   <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
-      子程序的参数传递
+      串操作类指令
     </span>
   </a>
   
@@ -1100,6 +1100,15 @@
         
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序的参数传递
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
     <span class="md-ellipsis">
       子程序的嵌套、递归和重入
     </span>
@@ -1123,7 +1132,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       宏结构程序设计
     </span>
@@ -1155,7 +1164,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -1608,7 +1617,7 @@
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
-      串操作类指令
+      循环程序设计
     </span>
   </a>
   
@@ -1617,7 +1626,7 @@
           <li class="md-nav__item">
   <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
-      子程序的参数传递
+      串操作类指令
     </span>
   </a>
   
@@ -1625,6 +1634,15 @@
         
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序的参数传递
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
     <span class="md-ellipsis">
       子程序的嵌套、递归和重入
     </span>
@@ -1648,7 +1666,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       宏结构程序设计
     </span>
@@ -1680,7 +1698,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -1723,7 +1741,7 @@
 <li>同一个地址既可以看作<strong>字节单元</strong>的地址，也可以看作<strong>字单元</strong>的地址，还可以看作<strong>双字单元</strong>的地址。                </li>
 </ul>
 </li>
-<li>存储器的分段管理：8086 把存储器分成若干段，每段的大小最大为 64KB，每个存储单元可表示为“段基地址：偏移地址”。<strong>段基地址</strong>是段的起始地址除以 16 后的值，即必须形如“XXXX0H”，<strong>偏移地址</strong>是段内偏移量，可以用 16 位表示。</li>
+<li>存储器的分段管理：8086 把存储器分成若干段，每段的大小最大为 64KB，每个存储单元可表示为“段基地址 ：偏移地址”。<strong>段基地址</strong>是段的起始地址除以 16 后的值，即必须形如“XXXX0H”，<strong>偏移地址</strong>是段内偏移量（也称有效地址，EA），可以用 16 位表示。</li>
 <li>
 <p>段寄存器的作用：</p>
 <ul>
@@ -1772,6 +1790,7 @@
 <li>逻辑运算指令<ul>
 <li>影响标志位：and、or、xor、test、neg</li>
 <li>不影响标志位：not</li>
+<li>除了 NOT 不影响标志位外，其他所有逻辑运算指令执行完后，OF 和 CF 一定是 0</li>
 </ul>
 </li>
 <li>移位指令：shl、shr、sal、sar、rol、ror、rcl、rcr；</li>
@@ -1782,8 +1801,8 @@
 </ul>
 <h4 id="_3">状态标志</h4>
 <ul>
-<li>CF：进位标志，<strong>无符号数运算时</strong>，最高位是否有进位或借位。</li>
-<li>OF：溢出标志，<strong>有符号数运算时</strong>，运算结果是否超出范围。</li>
+<li>CF：进位标志，<strong>无符号数运算时</strong>，是否溢出，即最高位是否有进位或借位。</li>
+<li>OF：溢出标志，<strong>有符号数运算时</strong>，是否溢出，运算结果是否超出范围。</li>
 <li>CF 和 OF 的区别：CF 表示无符号整数运算结果是否超出范围，超出范围后加上进位或借位运算结果依然<strong>正确</strong>；OF 表示有符号整数运算结果是否超出范围，超出范围后加上进位或借位运算结果<strong>不正确</strong>。</li>
 <li>SF：符号标志，结果的最高位。</li>
 <li>ZF：零标志，结果是否为 0。</li>
@@ -1823,6 +1842,9 @@
 <p>CALL、RET</p>
 <h4 id="_10">中断指令</h4>
 <ul>
+<li>
+<p>中断类型</p>
+<ul>
 <li>外部中断 <ul>
 <li>可屏蔽中断</li>
 <li>非屏蔽中断</li>
@@ -1833,6 +1855,19 @@
 <li>指令中断</li>
 <li>溢出中断</li>
 <li>单步中断  </li>
+</ul>
+</li>
+<li>
+<p>中断过程</p>
+<ul>
+<li>中断向量表<ul>
+<li>每个中断的起始地址是 4 的倍数</li>
+<li>每个中断共两个字，低字存放中断服务程序的偏移地址 IP，高字存放段地址 CS</li>
+</ul>
+</li>
+<li>内存的地址区域从 00000H 开始为中断向量表</li>
+</ul>
+</li>
 </ul>
 <h2 id="3">3 汇编语言程序格式</h2>
 <h4 id="_11">汇编语言程序的开发</h4>
@@ -1996,7 +2031,7 @@
 </ul>
 </li>
 <li>
-<p>伪操作</p>
+<p>伪操作：汇编程序对源程序进行汇编时处理的操作，完成处理器选择、存储模式定义、数据定义、存储器分配、指示程序开始结束等功能</p>
 </li>
 </ul>
 <table>
@@ -2040,7 +2075,16 @@
 </li>
 </ul>
 <h2 id="4">4 基本汇编语言程序设计</h2>
-<h4 id="_13">串操作类指令</h4>
+<h4 id="_13">循环程序设计</h4>
+<ul>
+<li>循环程序的三部分：<ul>
+<li>循环初始部分</li>
+<li>循环体部分</li>
+<li>循环控制部分</li>
+</ul>
+</li>
+</ul>
+<h4 id="_14">串操作类指令</h4>
 <ul>
 <li>源操作数用寄存器 <code>SI</code> 间接寻址，默认在数据段 <code>DS</code> 中，即 <code>DS:[SI]</code>，允许段超越</li>
 <li>目的操作数用寄存器 <code>DI</code> 间接寻址，默认在数据段 <code>ES</code> 中，即 <code>ES:[DI]</code>，不允许段超越</li>
@@ -2067,21 +2111,21 @@
 <li>常用重复前缀：REP</li>
 </ul>
 </li>
-<li>串比较<ul>
+<li>串比较（CMPS）<ul>
 <li>CMPSB ds:[si]-es:[di], si+1, di+1</li>
 <li>CMPSW ds:[si]-es:[di], si+2, di+2</li>
-<li>常用重复前缀：REPZ</li>
 </ul>
 </li>
-<li>串扫描（用 <code>AL</code> 或 <code>AX</code> 的内容减去目的数据串，以比较两者的关系）<ul>
+<li>串扫描（SCAS，用 <code>AL</code> 或 <code>AX</code> 的内容减去目的数据串，以比较两者的关系）<ul>
 <li>SCASB ; al-es:[di], di &larr; di<span class="arithmatex">\(\pm\)</span>1</li>
 <li>SCASW ; ax-es:[di], di &larr; di<span class="arithmatex">\(\pm\)</span>2</li>
 </ul>
 </li>
+<li>CMPS 和 SCAS 都可以配合 REPE/REPZ/REPNE/REPNZ 前缀使用，通过 ZF 标志判断两数是否相等</li>
 </ul>
-<h4 id="_14">子程序的参数传递</h4>
-<p>寄存器传递、变量传递、栈传递</p>
-<h4 id="_15">子程序的嵌套、递归和重入</h4>
+<h4 id="_15">子程序的参数传递</h4>
+<p>寄存器传递、变量传递、地址表、栈传递</p>
+<h4 id="_16">子程序的嵌套、递归和重入</h4>
 <ul>
 <li>嵌套 子程序内包含有子程序的调用</li>
 <li>递归 子程序调用自身</li>
@@ -2089,7 +2133,7 @@
 <li>子程序近调用时，入栈 2B，出栈 2B，而子程序远调用时，入栈 4B，出栈 4B。</li>
 </ul>
 <h2 id="5">5 高级汇编语言程序设计</h2>
-<h4 id="_16">宏结构程序设计</h4>
+<h4 id="_17">宏结构程序设计</h4>
 <ul>
 <li>定义</li>
 </ul>
@@ -2174,7 +2218,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_17">错题</h2>
+<h2 id="_18">错题</h2>
 <hr />
 <p>1 设 CL=4，AL=0C8H，执行 SAR AL，CL 后，AL 中的数据是 【 0FCH 】</p>
 <p>A、0FCH </p>
