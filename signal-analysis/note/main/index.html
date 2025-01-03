@@ -2538,6 +2538,69 @@
 </li>
 </ul>
 <h4 id="fir">有限长脉冲响应数字滤波器设计（FIR）</h4>
+<ol>
+<li><span class="arithmatex">\(H\left(z\right)=\sum_{j=0}^{N-1}b_{j}z^{-j}\)</span> 和 <span class="arithmatex">\(h(n)=\sum_{i=0}^{N-1}b_jx(n-j)\)</span></li>
+<li>线性相位是指 <span class="arithmatex">\(\phi(\omega)\)</span> 是 <span class="arithmatex">\(\omega\)</span> 的线性函数<ol>
+<li>严格线性相位系统：<span class="arithmatex">\(\phi(\omega)=-\alpha\omega\)</span></li>
+<li>宽（广义）线性相位系统：<span class="arithmatex">\(\phi(\omega)=-\alpha\omega+\beta\)</span></li>
+</ol>
+</li>
+<li>四种线性相位系统 <br> <img alt="alt text" src="../image-7.png" /> <br> <img alt="alt text" src="../image-8.png" /></li>
+<li>窗函数法设计 <code>FIR</code> 滤波器<ol>
+<li>核心：只需求出  <span class="arithmatex">\(H\left(z\right)=\sum_{n=0}^{N-1}b_{n}z^{-n}=\sum_{n=0}^{N-1}h(n)z^{-n}\)</span> 中的 <span class="arithmatex">\(h(n)\)</span></li>
+<li>由设计目标 <span class="arithmatex">\(H_{\mathrm{d}}(\mathrm{e}^{\mathrm{j}\omega})\)</span> 确定<code>FIR</code> 的类型 (四选一) 和幅度函数 <span class="arithmatex">\(A_{\mathrm{d}}(\omega)\)</span>，<span class="arithmatex">\(H_\text{d}(\mathrm{e}^{\mathrm{j}\omega})=A_d(\omega)e^{j\varphi_d(\omega)}\)</span></li>
+<li>根据类型确定线性相位FIR滤波器的相位 <span class="arithmatex">\(\varphi_{\mathrm{d}}(\omega)\)</span>，<span class="arithmatex">\(\varphi_{\mathrm{d}}(\omega)=-\alpha\omega+\beta\quad(\beta=0, \pi/2)\)</span></li>
+<li>根据 <span class="arithmatex">\(A_{\mathrm{d}}(\omega)\)</span> 和 <span class="arithmatex">\(\varphi_{\mathrm{d}}(\omega)\)</span> 通过 <code>IDTFT</code> 求解 <span class="arithmatex">\(h_\mathrm{d}(n)\)</span>，$h_\mathrm{d}(n)=\frac{1}{2\pi}\int_{-\pi}^{\pi}A_\mathrm{d}(\omega)\mathrm{e}^{\mathrm{j}\varphi_\mathrm{d}(\omega)}\mathrm{e}^{\mathrm{j}k\omega}\mathrm{d}\omega $</li>
+<li>加窗截短 <span class="arithmatex">\(h_\mathrm{d}(n)\)</span>，得到有限长因果序列 <span class="arithmatex">\(h(n)\)</span>，<span class="arithmatex">\(h(\mathrm{n})=h_\mathrm{d}(\mathrm{n})w_N(\mathrm{n})\)</span></li>
+</ol>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>FIR</th>
+<th>IIR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>严格线性相位</td>
+<td>有</td>
+<td>没有</td>
+</tr>
+<tr>
+<td>h(n) 长度</td>
+<td>有限</td>
+<td>无限</td>
+</tr>
+<tr>
+<td>稳定性</td>
+<td>极点全部在原点（永远稳定），无稳定性问题</td>
+<td>有稳定性问题</td>
+</tr>
+<tr>
+<td>阶数</td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td>结构</td>
+<td>非递归</td>
+<td>递归系统</td>
+</tr>
+<tr>
+<td>运算误差</td>
+<td>无反馈，运算误差小</td>
+<td>有反馈，由于运算中的四舍五入会产生极限环</td>
+</tr>
+<tr>
+<td>快速算法</td>
+<td>用 FFT 实现，减少运算量</td>
+<td>无快速运算方法</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_11">需要关注的课后习题</h2>
 <h4 id="_12">概表</h4>
 <table>
