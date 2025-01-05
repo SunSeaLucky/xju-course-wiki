@@ -1166,7 +1166,7 @@
         <li class="md-nav__item">
   <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
-      错题
+      做试卷遇到的
     </span>
   </a>
   
@@ -1700,7 +1700,7 @@
         <li class="md-nav__item">
   <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
-      错题
+      做试卷遇到的
     </span>
   </a>
   
@@ -1764,7 +1764,11 @@
 <h2 id="2-8086">2 <code>8086</code> 的指令系统</h2>
 <h4 id="_2">各种指令</h4>
 <ul>
-<li>数据传送指令：mov、xchg(reg &harr; reg/mem 或 reg/mem &harr; reg)、xlat(al &larr; ds:[bx+al])；</li>
+<li>数据传送指令：<ul>
+<li>mov(reg/mem, imm; reg/mem/seg, reg; reg/seg, mem; reg/mem, seg)</li>
+<li>xchg(reg &harr; reg/mem 或 reg/mem &harr; reg)、xlat(al &larr; ds:[bx+al])；</li>
+</ul>
+</li>
 <li>堆栈操作指令：push、pop（注意 push 的时候地址减少，pop 的时候地址增加）；</li>
 <li>标志传送指令：lahf、sahf、pushf、popf；</li>
 <li>地址传送指令：lea、lds、les；</li>
@@ -1801,13 +1805,13 @@
 </ul>
 <h4 id="_3">状态标志</h4>
 <ul>
-<li>CF：进位标志，<strong>无符号数运算时</strong>，是否溢出，即最高位是否有进位或借位。</li>
-<li>OF：溢出标志，<strong>有符号数运算时</strong>，是否溢出，运算结果是否超出范围。</li>
+<li>CF：进位标志，<strong>无符号数运算时</strong>，是否溢出，即最高位是否有进位或借位。检测最高有效位（MSB，Most Significant Bit）<strong>是否产生了进位或借位</strong></li>
+<li>OF：溢出标志，<strong>有符号数运算时</strong>，是否溢出，运算结果是否超出范围。检测最高有效位（MSB，符号位） 和 <strong>次高位的进位</strong> 是否不一致</li>
 <li>CF 和 OF 的区别：CF 表示无符号整数运算结果是否超出范围，超出范围后加上进位或借位运算结果依然<strong>正确</strong>；OF 表示有符号整数运算结果是否超出范围，超出范围后加上进位或借位运算结果<strong>不正确</strong>。</li>
 <li>SF：符号标志，结果的最高位。</li>
 <li>ZF：零标志，结果是否为 0。</li>
 <li>PF：奇偶标志，运算结果低八位中 1 的个数为 0 或者偶数时，PF=1；否则 PF=0。</li>
-<li>判断是否影响标志位原则：是否发生了<strong>算数、测试、比较、移数</strong>，发生了往往是影响标志位的</li>
+<li>判断是否影响标志位原则：是否发生了<strong>算数、测试、比较、移位</strong>，发生了往往是影响标志位的</li>
 <li>特殊指令 <code>INC</code> 和 <code>DEC</code> 不会影响 <code>CF</code>。</li>
 </ul>
 <h4 id="_4">算术指令</h4>
@@ -2218,62 +2222,21 @@
 </ul>
 </li>
 </ul>
-<h2 id="_18">错题</h2>
-<hr />
-<p>1 设 CL=4，AL=0C8H，执行 SAR AL，CL 后，AL 中的数据是 【 0FCH 】</p>
-<p>A、0FCH </p>
-<p>B、0CH </p>
-<p>C、08H </p>
-<p>D、0F8H</p>
-<p><strong>解析</strong> 注意是算数右移，而且是非循环的，所以 8 直接被丢弃了。又因为 C 是 1100，也就是符号位是 1，所以左边不停补 1。</p>
-<hr />
-<p>2 比较两个字符串是否相等的指令可以是 【 REPZ CMPSB 】</p>
-<p>A、REP CMPSB </p>
-<p>B、REPZ CMPSB </p>
-<p>C、RENPZ CMPSB </p>
-<p>D、REP MOVSB</p>
-<p>正确答案是：<strong>B、REPZ CMPSB</strong></p>
-<p><strong>解析</strong>：</p>
-<ul>
-<li><strong><code>CMPSB</code></strong>：比较两个字符串的字节（Byte），即比较 <code>DS:SI</code> 和 <code>ES:DI</code> 指向的两个字节。</li>
-<li>如果两个字节相等，<code>ZF</code>（零标志位）被置为 1。</li>
-<li>如果不相等，<code>ZF</code> 被清零。</li>
-<li>
-<p>比较完成后，<code>SI</code> 和 <code>DI</code> 自动递增或递减（取决于方向标志位 <code>DF</code> 的值）。</p>
-</li>
-<li>
-<p><strong><code>REPZ</code></strong>：重复执行后续指令，直到满足以下条件之一：</p>
-</li>
-<li><strong><code>ZF = 0</code></strong>（表示两个字节不相等）。</li>
-<li><strong><code>CX = 0</code></strong>（表示比较的字节数已达到指定长度）。</li>
-</ul>
-<p>因此，<code>REPZ CMPSB</code> 的作用是：按字节逐一比较两个字符串，直到发现不相等的字节或比较完成。</p>
-<ul>
-<li><strong>A、REP CMPSB</strong>：</li>
-<li><code>REP</code> 仅重复执行 <code>CMPSB</code>，直到 <code>CX = 0</code>，但不依赖 <code>ZF</code> 标志位。</li>
-<li>
-<p>它无法在发现不相等时提前停止，因此不适合用于比较字符串是否相等。</p>
-</li>
-<li>
-<p><strong>B、REPZ CMPSB</strong>：</p>
-</li>
-<li><code>REPZ</code> 会在 <code>ZF = 0</code>（发现不相等）或 <code>CX = 0</code>（比较完成）时停止。</li>
-<li>
-<p>这是比较两个字符串是否相等的正确指令。</p>
-</li>
-<li>
-<p><strong>C、RENPZ CMPSB</strong>：</p>
-</li>
-<li>选项中写作 <code>RENPZ</code>，但实际上没有这样的指令前缀。</li>
-<li>
-<p>正确的前缀是 <code>REPNZ</code>，表示在 <code>ZF = 1</code> 时停止，适用于查找不相等的情况，而非比较字符串是否相等。</p>
-</li>
-<li>
-<p><strong>D、REP MOVSB</strong>：</p>
-</li>
-<li><code>REP MOVSB</code> 用于将字符串从源地址复制到目标地址，与字符串比较无关。</li>
-</ul>
-<hr />
+<h2 id="_18">做试卷遇到的</h2>
+<ol>
+<li>可屏蔽中断就是它的请求是否被 CPU 响应要受 IF 的控制</li>
+<li>引起中断的紧急事务称为<strong>中断源</strong></li>
+<li>键盘 I/O 、显示 I/O 和打印 I/O 分别对应 16H、10H、17H 号中断</li>
+<li>字符显示模式缓冲区中的一个字对应屏幕上的一个字符，字的低字节存放 ASCII 码，高字节存放属性（如颜色）</li>
+<li>在段定义时，如果定位类型用户未选择，就表示是隐含类型，即 <code>PARA</code></li>
+<li>通常主程序和子程序间参数传送的方法有三种：用寄存器传递、用存储单元传递、用堆栈传递</li>
+<li>当程序顺序执行时，每取一条指令语句，IP 指针增加的值是由<strong>指令长度决定的</strong></li>
+<li>MOV 指令不能直接在两个段寄存器之间传递数据、不允许两个内存地址之间直接传递数据、MOV 不可以向 CX 中传递地址（除非是两地址之差）</li>
+<li>AF（辅助进位标志，Auxiliary Flag）检测低 4 位的运算中是否发生了进位或借位。</li>
+<li>NEG 必然会导致 CF 为 1</li>
+<li><code>mov [bx+d/si], xx</code> 可以，但是 <code>mov [dx+d/si], xx</code> 不可以，这是因为 dx 寄存器不能作为基址寄存器</li>
+<li>注意字符串存储和数字存储方式的区别，字符串是左低右高，数字左高右低</li>
+</ol>
 
 
 
