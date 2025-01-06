@@ -2233,9 +2233,13 @@
 <li>当程序顺序执行时，每取一条指令语句，IP 指针增加的值是由<strong>指令长度决定的</strong></li>
 <li>MOV 指令不能直接在两个段寄存器之间传递数据、不允许两个内存地址之间直接传递数据、MOV 不可以向 CX 中传递地址（除非是两地址之差）</li>
 <li>AF（辅助进位标志，Auxiliary Flag）检测低 4 位的运算中是否发生了进位或借位。</li>
-<li>NEG 必然会导致 CF 为 1</li>
+<li><code>NEG</code> 必然会导致 <code>CF</code> 为 1</li>
 <li><code>mov [bx+d/si], xx</code> 可以，但是 <code>mov [dx+d/si], xx</code> 不可以，这是因为 dx 寄存器不能作为基址寄存器</li>
-<li>注意字符串存储和数字存储方式的区别，字符串是左低右高，数字左高右低</li>
+<li>注意 <strong>字符串存储</strong> 和 <strong>数字存储方式</strong> 的区别，字符串是<strong>左低右高</strong>，数字<strong>左高右低</strong>。字符串存储时是按照字节从左向右依次存储其 ASCII 码的</li>
+<li>段只能起始于 16 倍数的地址</li>
+<li>段内调用 <code>CALL</code>，<code>PUSH</code> 指令会压入偏移地址（IP，一个字），<code>SP</code> 会减 2</li>
+<li>段间调用 <code>CALL</code>，<code>PUSH</code> 指令会压入先压入段地址（CS），再压入偏移地址（IP），<code>SP</code> 会减 4</li>
+<li>标号定义（如 <code>EQU</code>、<code>=</code>）的数据，不占用主存，类似于宏</li>
 </ol>
 
 
