@@ -2240,6 +2240,12 @@
 <li>段内调用 <code>CALL</code>，<code>PUSH</code> 指令会压入偏移地址（IP，一个字），<code>SP</code> 会减 2</li>
 <li>段间调用 <code>CALL</code>，<code>PUSH</code> 指令会压入先压入段地址（CS），再压入偏移地址（IP），<code>SP</code> 会减 4</li>
 <li>标号定义（如 <code>EQU</code>、<code>=</code>）的数据，不占用主存，类似于宏</li>
+<li>段寄存器都不能直接赋立即数，必须用寄存器做中介；<code>CS</code> 是唯一不可以修改的段寄存器</li>
+<li>还能他妈的<strong>用别的变量</strong>来定义新变量</li>
+<li><code>SBB</code> 的作用 <code>结果 = 操作数1 - 操作数2 - CF</code></li>
+<li>在寻址时可以提供偏移地址的寄存器：<code>BX</code>、<code>BP</code>、<code>SI</code>、<code>DI</code></li>
+<li>8086/8088 CPU 的寄存器中，16 位的寄存器共有 14 个，通用寄存器（<code>AX</code>、<code>BX</code>、<code>CX</code>、<code>DX</code>）共 4 个，段寄存器 4 个，指针和变址寄存器（<code>SP</code>、<code>BP</code>、<code>SI</code>、<code>DI</code>）共 4 个，指令指针和标志寄存器（<code>IP</code>、<code>FLAG</code>）共 2 个</li>
+<li>段长度 <span class="arithmatex">\(\in[16B, 64KB]\)</span></li>
 </ol>
 
 
