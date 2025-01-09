@@ -1634,6 +1634,128 @@
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">su、passwd、who、date、echo、ps、kill
 </span><span id="__span-0-2">ls、cat、more、cd、cp、pwd、mv、rm、mkdir、grep、sort、tail、chmod、chown、adduser、deluser、gpasswd、newgrp、nohup cmd &amp;、fg、bg
 </span></code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th><strong>简要介绍</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>su</code></td>
+<td>切换用户身份，默认切换为超级用户（root）。</td>
+</tr>
+<tr>
+<td><code>passwd</code></td>
+<td>修改用户密码。</td>
+</tr>
+<tr>
+<td><code>who</code></td>
+<td>显示当前登录系统的用户信息。</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>显示或设置系统日期和时间。</td>
+</tr>
+<tr>
+<td><code>echo</code></td>
+<td>输出字符串或变量的值到终端。</td>
+</tr>
+<tr>
+<td><code>ps</code></td>
+<td>显示当前运行的进程信息。</td>
+</tr>
+<tr>
+<td><code>kill</code></td>
+<td>终止指定的进程。</td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>列出目录内容。</td>
+</tr>
+<tr>
+<td><code>cat</code></td>
+<td>查看文件内容，或将多个文件内容连接输出。</td>
+</tr>
+<tr>
+<td><code>more</code></td>
+<td>分页查看文件内容。</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>切换当前工作目录。</td>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td>复制文件或目录。</td>
+</tr>
+<tr>
+<td><code>pwd</code></td>
+<td>显示当前工作目录的绝对路径。</td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td>移动或重命名文件或目录。</td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td>删除文件或目录。</td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td>创建新目录。</td>
+</tr>
+<tr>
+<td><code>grep</code></td>
+<td>搜索文件中匹配指定模式的行。</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>对文本文件内容进行排序。</td>
+</tr>
+<tr>
+<td><code>tail</code></td>
+<td>查看文件的最后几行内容。</td>
+</tr>
+<tr>
+<td><code>chmod</code></td>
+<td>修改文件或目录的权限。</td>
+</tr>
+<tr>
+<td><code>chown</code></td>
+<td>修改文件或目录的所有者或所属组。</td>
+</tr>
+<tr>
+<td><code>adduser</code></td>
+<td>添加新用户（通常是 <code>useradd</code> 的交互式封装）。</td>
+</tr>
+<tr>
+<td><code>deluser</code></td>
+<td>删除用户（通常是 <code>userdel</code> 的交互式封装）。</td>
+</tr>
+<tr>
+<td><code>gpasswd</code></td>
+<td>管理组密码或修改组成员。</td>
+</tr>
+<tr>
+<td><code>newgrp</code></td>
+<td>切换到新的用户组。</td>
+</tr>
+<tr>
+<td><code>nohup cmd &amp;</code></td>
+<td>在后台运行命令，并忽略挂起信号（退出终端后命令仍继续运行）。</td>
+</tr>
+<tr>
+<td><code>fg</code></td>
+<td>将后台运行的任务切换到前台。</td>
+</tr>
+<tr>
+<td><code>bg</code></td>
+<td>将暂停的任务切换到后台运行。</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_2">简答题知识点</h2>
 <h4 id="linux-10">Linux 的标准目录结构及其存放内容（10个主要一级目录）</h4>
 <p>/bin
@@ -1712,18 +1834,20 @@
 <h4 id="linux_4">Linux 下的隐含文件如何标识和显示</h4>
 <p>在 Linux 文件系统中，任何文件或目录的名称以 . 开头都会被视为隐含文件。使用 <code>ls -a</code> 或 <code>ls -A</code>。</p>
 <h4 id="linux_5">Linux 系统的主要应用领域</h4>
-<p>Linux 系统的主要应用领域包括：
-1. <strong>服务器</strong>（Web、数据库、邮件、云计算等）。
-2. <strong>嵌入式系统</strong>（智能设备、物联网、汽车电子等）。
-3. <strong>云计算与虚拟化</strong>（容器、分布式计算等）。
-4. <strong>超级计算机</strong>（高性能计算）。
-5. <strong>桌面操作系统</strong>（开发、教育、科研等）。
-6. <strong>网络设备</strong>（路由器、防火墙等）。
-7. <strong>网络安全</strong>（渗透测试、日志分析等）。
-8. <strong>科学研究与教育</strong>。
-9. <strong>游戏开发与运行</strong>。
-10. <strong>企业应用</strong>（ERP、存储、邮件系统等）。
-11. <strong>多媒体与创意</strong>（视频、音频、图像处理）。</p>
+<p>Linux 系统的主要应用领域包括：</p>
+<ol>
+<li><strong>服务器</strong>（Web、数据库、邮件、云计算等）。</li>
+<li><strong>嵌入式系统</strong>（智能设备、物联网、汽车电子等）。</li>
+<li><strong>云计算与虚拟化</strong>（容器、分布式计算等）。</li>
+<li><strong>超级计算机</strong>（高性能计算）。</li>
+<li><strong>桌面操作系统</strong>（开发、教育、科研等）。</li>
+<li><strong>网络设备</strong>（路由器、防火墙等）。</li>
+<li><strong>网络安全</strong>（渗透测试、日志分析等）。</li>
+<li><strong>科学研究与教育</strong>。</li>
+<li><strong>游戏开发与运行</strong>。</li>
+<li><strong>企业应用</strong>（ERP、存储、邮件系统等）。</li>
+<li><strong>多媒体与创意</strong>（视频、音频、图像处理）。</li>
+</ol>
 <h2 id="_5">综合题</h2>
 <h4 id="cron">计划任务 cron 的建立方法及管理</h4>
 <h4 id="_6">文件基本操作综合</h4>
