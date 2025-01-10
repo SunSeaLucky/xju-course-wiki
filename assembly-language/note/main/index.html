@@ -1440,6 +1440,174 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    嵌入式
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            嵌入式
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emb-linux/intro/main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    课程简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emb-linux/note/main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    算法设计与分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            算法设计与分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/intro/main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    课程简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/note/main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2261,7 +2429,7 @@
 <li>通常主程序和子程序间参数传送的方法有三种：用寄存器传递、用存储单元传递、用堆栈传递</li>
 <li>当程序顺序执行时，每取一条指令语句，IP 指针增加的值是由<strong>指令长度决定的</strong></li>
 <li>MOV 指令不能直接在两个段寄存器之间传递数据、不允许两个内存地址之间直接传递数据、MOV 不可以向 CX 中传递地址（除非是两地址之差）</li>
-<li>AF（辅助进位标志，Auxiliary Flag）检测低 4 位的运算中是否发生了进位或借位。</li>
+<li>AF（辅助进位标志，Auxiliary Flag）检测低 4 位的运算中是否发生了进位或借位</li>
 <li><code>NEG</code> 必然会导致 <code>CF</code> 为 1</li>
 <li><code>mov [bx+d/si], xx</code> 可以，但是 <code>mov [dx+d/si], xx</code> 不可以，这是因为 dx 寄存器不能作为基址寄存器</li>
 <li>注意 <strong>字符串存储</strong> 和 <strong>数字存储方式</strong> 的区别，字符串是<strong>左低右高</strong>，数字<strong>左高右低</strong>。字符串存储时是按照字节从左向右依次存储其 ASCII 码的</li>
@@ -2275,6 +2443,27 @@
 <li>在寻址时可以提供偏移地址的寄存器：<code>BX</code>、<code>BP</code>、<code>SI</code>、<code>DI</code></li>
 <li>8086/8088 CPU 的寄存器中，16 位的寄存器共有 14 个，通用寄存器（<code>AX</code>、<code>BX</code>、<code>CX</code>、<code>DX</code>）共 4 个，段寄存器 4 个，指针和变址寄存器（<code>SP</code>、<code>BP</code>、<code>SI</code>、<code>DI</code>）共 4 个，指令指针和标志寄存器（<code>IP</code>、<code>FLAG</code>）共 2 个</li>
 <li>段长度 <span class="arithmatex">\(\in[16B, 64KB]\)</span></li>
+<li>字相除时要拓展为双字</li>
+<li>寄存器有 16 位，编号是从 0~15 编号的</li>
+<li><code>mov ax, [si+di]</code> 是错的，不能只使用两个索引寄存器。</li>
+<li><code>NOT</code> 不影响 CF 和 OF 的值</li>
+<li>指令限制常用圈套（最 SB 的题型，行不行我上机看看不就知道了？天天 nm 考标号里不能出现什么符号还有这种，每个语言都要记一遍）：<ol>
+<li>长度不同型</li>
+<li>篡改 cs 型</li>
+<li>段地址参与运算型</li>
+<li>双地址做操作数型</li>
+<li>cx 做地址寄存器型</li>
+<li>div / mul 后面跟的不是寄存器型</li>
+<li>段地址赋立即数型</li>
+</ol>
+</li>
+<li>立即寻址：mov ax, offset array</li>
+<li>读入 DX 指定的端口的数据：<code>IN AL, DX</code>；输出数据到 DX 指定的端口：<code>OUT DX, AL</code></li>
+<li>显示字符串时，定义的字符串最后要有 '$'。</li>
+<li>INC/DEC 指令之后不可以使用加法调整指令</li>
+<li>INC/DEC 除了不影响 CF，剩下的都影响</li>
+<li>堆栈不能压入立即数</li>
+<li>loop 在判断 cx 前，cx 会减 1</li>
 </ol>
 
 
