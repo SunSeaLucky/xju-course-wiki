@@ -3071,10 +3071,26 @@
 <h2 id="_20">考试重点</h2>
 <h4 id="_21">第一章</h4>
 <ol>
-<li>周期性判定（选择）</li>
-<li>线性时不变判定、稳定性、因果性（简答分析）</li>
-<li>稳定、不稳定要分别从时域和 z 域判断</li>
+<li>周期性判定（选择），两个周期函数之和仍然是周期函数的条件是：<strong>两个函数的周期的比值是有理数</strong></li>
+<li>线性时不变判定、稳定性、因果性（简答分析）例题 1-4、1-5<ol>
+<li>线性<ol>
+<li>比例性：<span class="arithmatex">\(T[ax(t)]=ay(t)\)</span></li>
+<li>可加性：<span class="arithmatex">\(T[x_1(t)+x_2(t)]=y_1(t)+y_2(t)\)</span></li>
+</ol>
+</li>
+<li>时不变性：<span class="arithmatex">\(T[x(t-t_0)]=y(t-t_0)\)</span></li>
+</ol>
+</li>
+<li>稳定、不稳定要分别从时域和 <code>z</code> 域判断</li>
 <li>卷积，能计算线性卷积，并知道卷积结果长度</li>
+<li>矩形序列 <span class="arithmatex">\(R_N(n)\)</span> 的表达式：<ol>
+<li><span class="arithmatex">\(R_N(n)=u(n)-u(n-N)\)</span></li>
+<li><span class="arithmatex">\(R_N(n)=\{\underline{1},1,1,\cdots,1\}\)</span>（共 <span class="arithmatex">\(N\)</span> 个 1）</li>
+<li><span class="arithmatex">\(R_N(n)=\sum\limits_{m=0}^{N-1}\delta(n-m)=\delta(n)+\delta(n-1)+\cdots+\delta(n-N+1)\)</span>（共 <span class="arithmatex">\(N\)</span> 个单位冲击）</li>
+</ol>
+</li>
+<li>信号尺度变换：<span class="arithmatex">\(f(at)=\begin{cases}扩展,~~a&lt;1\\压缩,~~a&gt;1&amp;\end{cases}\)</span></li>
+<li>冲激信号：<span class="arithmatex">\(\int\limits_{-\infty}^{\infty}f(t)\delta(t-t_0)dt=f(t_0)\)</span></li>
 </ol>
 <h4 id="_22">第二章</h4>
 <ol>
@@ -3091,44 +3107,56 @@
 <li>傅里叶变换的应用，调制</li>
 <li>43~52 页例题注意</li>
 <li>补练习题 2-19~21</li>
-<li>周期型号的特点 <strong>离散型、收敛性、谐波性</strong></li>
+<li>周期信号傅里叶变换的特点 <strong>离散性、收敛性、谐波性</strong></li>
 <li>周期信号的傅里叶级数不用掌握</li>
 <li><span class="arithmatex">\(f(t)\)</span> 为 <span class="arithmatex">\(t\)</span> 实偶函数、实奇函数时，傅里叶变换的结果</li>
 <li>傅里叶变换存在的条件：<strong>绝对可积</strong></li>
-<li>判定因果、稳定，时域用时域判定方法，频域用频域判定方法（2页、3页，17页18页）</li>
+<li>判定因果、稳定，时域用时域判定方法，频域用频域判定方法（2 页、3 页，17 页、18页）<ol>
+<li>稳定<ol>
+<li><strong>系统的输入有界，输出也有界</strong></li>
+<li>极点判定</li>
+</ol>
+</li>
+<li>因果<ol>
+<li><strong>系统的输入不超前于输出</strong></li>
+<li>极点在单位圆内</li>
+</ol>
+</li>
+</ol>
+</li>
 <li>判断 <span class="arithmatex">\(h(n)\)</span> 或 <span class="arithmatex">\(h(t)\)</span> 在 <span class="arithmatex">\(t\)</span> 小于 0 时或 <span class="arithmatex">\(n\)</span> 小于 0 时，是否恒等于 0</li>
 </ol>
 <h4 id="_23">第四章</h4>
 <ol>
 <li>第四章所有例题都要做一遍 例题 4-4 必须会做</li>
-<li>习题 4-14、4-16必须会做</li>
-<li>z 变换的正变换和逆变换</li>
-<li>z 变换存在的充要条件</li>
-<li>利用 z 变换求解离散系统判断系统特性（一道大题，给一个系统，求解系统的 H(z)、判断系统是否稳定）</li>
+<li>习题 4-14、4-16 必须会做</li>
+<li><code>z</code> 变换的正变换和逆变换</li>
+<li><code>z</code> 变换存在的充要条件：无穷项级数求和必须收敛</li>
+<li>利用 <code>z</code> 变换求解离散系统判断系统特性（一道大题，给一个系统，求解系统的 <span class="arithmatex">\(H(z)\)</span>、判断系统是否稳定）</li>
 <li>收敛域（右边、左边、双边）</li>
-<li>两个序列的 z 变换相等，两个序列 <strong>不一定相等，还要看收敛域</strong></li>
+<li>两个序列的 <code>z</code> 变换相等，两个序列 <strong>不一定相等，还要看收敛域</strong></li>
 <li>卷积性：时域相乘、频域卷积</li>
 </ol>
 <h4 id="_24">第五章</h4>
 <p>137、145</p>
 <ol>
 <li>有可能计算循环卷积或者是利用 DFT 的性质做一些操作</li>
-<li>DFT 的每一个性质都会考（A 卷圆周卷积不考，B 卷会考）</li>
+<li><code>DFT</code> 的每一个性质都会考（A 卷圆周卷积不考，B 卷会考）</li>
 <li><span class="arithmatex">\(DFT[x((n\pm M))_NR_N]=W^{\mp Mk}_{N}X(k)\)</span></li>
-<li>要注意圆周特性 例题5-3</li>
+<li>要注意圆周特性 例题 5-3</li>
 <li>共轭特性</li>
-<li>DFT、DTFT、z 变换的关系（5.1.3）</li>
-<li>求某一个点的 DFT，比如 N=5 时求 X(5) 的 DFT</li>
+<li><code>DFT</code>、<code>DTFT</code>、<code>z</code> 变换的关系（5.1.3）：对有限长序列在单位圆上的 <span class="arithmatex">\(N\)</span> 个等分点上计算其 <span class="arithmatex">\(z\)</span> 变换，即令 <span class="arithmatex">\(z=e^{j\frac{2\pi}{N}k}\)</span>，就是有限长序列的离散傅里叶变换</li>
+<li>求某一个点的 <code>DFT</code>，比如 N=5 时求 X(5) 的 <code>DFT</code></li>
 <li>若满足 <span class="arithmatex">\(N=M+L-1\)</span>，则 <span class="arithmatex">\(N\)</span> 点循环卷积等于线性卷积</li>
-<li>如果 <span class="arithmatex">\(x(n)\)</span> 为实序列，则 <span class="arithmatex">\(DFT[x(n)]=X(k)\)</span> 满足 <span class="arithmatex">\(X(k)=X^*(N-k)\)</span></li>
+<li>如果 <span class="arithmatex">\(x(n)\)</span> 为实序列，则 <span class="arithmatex">\(DFT[x(n)]=X(k)\)</span> 满足 <span class="arithmatex">\(X(k)=X^*(N-k)\)</span>，这意味着 <span class="arithmatex">\(X(k)\)</span> 在 <span class="arithmatex">\(0\sim N\)</span> 范围内，对于 <span class="arithmatex">\(\frac{N}{2}\)</span> 点，<span class="arithmatex">\(|X(k)|\)</span> 呈半周偶对称分布，<span class="arithmatex">\(\arg[X(k)]\)</span> 呈半周奇对称分布。</li>
 <li>共轭对称性：<span class="arithmatex">\(DFT[x^*(n)]=DFT[x^*(N-n)]\)</span></li>
 </ol>
 <h4 id="_25">第六章</h4>
 <ol>
 <li>蝶形图 4 点按时间/频率抽取</li>
 <li>运算量比较<ol>
-<li>DFT 加法：<span class="arithmatex">\(N-1\)</span>，乘法：<span class="arithmatex">\(N^2\)</span></li>
-<li>FFT 加法：<span class="arithmatex">\(N\log_2 N\)</span>，乘法：<span class="arithmatex">\(\frac{N}{2}\log_2 N\)</span></li>
+<li><code>DFT</code> 加法：<span class="arithmatex">\(N-1\)</span>，乘法：<span class="arithmatex">\(N^2\)</span></li>
+<li><code>FFT</code> 加法：<span class="arithmatex">\(N\log_2 N\)</span>，乘法：<span class="arithmatex">\(\frac{N}{2}\log_2 N\)</span></li>
 </ol>
 </li>
 <li>FFT 应用<ol>
@@ -3138,16 +3166,16 @@
 </li>
 <li>记住频率分辨能力：<span class="arithmatex">\(F_0=\frac{f_s}{N}=\frac{1}{NT_s}=\frac{1}{T_0}\)</span></li>
 <li>例题 6-2、6-3</li>
-<li>FFT 应用求 IDFT、线性卷积、分析信号频谱。知道基本原理（简答题）</li>
-<li>(xxb) FFT 的应用 N 求 2N</li>
-<li>(xxb) FFT 求逆变换</li>
-<li>(xxb) FFT 求线性卷积</li>
+<li><code>FFT</code> 应用求 <code>IDFT</code>、线性卷积、分析信号频谱。知道基本原理（简答题）</li>
+<li>(xxb) <code>FFT</code> 的应用 N 求 2N</li>
+<li>(xxb) <code>FFT</code> 求逆变换</li>
+<li>(xxb) <code>FFT</code> 求线性卷积</li>
 <li>(xxb) 栅栏现象：离散傅里叶变换是对连续频谱的抽样，只能<strong>观察到频率离散点上的谱值</strong>，而无法看到连续谱 <span class="arithmatex">\(X(e^{j\omega})\)</span> 上的内容。就好像通过百叶窗观察景色一样，可以通过补零法减轻</li>
 </ol>
 <h4 id="_26">第七章</h4>
 <ol>
 <li>例题 7-4/5</li>
-<li>Butterworth 的三个性质<ol>
+<li><code>Butterworth</code> 的三个性质<ol>
 <li>最大平坦性</li>
 <li>3dB 不变性</li>
 <li>通带和阻带下降的单调性</li>
@@ -3168,12 +3196,13 @@
 </li>
 <li>利用脉冲响应不变法和双线性变换把模拟滤波器转换为数字滤波器</li>
 <li>双向都会转换 s &hArr; z</li>
-<li>线性相位 FIR 滤波器的线性条件：奇对称或偶对称。<span class="arithmatex">\(h(n)=h(N-1-n)\)</span> 和 <span class="arithmatex">\(h(n)=-h(N-1-n)\)</span></li>
-<li>FIR 的设计不考</li>
+<li>线性相位 <code>FIR</code> 滤波器的线性条件：奇对称或偶对称。<span class="arithmatex">\(h(n)=h(N-1-n)\)</span> 和 <span class="arithmatex">\(h(n)=-h(N-1-n)\)</span></li>
+<li><code>FIR</code> 的设计不考</li>
 </ol>
 <h4 id="_27">杂项</h4>
 <ol>
 <li>计算最后要化到三角函数</li>
+<li>频域抽样定理，时域离散化、频域周期化</li>
 </ol>
 <h4 id="xxb">xxb 补充</h4>
 <p>函数和delta t 卷积的性质，delta t加减t0，函数左右移t0

@@ -761,7 +761,7 @@
         <li class="md-nav__item">
   <a href="#shell" class="md-nav__link">
     <span class="md-ellipsis">
-      SHELL脚本编程
+      Shell 脚本编程
     </span>
   </a>
   
@@ -1772,7 +1772,7 @@
         <li class="md-nav__item">
   <a href="#shell" class="md-nav__link">
     <span class="md-ellipsis">
-      SHELL脚本编程
+      Shell 脚本编程
     </span>
   </a>
   
@@ -2044,6 +2044,41 @@
 </ol>
 <h4 id="linux-suidsgidsbit">Linux系统的特殊权限 SUID（文件）、SGID（文件和目录）、SBIT（目录）</h4>
 <h4 id="linux-c">Linux C 语言程序编译方法，调试方法</h4>
+<p>编译器就是将高级程序语言转换为执行效率更高的机器语言的程序，GCC 也是使用最为普遍的一种编译器。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-E</td>
+<td><strong>预处理</strong>后即停止，不进行编译、汇编及连接</td>
+</tr>
+<tr>
+<td>-S</td>
+<td><strong>编译</strong>后即停止，不进行汇编及连接</td>
+</tr>
+<tr>
+<td>-c</td>
+<td><strong>汇编</strong>源文件，但不进行连接</td>
+</tr>
+<tr>
+<td>-o file</td>
+<td><strong>连接</strong>，指定输出文件为 file</td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">gcc -E example.c -o example.i
+</span><span id="__span-2-2">gcc -S example.c -o example.s
+</span><span id="__span-2-3">gcc -c example.c -o example.o
+</span><span id="__span-2-4">gcc example.o -o example
+</span></code></pre></div></td></tr></table></div>
 <h4 id="_4">符号链接和硬链接文件的区别，怎样创建链接文件</h4>
 <table>
 <thead>
@@ -2092,10 +2127,10 @@
 </tbody>
 </table>
 <p>创建硬链接：
-<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">ln<span class="w"> </span>source_file<span class="w"> </span>hard_link
+<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">ln<span class="w"> </span>source_file<span class="w"> </span>hard_link
 </span></code></pre></div></td></tr></table></div></p>
 <p>创建符号链接：
-<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">ln<span class="w"> </span>-s<span class="w"> </span>source_file<span class="w"> </span>symbolic_link
+<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">ln<span class="w"> </span>-s<span class="w"> </span>source_file<span class="w"> </span>symbolic_link
 </span></code></pre></div></td></tr></table></div></p>
 <h4 id="linux_3">Linux 系统中管道的功能</h4>
 <p>它通过符号 <code>|</code> 实现，允许多个命令组合在一起执行</p>
@@ -2121,12 +2156,54 @@
 <li><strong>多媒体与创意</strong>（视频、音频、图像处理）。</li>
 </ol>
 <h2 id="_5">综合题</h2>
-<h4 id="cron">计划任务 cron 的建立方法及管理</h4>
+<h4 id="cron">计划任务 <code>cron</code> 的建立方法及管理</h4>
+<p>语法表达式：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">* * * * * command  
+</span><span id="__span-5-2">- - - - -  
+</span><span id="__span-5-3">| | | | |  
+</span><span id="__span-5-4">| | | | +---- 星期几 (0 - 7, 0 和 7 都表示周日)  
+</span><span id="__span-5-5">| | | +------ 月份 (1 - 12)  
+</span><span id="__span-5-6">| | +-------- 日期 (1 - 31)  
+</span><span id="__span-5-7">| +---------- 小时 (0 - 23)  
+</span><span id="__span-5-8">+------------ 分钟 (0 - 59)
+</span></code></pre></div></td></tr></table></div>
+<p>方法一</p>
+<ol>
+<li>利用 <code>vi/vim</code> 创建 <code>cron</code> 作业列表文件，假设文件命名为 <code>mycron</code>。</li>
+<li>按照上述格式创建好任务文件</li>
+<li>使用命令 <code>crontab mycron</code> 加载 <code>mycron</code> 作业列表文件（其实是被写入了 <code>/var/spool/cron/crontabs/username</code> 中）</li>
+</ol>
+<p>方法二</p>
+<ol>
+<li>使用命令 <code>crontab -e</code> 进入 <code>vim</code> 编辑器</li>
+<li>按照上述格式编辑好作业列表文件</li>
+<li>保存退出</li>
+</ol>
 <h4 id="_6">文件基本操作综合</h4>
-<h4 id="etcsudoers">提升普通用户成为管理员（ /etc/sudoers 文件的配置）</h4>
+<h4 id="etcsudoers">提升普通用户成为管理员（ <code>/etc/sudoers</code> 文件的配置）</h4>
+<p>直接编辑 <code>/etc/sudoers</code> 文件可能会导致语法错误，从而使系统无法正常使用 <code>sudo</code>。推荐使用 <code>visudo</code> 工具来编辑 <code>/etc/sudoers</code> 文件。</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">username    ALL=(ALL:ALL) ALL  
+</span><span id="__span-6-2">|           |   |        |  
+</span><span id="__span-6-3">|           |   |        +---- 用户可以运行的命令范围（ALL 表示所有命令）  
+</span><span id="__span-6-4">|           |   +------------- 用户可以以哪些用户和组的身份运行命令  
+</span><span id="__span-6-5">|           +----------------- 用户可以在哪些主机上使用 sudo（ALL 表示所有主机）  
+</span><span id="__span-6-6">+----------------------------- 指定的用户名（需要赋予 sudo 权限的用户）
+</span></code></pre></div></td></tr></table></div>
 <h4 id="_7">多用户管理（用户和组管理）</h4>
-<h2 id="shell">SHELL脚本编程</h2>
-<p>参考实验课 Shell 脚本例子</p>
+<h2 id="shell"><code>Shell</code> 脚本编程</h2>
+<p>参考实验课 <code>Shell</code> 脚本例子</p>
 
 
 
