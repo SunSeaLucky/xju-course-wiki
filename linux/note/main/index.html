@@ -738,7 +738,7 @@
           <li class="md-nav__item">
   <a href="#etcsudoers" class="md-nav__link">
     <span class="md-ellipsis">
-      提升普通用户成为管理员（/etc/sudoers文件的配置）
+      提升普通用户成为管理员（ /etc/sudoers 文件的配置）
     </span>
   </a>
   
@@ -1749,7 +1749,7 @@
           <li class="md-nav__item">
   <a href="#etcsudoers" class="md-nav__link">
     <span class="md-ellipsis">
-      提升普通用户成为管理员（/etc/sudoers文件的配置）
+      提升普通用户成为管理员（ /etc/sudoers 文件的配置）
     </span>
   </a>
   
@@ -1926,23 +1926,122 @@
 </table>
 <h2 id="_2">简答题知识点</h2>
 <h4 id="linux-10">Linux 的标准目录结构及其存放内容（10个主要一级目录）</h4>
-<p>/bin
-/sbin
-/etc
-/dev
-/proc
-/var
-/usr
-/home
-/lib
-/boot
-/tmp
-/mnt</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/bin</td>
+<td>存放 <strong>Linux 最常用的基本命令</strong>，如 ls, cd, cp, mkdir, date，cat等 。</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td>存放 <strong>系统管理员的系统管理命令</strong>，如 fdisk, init, ifconfig, reboot 等 。</td>
+</tr>
+<tr>
+<td>/root</td>
+<td>超级用户的主目录</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td>存放 <strong>各种配置信息</strong>，如网络配置文件、文件系统、系统配置文件、设备配置信息、设置用户信息等都在这个目录下。</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td>存放 <strong>设备文件</strong>，这种文件与普通文件不同，<strong>没有真正的内容，只是各种设备的名称</strong>，用户像访问文件一样访问设备</td>
+</tr>
+<tr>
+<td>/proc</td>
+<td>存放 <strong>系统信息</strong>，该目录下的文件不是存于硬盘中，是系统初启时在内存中产生的。关闭计算机时它会消失，每次重启时又重新生成</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>存放 <strong>系统记帐信息、日志文件</strong></td>
+</tr>
+<tr>
+<td>/usr</td>
+<td>用户的很多 <strong>应用程序和文件几乎都存放在这个目录下</strong>。这里有许多目录，/usr/bin中存放软件包程序。如bin, sbin, lib, src， X11R6等</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>存放<strong>用户的主目录</strong></td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>存放系统最基本的 <strong>动态连接库</strong>，几乎所有的应用程序都要用到这个目录中的共享库</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td>存放<strong>系统启动时要用到的程序</strong>。我们在使用 grub 或 lilo 引导 Linux 的时候，会用到这里的一些信息</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>存放 <strong>临时数据</strong></td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td>一般为空，通常临时将别的文件系统挂在该目录</td>
+</tr>
+</tbody>
+</table>
 <h4 id="_3">源代码安装的常见的方法和过程</h4>
+<ol>
+<li>释放 <code>TAR</code> 包</li>
+<li>查看并阅读包内附带的软件安装说明</li>
+<li>进行编译准备。<code>--prefix</code> 指的是安装路径，<code>--with</code> 指的是安装本文件所依赖的库文件
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">./configure  [--prefix=directory --with=library]
+</span></code></pre></div></td></tr></table></div></li>
+<li>进行编译。经过执行 <code>./configure</code> 会产生 <code>MakeFile</code> 文件，运行 <code>make</code> 命令进行编译</li>
+<li>进行软件安装。执行 <code>make install</code> 安装软件</li>
+<li>清除临时文件。执行 <code>make clean</code> 清除编译过程中产生的临时文件</li>
+</ol>
 <h4 id="linux_1">Linux 如何使用设备，设备的分类，常用的设备名有哪些（硬盘、终端、空设备）</h4>
+<ol>
+<li>使用：Linux 使用<strong>设备文件</strong>来与硬件设备交互。设备文件是特殊的文件，通常位于 <code>/dev</code> 目录下，用户或程序通过对这些文件的操作（如读写）来与硬件设备通信。</li>
+<li>分类：<ol>
+<li><strong>字符设备</strong>。以字符为单位进行数据传输，通常是顺序访问</li>
+<li><strong>块设备</strong>。以块为单位进行数据传输，支持随机访问</li>
+<li><strong>网络设备</strong>。不通过 <code>/dev</code> 目录管理，而是通过网络接口（如 <code>eth0</code>、<code>wlan0</code>）进行操作</li>
+</ol>
+</li>
+<li>常用设备名： <code>/dev/sdX</code>、<code>/dev/tty</code>、<code>/dev/null</code>、<code>/dev/zero</code></li>
+</ol>
 <h4 id="linux_2">在 Linux 系统中怎样运行脚本文件？举例说明脚本文件的多种运行方式</h4>
+<ol>
+<li>在子 <code>shell</code> 中运行脚本文件<ol>
+<li><code>chmod a+x script.sh &amp;&amp; ./script.sh</code></li>
+<li><code>bash script.sh</code></li>
+</ol>
+</li>
+<li>在当前 <code>shell</code> 中运行脚本文件<ol>
+<li><code>source script.sh</code></li>
+<li><code>. script.sh</code></li>
+</ol>
+</li>
+</ol>
 <h4 id="vivimvivim">怎样进入，退出 vi/vim。vi/vim 的三种工作模式如何转换。定位、查找字符串方法（任何一种即可）</h4>
+<ol>
+<li>进入：<code>vi/vim file_name</code></li>
+<li>退出：<code>:q!</code> 强制退出，<code>:wq</code> 保存并退出，<code>:q</code> 退出不保存</li>
+<li>三种工作模式：<ol>
+<li>命令模式：按 <code>i</code> 进入插入模式，按 <code>ESC</code> 进入命令模式</li>
+<li>插入模式：按 <code>i</code> 或 <code>a</code> 或 <code>o</code> 进入一般模式，按 <code>ESC</code> 进入插入模式</li>
+<li>底行模式：按 <code>:</code> 进入低行模式，按 <code>i</code> 进入插入模式，按 <code>ESC</code> 进入命令模式</li>
+</ol>
+</li>
+<li>查找：在命令模式下使用 <code>/</code> 或 <code>?</code> 进行查找，<code>/</code> 向下查找，<code>?</code> 向上查找，<code>n</code> 向下查找下一个，<code>N</code> 向上查找上一个</li>
+</ol>
+<p><img alt="alt text" src="../image.png" /></p>
 <h4 id="linux-linux">Linux 系统中的命令补全的用法，Linux 系统的输入、输出重定向的用法</h4>
+<ol>
+<li>命令补全：主要通过按下 <code>Tab</code> 键实现，如果有多个可能的命令，按 <code>Tab</code> 键两次，会列出所有可能的选项</li>
+<li>输入重定向：<code>wc -l &lt; input.txt</code> 或 <code>ls -l | grep "txt"</code></li>
+<li>输出重定向：<code>ls -l &gt; output.txt</code> 或 <code>echo "Hello again!" &gt;&gt; output.txt</code></li>
+</ol>
 <h4 id="linux-suidsgidsbit">Linux系统的特殊权限 SUID（文件）、SGID（文件和目录）、SBIT（目录）</h4>
 <h4 id="linux-c">Linux C 语言程序编译方法，调试方法</h4>
 <h4 id="_4">符号链接和硬链接文件的区别，怎样创建链接文件</h4>
@@ -1993,14 +2092,19 @@
 </tbody>
 </table>
 <p>创建硬链接：
-<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">ln<span class="w"> </span>source_file<span class="w"> </span>hard_link
+<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">ln<span class="w"> </span>source_file<span class="w"> </span>hard_link
 </span></code></pre></div></td></tr></table></div></p>
 <p>创建符号链接：
-<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">ln<span class="w"> </span>-s<span class="w"> </span>source_file<span class="w"> </span>symbolic_link
+<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">ln<span class="w"> </span>-s<span class="w"> </span>source_file<span class="w"> </span>symbolic_link
 </span></code></pre></div></td></tr></table></div></p>
 <h4 id="linux_3">Linux 系统中管道的功能</h4>
+<p>它通过符号 <code>|</code> 实现，允许多个命令组合在一起执行</p>
+<ol>
+<li>连接命令：<strong>将一个命令的输出作为另一个命令的输入</strong></li>
+<li>与过滤器结合：筛选、格式化和处理数据</li>
+</ol>
 <h4 id="linux_4">Linux 下的隐含文件如何标识和显示</h4>
-<p>在 Linux 文件系统中，任何文件或目录的名称以 . 开头都会被视为隐含文件。使用 <code>ls -a</code> 或 <code>ls -A</code>。</p>
+<p>在 Linux 文件系统中，任何文件或目录的名称以 <code>.</code> 开头都会被视为隐含文件。使用 <code>ls -a</code> 或 <code>ls -A</code>。</p>
 <h4 id="linux_5">Linux 系统的主要应用领域</h4>
 <p>Linux 系统的主要应用领域包括：</p>
 <ol>
@@ -2019,10 +2123,10 @@
 <h2 id="_5">综合题</h2>
 <h4 id="cron">计划任务 cron 的建立方法及管理</h4>
 <h4 id="_6">文件基本操作综合</h4>
-<h4 id="etcsudoers">提升普通用户成为管理员（/etc/sudoers文件的配置）</h4>
+<h4 id="etcsudoers">提升普通用户成为管理员（ /etc/sudoers 文件的配置）</h4>
 <h4 id="_7">多用户管理（用户和组管理）</h4>
 <h2 id="shell">SHELL脚本编程</h2>
-<p>参考实验课Shell脚本例子</p>
+<p>参考实验课 Shell 脚本例子</p>
 
 
 
