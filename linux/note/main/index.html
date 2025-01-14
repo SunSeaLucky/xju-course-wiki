@@ -2037,11 +2037,65 @@
 </ol>
 <p><img alt="alt text" src="../image.png" /></p>
 <h4 id="linux-linux">Linux 系统中的命令补全的用法，Linux 系统的输入、输出重定向的用法</h4>
-<ol>
-<li>命令补全：主要通过按下 <code>Tab</code> 键实现，如果有多个可能的命令，按 <code>Tab</code> 键两次，会列出所有可能的选项</li>
-<li>输入重定向：<code>wc -l &lt; input.txt</code> 或 <code>ls -l | grep "txt"</code></li>
-<li>输出重定向：<code>ls -l &gt; output.txt</code> 或 <code>echo "Hello again!" &gt;&gt; output.txt</code></li>
-</ol>
+<p>命令补全：主要通过按下 <code>Tab</code> 键实现，如果有多个可能的命令，按 <code>Tab</code> 键两次，会列出所有可能的选项</p>
+<p>输入重定向：<code>wc -l &lt; input.txt</code> 或 <code>ls -l | grep "txt"</code></p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;</code></td>
+<td>将标准输出重定向到文件（覆盖文件内容）。</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>将标准输出追加到文件末尾（不覆盖文件内容）。</td>
+</tr>
+<tr>
+<td><code>2&gt;</code></td>
+<td>将标准错误重定向到文件（覆盖文件内容）。</td>
+</tr>
+<tr>
+<td><code>2&gt;&gt;</code></td>
+<td>将标准错误追加到文件末尾（不覆盖文件内容）。</td>
+</tr>
+<tr>
+<td><code>&amp;&gt;</code></td>
+<td>将标准输出和标准错误同时重定向到文件（覆盖文件内容）。</td>
+</tr>
+<tr>
+<td><code>&amp;&gt;&gt;</code></td>
+<td>将标准输出和标准错误同时追加到文件末尾（不覆盖文件内容）。</td>
+</tr>
+</tbody>
+</table>
+<p>输出重定向：<code>ls -l &gt; output.txt</code> 或 <code>echo "Hello again!" &gt;&gt; output.txt</code></p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;</code></td>
+<td>将文件内容作为命令的标准输入。</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>Here Document，用于将多行字符串作为命令的标准输入。</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;&lt;</code></td>
+<td>Here String，用于将单行字符串作为命令的标准输入。</td>
+</tr>
+</tbody>
+</table>
 <h4 id="linux-suidsgidsbit">Linux系统的特殊权限 SUID（文件）、SGID（文件和目录）、SBIT（目录）</h4>
 <p>SUID（Set User ID）：当一个文件设置了 <code>SUID</code> 位并被执行时，执行该文件的用户会<strong>临时获得文件所有者的权限</strong>，而不是以执行者本身的权限运行。</p>
 <p>SGID（Set Group ID）：当一个文件设置了 <code>SGID</code> 位并被执行时，执行该文件的用户会<strong>临时获得文件所属组的权限</strong>，而不是以执行者本身的组权限运行。</p>
