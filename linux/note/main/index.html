@@ -2043,6 +2043,9 @@
 <li>输出重定向：<code>ls -l &gt; output.txt</code> 或 <code>echo "Hello again!" &gt;&gt; output.txt</code></li>
 </ol>
 <h4 id="linux-suidsgidsbit">Linux系统的特殊权限 SUID（文件）、SGID（文件和目录）、SBIT（目录）</h4>
+<p>SUID（Set User ID）：当一个文件设置了 <code>SUID</code> 位并被执行时，执行该文件的用户会<strong>临时获得文件所有者的权限</strong>，而不是以执行者本身的权限运行。</p>
+<p>SGID（Set Group ID）：当一个文件设置了 <code>SGID</code> 位并被执行时，执行该文件的用户会<strong>临时获得文件所属组的权限</strong>，而不是以执行者本身的组权限运行。</p>
+<p>SBIT（Sticky Bit）：当一个目录设置了 <code>Sticky Bit</code> 时，目录中的文件只能<strong>被文件的所有者或 root 用户删除或修改</strong>，即使其他用户对该目录有写权限。</p>
 <h4 id="linux-c">Linux C 语言程序编译方法，调试方法</h4>
 <p>编译器就是将高级程序语言转换为执行效率更高的机器语言的程序，GCC 也是使用最为普遍的一种编译器。</p>
 <table>
@@ -2071,6 +2074,7 @@
 </tr>
 </tbody>
 </table>
+<p>分阶段：</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2078,6 +2082,9 @@
 </span><span id="__span-2-2">gcc -S example.c -o example.s
 </span><span id="__span-2-3">gcc -c example.c -o example.o
 </span><span id="__span-2-4">gcc example.o -o example
+</span></code></pre></div></td></tr></table></div>
+<p>一步到位：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">gcc example.c -o example
 </span></code></pre></div></td></tr></table></div>
 <h4 id="_4">符号链接和硬链接文件的区别，怎样创建链接文件</h4>
 <table>
@@ -2127,10 +2134,10 @@
 </tbody>
 </table>
 <p>创建硬链接：
-<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">ln<span class="w"> </span>source_file<span class="w"> </span>hard_link
+<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">ln<span class="w"> </span>source_file<span class="w"> </span>hard_link
 </span></code></pre></div></td></tr></table></div></p>
 <p>创建符号链接：
-<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">ln<span class="w"> </span>-s<span class="w"> </span>source_file<span class="w"> </span>symbolic_link
+<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">ln<span class="w"> </span>-s<span class="w"> </span>source_file<span class="w"> </span>symbolic_link
 </span></code></pre></div></td></tr></table></div></p>
 <h4 id="linux_3">Linux 系统中管道的功能</h4>
 <p>它通过符号 <code>|</code> 实现，允许多个命令组合在一起执行</p>
@@ -2165,14 +2172,14 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">* * * * * command  
-</span><span id="__span-5-2">- - - - -  
-</span><span id="__span-5-3">| | | | |  
-</span><span id="__span-5-4">| | | | +---- 星期几 (0 - 7, 0 和 7 都表示周日)  
-</span><span id="__span-5-5">| | | +------ 月份 (1 - 12)  
-</span><span id="__span-5-6">| | +-------- 日期 (1 - 31)  
-</span><span id="__span-5-7">| +---------- 小时 (0 - 23)  
-</span><span id="__span-5-8">+------------ 分钟 (0 - 59)
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">* * * * * command  
+</span><span id="__span-6-2">- - - - -  
+</span><span id="__span-6-3">| | | | |  
+</span><span id="__span-6-4">| | | | +---- 星期几 (0 - 7, 0 和 7 都表示周日)  
+</span><span id="__span-6-5">| | | +------ 月份 (1 - 12)  
+</span><span id="__span-6-6">| | +-------- 日期 (1 - 31)  
+</span><span id="__span-6-7">| +---------- 小时 (0 - 23)  
+</span><span id="__span-6-8">+------------ 分钟 (0 - 59)
 </span></code></pre></div></td></tr></table></div>
 <p>方法一</p>
 <ol>
@@ -2187,6 +2194,8 @@
 <li>保存退出</li>
 </ol>
 <h4 id="_6">文件基本操作综合</h4>
+<p>可以联系数据库中的增删改查想一想，至少有<strong>添加文件、删除文件、修改文件、查看文件</strong>。</p>
+<p>所对应的命令有 <code>touch</code>、<code>rm</code>、<code>cp</code>、<code>mv</code>、<code>cat</code>、<code>less</code>、<code>head</code>、<code>tail</code>、<code>grep</code>、<code>find</code>。</p>
 <h4 id="etcsudoers">提升普通用户成为管理员（ <code>/etc/sudoers</code> 文件的配置）</h4>
 <p>直接编辑 <code>/etc/sudoers</code> 文件可能会导致语法错误，从而使系统无法正常使用 <code>sudo</code>。推荐使用 <code>visudo</code> 工具来编辑 <code>/etc/sudoers</code> 文件。</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -2194,16 +2203,39 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">username    ALL=(ALL:ALL) ALL  
-</span><span id="__span-6-2">|           |   |        |  
-</span><span id="__span-6-3">|           |   |        +---- 用户可以运行的命令范围（ALL 表示所有命令）  
-</span><span id="__span-6-4">|           |   +------------- 用户可以以哪些用户和组的身份运行命令  
-</span><span id="__span-6-5">|           +----------------- 用户可以在哪些主机上使用 sudo（ALL 表示所有主机）  
-</span><span id="__span-6-6">+----------------------------- 指定的用户名（需要赋予 sudo 权限的用户）
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">username    ALL=(ALL:ALL) ALL  
+</span><span id="__span-7-2">|           |   |        |  
+</span><span id="__span-7-3">|           |   |        +---- 用户可以运行的命令范围（ALL 表示所有命令）  
+</span><span id="__span-7-4">|           |   +------------- 用户可以以哪些用户和组的身份运行命令  
+</span><span id="__span-7-5">|           +----------------- 用户可以在哪些主机上使用 sudo（ALL 表示所有主机）  
+</span><span id="__span-7-6">+----------------------------- 指定的用户名（需要赋予 sudo 权限的用户）
 </span></code></pre></div></td></tr></table></div>
 <h4 id="_7">多用户管理（用户和组管理）</h4>
+<p>添加用户：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">useradd -m -d /home/username -s /bin/bash username
+</span></code></pre></div></td></tr></table></div>
+<p>删除用户：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">userdel -r username
+</span></code></pre></div></td></tr></table></div>
+<p>添加组：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">groupadd groupname
+</span></code></pre></div></td></tr></table></div>
+<p>删除组：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">groupdel groupname
+</span></code></pre></div></td></tr></table></div>
+<p>将用户加入组：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">gpasswd -a 用户名 组名
+</span></code></pre></div></td></tr></table></div>
+<p>设置组的管理员：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">gpasswd -A username groupname
+</span></code></pre></div></td></tr></table></div>
 <h2 id="shell"><code>Shell</code> 脚本编程</h2>
 <p>参考实验课 <code>Shell</code> 脚本例子</p>
+<p>自己遇到的注意的点：</p>
+<ol>
+<li>判断字符是否为空要用 <code>[[ X"$msg" == "X" ]]</code></li>
+<li>每条 <code>case</code> 后面要加双分号</li>
+</ol>
 
 
 
