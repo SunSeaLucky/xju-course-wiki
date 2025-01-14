@@ -1989,6 +1989,7 @@
 </tbody>
 </table>
 <h4 id="_3">源代码安装的常见的方法和过程</h4>
+<p>基于 CMake 的、基于脚本的、基于 <code>./configure</code> 的</p>
 <ol>
 <li>释放 <code>TAR</code> 包</li>
 <li>查看并阅读包内附带的软件安装说明</li>
@@ -2002,6 +2003,7 @@
 <li>清除临时文件。执行 <code>make clean</code> 清除编译过程中产生的临时文件</li>
 </ol>
 <h4 id="linux_1">Linux 如何使用设备，设备的分类，常用的设备名有哪些（硬盘、终端、空设备）</h4>
+<p>Linux 内核在探测到设备硬件后，会在 <code>/dev</code> 目录下创建其对应的设备文件，此设备文件将关联该设备的驱动程序，通过访问此设备文件即可访问到文件所关联的设备。</p>
 <ol>
 <li>使用：Linux 使用<strong>设备文件</strong>来与硬件设备交互。设备文件是特殊的文件，通常位于 <code>/dev</code> 目录下，用户或程序通过对这些文件的操作（如读写）来与硬件设备通信。</li>
 <li>分类：<ol>
@@ -2050,6 +2052,29 @@
 </thead>
 <tbody>
 <tr>
+<td><code>&lt;</code></td>
+<td>将文件内容作为命令的标准输入。</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>Here Document，用于将多行字符串作为命令的标准输入。</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;&lt;</code></td>
+<td>Here String，用于将单行字符串作为命令的标准输入。</td>
+</tr>
+</tbody>
+</table>
+<p>输出重定向：<code>ls -l &gt; output.txt</code> 或 <code>echo "Hello again!" &gt;&gt; output.txt</code></p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td><code>&gt;</code></td>
 <td>将标准输出重定向到文件（覆盖文件内容）。</td>
 </tr>
@@ -2075,33 +2100,10 @@
 </tr>
 </tbody>
 </table>
-<p>输出重定向：<code>ls -l &gt; output.txt</code> 或 <code>echo "Hello again!" &gt;&gt; output.txt</code></p>
-<table>
-<thead>
-<tr>
-<th>符号</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&lt;</code></td>
-<td>将文件内容作为命令的标准输入。</td>
-</tr>
-<tr>
-<td><code>&lt;&lt;</code></td>
-<td>Here Document，用于将多行字符串作为命令的标准输入。</td>
-</tr>
-<tr>
-<td><code>&lt;&lt;&lt;</code></td>
-<td>Here String，用于将单行字符串作为命令的标准输入。</td>
-</tr>
-</tbody>
-</table>
 <h4 id="linux-suidsgidsbit">Linux系统的特殊权限 SUID（文件）、SGID（文件和目录）、SBIT（目录）</h4>
-<p>SUID（Set User ID）：当一个文件设置了 <code>SUID</code> 位并被执行时，执行该文件的用户会<strong>临时获得文件所有者的权限</strong>，而不是以执行者本身的权限运行。</p>
-<p>SGID（Set Group ID）：当一个文件设置了 <code>SGID</code> 位并被执行时，执行该文件的用户会<strong>临时获得文件所属组的权限</strong>，而不是以执行者本身的组权限运行。</p>
-<p>SBIT（Sticky Bit）：当一个目录设置了 <code>Sticky Bit</code> 时，目录中的文件只能<strong>被文件的所有者或 root 用户删除或修改</strong>，即使其他用户对该目录有写权限。</p>
+<p>SUID（Set User ID）：只对<strong>文件</strong>有效，当一个文件设置了 <code>SUID</code> 位并被执行时，执行该文件的用户会<strong>临时获得文件所有者的权限</strong>，而不是以执行者本身的权限运行。</p>
+<p>SGID（Set Group ID）：对<strong>文件</strong>和<strong>目录</strong>有效，当一个文件设置了 <code>SGID</code> 位并被执行时，执行该文件的用户会<strong>临时获得文件所属组的权限</strong>，而不是以执行者本身的组权限运行。目录下创建的目录会继承目录的 <code>SGID</code> 位。</p>
+<p>SBIT（Sticky Bit）：对<strong>目录</strong>有效，当一个目录设置了 <code>Sticky Bit</code> 时，目录中的文件只能<strong>被文件的所有者或 root 用户删除或修改</strong>，即使其他用户对该目录有写权限。</p>
 <h4 id="linux-c">Linux C 语言程序编译方法，调试方法</h4>
 <p>编译器就是将高级程序语言转换为执行效率更高的机器语言的程序，GCC 也是使用最为普遍的一种编译器。</p>
 <table>
@@ -2211,6 +2213,11 @@
 <h4 id="linux_5">Linux 系统的主要应用领域</h4>
 <p>Linux 系统的主要应用领域包括：</p>
 <ol>
+<li>传统企业级<strong>服务器</strong>应用场景</li>
+<li><strong>嵌入式</strong>、物联网、边缘计算等应用场景</li>
+<li><strong>智能手机</strong>、平板电脑等移动终端</li>
+<li><strong>云计算</strong>、区块链、大数据、<strong>深度学习</strong>等应用场景</li>
+<li><strong>个人桌面操作系统</strong></li>
 <li><strong>服务器</strong>（Web、数据库、邮件、云计算等）。</li>
 <li><strong>嵌入式系统</strong>（智能设备、物联网、汽车电子等）。</li>
 <li><strong>云计算与虚拟化</strong>（容器、分布式计算等）。</li>
@@ -2258,7 +2265,7 @@
 <p>可以联系数据库中的增删改查想一想，至少有<strong>添加文件、删除文件、修改文件、查看文件</strong>。</p>
 <p>所对应的命令有 <code>touch</code>、<code>rm</code>、<code>cp</code>、<code>mv</code>、<code>cat</code>、<code>less</code>、<code>head</code>、<code>tail</code>、<code>grep</code>、<code>find</code>。</p>
 <h4 id="etcsudoers">提升普通用户成为管理员（ <code>/etc/sudoers</code> 文件的配置）</h4>
-<p>直接编辑 <code>/etc/sudoers</code> 文件可能会导致语法错误，从而使系统无法正常使用 <code>sudo</code>。推荐使用 <code>visudo</code> 工具来编辑 <code>/etc/sudoers</code> 文件。</p>
+<p>直接编辑 <code>/etc/sudoers</code> 文件可能会导致语法错误，从而使系统无法正常使用 <code>sudo</code>。推荐使用 <code>sudo visudo</code> 工具来编辑 <code>/etc/sudoers</code> 文件。</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2273,7 +2280,7 @@
 </span></code></pre></div></td></tr></table></div>
 <h4 id="_7">多用户管理（用户和组管理）</h4>
 <p>添加用户：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">useradd -m -d /home/username -s /bin/bash username
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">useradd -m -d /home/username -s /bin/bash username -G group
 </span></code></pre></div></td></tr></table></div>
 <p>删除用户：</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">userdel -r username
@@ -2284,11 +2291,26 @@
 <p>删除组：</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">groupdel groupname
 </span></code></pre></div></td></tr></table></div>
+<p>自己加入新组：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">newgrp groupname
+</span></code></pre></div></td></tr></table></div>
+<p>把别人加入新组：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">usermod -aG groupname username
+</span></code></pre></div></td></tr></table></div>
+<p>查看自己的组：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1">groups
+</span></code></pre></div></td></tr></table></div>
 <p>将用户加入组：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">gpasswd -a 用户名 组名
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1">gpasswd -a username groupname
+</span></code></pre></div></td></tr></table></div>
+<p>从组中删除用户：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1">gpasswd -d username groupname
 </span></code></pre></div></td></tr></table></div>
 <p>设置组的管理员：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">gpasswd -A username groupname
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1">gpasswd -A username groupname
+</span></code></pre></div></td></tr></table></div>
+<p>查看系统上的组：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1">cat /etc/group
 </span></code></pre></div></td></tr></table></div>
 <h2 id="shell"><code>Shell</code> 脚本编程</h2>
 <p>参考实验课 <code>Shell</code> 脚本例子</p>
