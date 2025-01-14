@@ -1992,9 +1992,11 @@
 <ol>
 <li>释放 <code>TAR</code> 包</li>
 <li>查看并阅读包内附带的软件安装说明</li>
-<li>进行编译准备。<code>--prefix</code> 指的是安装路径，<code>--with</code> 指的是安装本文件所依赖的库文件
+<li>进行编译准备。<code>--prefix</code> 指的是安装路径，<code>--with</code> 指的是安装本文件所依赖的库文件</li>
+</ol>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">./configure  [--prefix=directory --with=library]
-</span></code></pre></div></td></tr></table></div></li>
+</span></code></pre></div></td></tr></table></div>
+<ol>
 <li>进行编译。经过执行 <code>./configure</code> 会产生 <code>MakeFile</code> 文件，运行 <code>make</code> 命令进行编译</li>
 <li>进行软件安装。执行 <code>make install</code> 安装软件</li>
 <li>清除临时文件。执行 <code>make clean</code> 清除编译过程中产生的临时文件</li>
@@ -2140,6 +2142,11 @@
 <p>一步到位：</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">gcc example.c -o example
 </span></code></pre></div></td></tr></table></div>
+<p>调试：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">gcc -g example.c -o example
+</span><span id="__span-4-2">gdb example
+</span></code></pre></div></td></tr></table></div>
 <h4 id="_4">符号链接和硬链接文件的区别，怎样创建链接文件</h4>
 <table>
 <thead>
@@ -2188,10 +2195,10 @@
 </tbody>
 </table>
 <p>创建硬链接：
-<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">ln<span class="w"> </span>source_file<span class="w"> </span>hard_link
+<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">ln<span class="w"> </span>source_file<span class="w"> </span>hard_link
 </span></code></pre></div></td></tr></table></div></p>
 <p>创建符号链接：
-<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">ln<span class="w"> </span>-s<span class="w"> </span>source_file<span class="w"> </span>symbolic_link
+<div class="language-sh highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">ln<span class="w"> </span>-s<span class="w"> </span>source_file<span class="w"> </span>symbolic_link
 </span></code></pre></div></td></tr></table></div></p>
 <h4 id="linux_3">Linux 系统中管道的功能</h4>
 <p>它通过符号 <code>|</code> 实现，允许多个命令组合在一起执行</p>
@@ -2226,14 +2233,14 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">* * * * * command  
-</span><span id="__span-6-2">- - - - -  
-</span><span id="__span-6-3">| | | | |  
-</span><span id="__span-6-4">| | | | +---- 星期几 (0 - 7, 0 和 7 都表示周日)  
-</span><span id="__span-6-5">| | | +------ 月份 (1 - 12)  
-</span><span id="__span-6-6">| | +-------- 日期 (1 - 31)  
-</span><span id="__span-6-7">| +---------- 小时 (0 - 23)  
-</span><span id="__span-6-8">+------------ 分钟 (0 - 59)
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">* * * * * command  
+</span><span id="__span-7-2">- - - - -  
+</span><span id="__span-7-3">| | | | |  
+</span><span id="__span-7-4">| | | | +---- 星期几 (0 - 7, 0 和 7 都表示周日)  
+</span><span id="__span-7-5">| | | +------ 月份 (1 - 12)  
+</span><span id="__span-7-6">| | +-------- 日期 (1 - 31)  
+</span><span id="__span-7-7">| +---------- 小时 (0 - 23)  
+</span><span id="__span-7-8">+------------ 分钟 (0 - 59)
 </span></code></pre></div></td></tr></table></div>
 <p>方法一</p>
 <ol>
@@ -2257,31 +2264,31 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">username    ALL=(ALL:ALL) ALL  
-</span><span id="__span-7-2">|           |   |        |  
-</span><span id="__span-7-3">|           |   |        +---- 用户可以运行的命令范围（ALL 表示所有命令）  
-</span><span id="__span-7-4">|           |   +------------- 用户可以以哪些用户和组的身份运行命令  
-</span><span id="__span-7-5">|           +----------------- 用户可以在哪些主机上使用 sudo（ALL 表示所有主机）  
-</span><span id="__span-7-6">+----------------------------- 指定的用户名（需要赋予 sudo 权限的用户）
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">username    ALL=(ALL:ALL) ALL  
+</span><span id="__span-8-2">|           |   |        |  
+</span><span id="__span-8-3">|           |   |        +---- 用户可以运行的命令范围（ALL 表示所有命令）  
+</span><span id="__span-8-4">|           |   +------------- 用户可以以哪些用户和组的身份运行命令  
+</span><span id="__span-8-5">|           +----------------- 用户可以在哪些主机上使用 sudo（ALL 表示所有主机）  
+</span><span id="__span-8-6">+----------------------------- 指定的用户名（需要赋予 sudo 权限的用户）
 </span></code></pre></div></td></tr></table></div>
 <h4 id="_7">多用户管理（用户和组管理）</h4>
 <p>添加用户：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">useradd -m -d /home/username -s /bin/bash username
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">useradd -m -d /home/username -s /bin/bash username
 </span></code></pre></div></td></tr></table></div>
 <p>删除用户：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">userdel -r username
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">userdel -r username
 </span></code></pre></div></td></tr></table></div>
 <p>添加组：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">groupadd groupname
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">groupadd groupname
 </span></code></pre></div></td></tr></table></div>
 <p>删除组：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">groupdel groupname
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">groupdel groupname
 </span></code></pre></div></td></tr></table></div>
 <p>将用户加入组：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">gpasswd -a 用户名 组名
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">gpasswd -a 用户名 组名
 </span></code></pre></div></td></tr></table></div>
 <p>设置组的管理员：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">gpasswd -A username groupname
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">gpasswd -A username groupname
 </span></code></pre></div></td></tr></table></div>
 <h2 id="shell"><code>Shell</code> 脚本编程</h2>
 <p>参考实验课 <code>Shell</code> 脚本例子</p>
