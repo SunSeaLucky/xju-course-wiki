@@ -1522,6 +1522,15 @@
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
+      隐式图术语
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
       割点
     </span>
   </a>
@@ -1538,7 +1547,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       回溯法和分支限界法的比较
     </span>
@@ -1765,6 +1774,15 @@
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
+      隐式图术语
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
       割点
     </span>
   </a>
@@ -1781,7 +1799,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       回溯法和分支限界法的比较
     </span>
@@ -1854,7 +1872,7 @@
 </ol>
 <h4 id="_9">适用分治法策略的问题</h4>
 <ol>
-<li>能将这 <span class="arithmatex">\(n\)</span> 个数据分解成 <span class="arithmatex">\(k\)</span> 个不同子集合，且得到 <span class="arithmatex">\(k\)</span> 个子集合是可以独立求解的子问题，其中 <span class="arithmatex">\(1 \le k\le n\)</span>。</li>
+<li>能将这 <span class="arithmatex">\(n\)</span> 个数据分解成 <span class="arithmatex">\(k\)</span> 个不同子集合，且得到 <span class="arithmatex">\(k\)</span> 个子集合是可以独立求解的子问题，其中 <span class="arithmatex">\(1 \le k\le n\)</span></li>
 <li>分解所得到的子问题与原问题具有相似的结构，便于利用递归或循环机制</li>
 <li>在求出这些子问题的解之后，就可以推解出原问题的解</li>
 </ol>
@@ -1871,9 +1889,14 @@
 </ol>
 <h2 id="5">5 图搜索算法</h2>
 <h4 id="_12">隐式图</h4>
-<p>隐式图是由问题的初始结点，为了求解或求证问题，根据题目的规则（一般是由题目的意思隐含给出的），也就是生成子结点的约束条件，逐步扩展结点，直到得到目标点为止的一个隐式的图。</p>
-<h4 id="_13">割点</h4>
-<p>在一个无向连通图 <span class="arithmatex">\(G\)</span> 中，当且仅当删去 <span class="arithmatex">\(G\)</span> 中的顶点 <span class="arithmatex">\(v\)</span> 及所有依附于 <span class="arithmatex">\(v\)</span> 的边后，可将图分割成两个以上的连通分量，则称 <span class="arithmatex">\(v\)</span> 为图 <span class="arithmatex">\(G\)</span> 的割点。</p>
+<p>隐式图是由问题的初始结点，为了求解或求证问题，根据题目的规则（一般是由题目的意思隐含给出的），也就是生成子结点的约束条件，逐步扩展结点，直到得到目标点为止的一个隐式的图</p>
+<h4 id="_13">隐式图术语</h4>
+<ol>
+<li>子集树：要求解的问题需要在 <span class="arithmatex">\(n\)</span> 个元素的子集中进行搜索，其搜索空间树称作<strong>子集树</strong></li>
+<li>排列树：要求解的问题需要在 <span class="arithmatex">\(n\)</span> 个元素的排列中进行搜索时，解空间树称作<strong>排列树</strong></li>
+</ol>
+<h4 id="_14">割点</h4>
+<p>在一个无向连通图 <span class="arithmatex">\(G\)</span> 中，当且仅当删去 <span class="arithmatex">\(G\)</span> 中的顶点 <span class="arithmatex">\(v\)</span> 及所有依附于 <span class="arithmatex">\(v\)</span> 的边后，可将图分割成两个以上的连通分量，则称 <span class="arithmatex">\(v\)</span> 为图 <span class="arithmatex">\(G\)</span> 的割点</p>
 <h4 id="g">连通图 <span class="arithmatex">\(G\)</span> 的割点判别</h4>
 <ol>
 <li>从图的某一个顶点开始深度优先遍历图，得到深度优先生成树</li>
@@ -1884,7 +1907,7 @@
 </ol>
 </li>
 </ol>
-<h4 id="_14">回溯法和分支限界法的比较</h4>
+<h4 id="_15">回溯法和分支限界法的比较</h4>
 <table>
 <thead>
 <tr>
