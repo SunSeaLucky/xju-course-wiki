@@ -1179,6 +1179,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#io-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入/输出处理器（I/O Processor）
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2307,6 +2316,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#io-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入/输出处理器（I/O Processor）
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2492,7 +2510,10 @@
 <p><img alt="字拓展" src="../4.png" /></p>
 <h4 id="_10">动态随机存储器</h4>
 <p><img alt="动态随机存储器读/写时序图" src="../5.png" /></p>
-<p>DRAM 的刷新操作：集中式刷新、分散式刷新、异步刷新</p>
+<p>DRAM 的刷新操作：
+    - 集中式刷新
+    - 分散式刷新：<strong>在任何一个存储周期内</strong>，分为访存和刷新两个子周期。访存时间内，供 CPU 和其他主设备访问；刷新时间内，对 DRAM 的某一行进行刷新
+    - 异步刷新：集中和分散的折中的办法，在单元刷新间隔 2ms 内均匀地把各行刷新一遍</p>
 <p>DRAM 和 SRAM 的比较：</p>
 <table>
 <thead>
@@ -3211,6 +3232,53 @@
 </ul>
 </li>
 </ul>
+<h4 id="io-processor">输入/输出处理器（I/O Processor）</h4>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th><strong>I/O处理器（IPO）</strong></th>
+<th><strong>DMA（直接存储器访问）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>功能</strong></td>
+<td>负责全面的I/O管理和数据传输</td>
+<td>仅负责数据传输</td>
+</tr>
+<tr>
+<td><strong>复杂性</strong></td>
+<td>复杂，类似于一个小型处理器</td>
+<td>简单，主要是硬件模块</td>
+</tr>
+<tr>
+<td><strong>对CPU的依赖</strong></td>
+<td>减少CPU参与，独立完成I/O任务</td>
+<td>需要CPU启动和管理</td>
+</tr>
+<tr>
+<td><strong>任务范围</strong></td>
+<td>包括设备管理、状态监控和数据传输</td>
+<td>仅限于数据传输</td>
+</tr>
+<tr>
+<td><strong>并行性</strong></td>
+<td>与CPU并行工作，独立完成任务</td>
+<td>数据传输时CPU可执行其他任务</td>
+</tr>
+<tr>
+<td><strong>应用场景</strong></td>
+<td>复杂I/O管理场景，多设备并发操作</td>
+<td>简单、高速数据传输场景</td>
+</tr>
+<tr>
+<td><strong>硬件成本</strong></td>
+<td>高</td>
+<td>低</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_28">复习纲要</h2>
 <h4 id="_29">题型</h4>
 <p><img alt="alt text" src="../image-3.png" /></p>
@@ -3355,12 +3423,36 @@
 <li>外设端口编址方式</li>
 <li>CPU 对外围设备的管理方式（五种，特点、适用场合）</li>
 <li><strong>中断机制</strong>（中断源、中断识别、优先级、响应返回过程、嵌套）</li>
+<li>中断发生条件<ol>
+<li>（源）中断源发出中断请求</li>
+<li>（蔽）中断未被屏蔽</li>
+<li>（优）中断优先级满足要求</li>
+<li>（开）当前CPU状态允许中断，即开中断</li>
+<li>（指）当前指令执行结束</li>
+<li>中断向量有效，能够正确找到中断服务程序</li>
+</ol>
+</li>
 </ol>
 <h2 id="_30">做题总结</h2>
 <ol>
 <li>计算连续地址编码时，从右至左分组，从左至右取片选位</li>
 <li>在比较 sb 浮点数和定点数的优劣时，要注意是否有前提<strong>位数相同</strong></li>
-<li>注意外设端口和接口的区别，端口是寄存器</li>
+<li>注意外设端口和接口的区别，外设端口是寄存器</li>
+<li>中断响应的处理步骤：关中断 &rArr; 保存断点 &rArr; 保护现场 &rArr; 判别中断条件转入中断服务程序 &rArr; 开中断 &rArr; 中断事件处理 &rArr; 关中断 &rArr; 恢复现场 &rArr; 恢复断点 &rArr; 开中断 &rArr; 返回断点</li>
+<li>每次总线操作，只能有一个主方占用总线控制权，但同一时间里可以有多个从方</li>
+<li>中断隐指令操作：<ol>
+<li>读取服务程序入口地址</li>
+<li>保存/恢复断点、现场</li>
+<li>开/关中断（修改的就是 IM 触发器）</li>
+</ol>
+</li>
+<li>串行接口与总线之间的数据传输是并行传输的，与外设之间的数据接口是串行传输的</li>
+<li>并行接口与总线、外设之间的数据传输，都是并行传输的</li>
+<li>DMA 的接管过程</li>
+<li>Cache 既属于 CPU 也属于内存</li>
+<li>转移指令的执行<strong>并不总是</strong>修改PC的值为转移的目标地址，只有当转移条件为真时才修改</li>
+<li>移码的符号表示规律和原码、补码、反码相反</li>
+<li>多体交叉存储器提高读/写操作速度的原因是采用流水技术</li>
 </ol>
 
 
