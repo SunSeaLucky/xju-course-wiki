@@ -1503,6 +1503,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    笔记
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1512,6 +1523,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      引论
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      文法和语言
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1545,6 +1593,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      引论
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      文法和语言
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1561,10 +1635,30 @@
   
 
 
-<h1 id="_1">引论</h1>
-<ul>
+<h1 id="_1">编译原理笔记</h1>
+<h2 id="_2">引论</h2>
+<ol>
 <li>什么是编译程序：把一种语言（源语言）书写的程序翻译成另一种语言（目标语言）的等价程序。</li>
-</ul>
+<li>编译过程</li>
+</ol>
+<pre class="mermaid"><code>graph LR
+A[源程序] --&gt; B[词法分析]
+B --&gt; C[语法分析]
+C --&gt; D[语义分析]
+D --&gt; E[中间代码生成]
+E --&gt; F[代码优化]
+F --&gt; G[目标代码生成]
+G --&gt; H[目标程序]</code></pre>
+<h2 id="_3">文法和语言</h2>
+<ol>
+<li><strong>文法</strong>：四元组 <span class="arithmatex">\((V_N, V_T, P, S)\)</span>，其中 <span class="arithmatex">\(V_N\)</span> 为非终结符集合，<span class="arithmatex">\(V_T\)</span> 为终结符集合，<span class="arithmatex">\(P\)</span> 为产生式集合，<span class="arithmatex">\(S\)</span> 为开始符号。<span class="arithmatex">\(V_N \cap V_T = \phi\)</span>，<span class="arithmatex">\(V_N \cup V_T = V\)</span>，<span class="arithmatex">\(V\)</span> 为所有符号集合。</li>
+<li><strong>规则</strong>（重写规则、产生式、生成式）：是形如 <span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 或 <span class="arithmatex">\(\alpha ::= \beta\)</span> 的 <span class="arithmatex">\((\alpha, \beta)\)</span> 有序对，其中 <span class="arithmatex">\(\alpha\)</span> 为产生式左部，<span class="arithmatex">\(\beta\)</span> 为产生式右部。<span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 或 <span class="arithmatex">\(\alpha ::= \beta\)</span> 读作 <em>定义为</em> 。</li>
+<li><strong>直接推导</strong>：设 <span class="arithmatex">\(\alpha \to \beta\)</span> 是文法 <span class="arithmatex">\(G=(V_N, V_T, P, S)\)</span> 的规则，<span class="arithmatex">\(\gamma\)</span> 和 <span class="arithmatex">\(\delta\)</span> 是 <span class="arithmatex">\(V^*\)</span> 中的任意符号，若有符号串 <span class="arithmatex">\(v, w\)</span> 满足<span class="arithmatex">\(v = \gamma \alpha \delta,~w = \gamma \beta \delta\)</span>，即说 <span class="arithmatex">\(v\)</span> 直接产生 <span class="arithmatex">\(w\)</span>，或说 <span class="arithmatex">\(v\)</span> 是 <span class="arithmatex">\(w\)</span> 的直接推导，或说 <span class="arithmatex">\(w\)</span> 直接归约到 <span class="arithmatex">\(v\)</span>，记作 <span class="arithmatex">\(v \Rightarrow w\)</span>。</li>
+<li><strong>多步推导 <span class="arithmatex">\((\geq 1)\)</span></strong>：<span class="arithmatex">\(v \xRightarrow{+} w\)</span></li>
+<li><strong>多步推导 <span class="arithmatex">\((\geq 0)\)</span></strong>：<span class="arithmatex">\(v \xRightarrow{*} w\)</span></li>
+<li><strong>句型</strong>：设 <span class="arithmatex">\(G[S]\)</span> 是一个文法，如果符号串 <span class="arithmatex">\(x\)</span> 是从识别符号推导出来的，即有 <span class="arithmatex">\(S \Rightarrow x\)</span>，则称 <span class="arithmatex">\(x\)</span> 是文法 <span class="arithmatex">\(G[S]\)</span> 的句型。</li>
+<li><strong>句子</strong>：若 <span class="arithmatex">\(x\)</span> 仅由终结符号组成，即 <span class="arithmatex">\(S \Rightarrow x, x \in V_T^*\)</span>，则称 <span class="arithmatex">\(x\)</span> 为 <span class="arithmatex">\(G[S]\)</span> 的句子。</li>
+</ol>
 
 
 
