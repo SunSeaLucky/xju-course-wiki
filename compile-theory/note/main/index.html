@@ -1557,6 +1557,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="文法和语言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preliminaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preliminaries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      文法的类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      上下文无关文法（2 型）文法及其语法树
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      句型的分析
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1638,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mao-mind/note/main.md" class="md-nav__link">
+      <a href="../../../mao-mind/note/main/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1701,6 +1743,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="文法和语言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preliminaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preliminaries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      文法的类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      上下文无关文法（2 型）文法及其语法树
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      句型的分析
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1723,10 +1807,10 @@
 
 <h1 id="_1">编译原理笔记</h1>
 <h2 id="_2">引论</h2>
-<ol>
+<ul>
 <li>什么是编译程序：把一种语言（源语言）书写的程序翻译成另一种语言（目标语言）的等价程序。</li>
 <li>编译过程</li>
-</ol>
+</ul>
 <pre class="mermaid"><code>graph LR
 A[源程序] --&gt; B[词法分析]
 B --&gt; C[语法分析]
@@ -1736,7 +1820,8 @@ E --&gt; F[代码优化]
 F --&gt; G[目标代码生成]
 G --&gt; H[目标程序]</code></pre>
 <h2 id="_3">文法和语言</h2>
-<ol>
+<h3 id="preliminaries">Preliminaries</h3>
+<ul>
 <li><strong>文法</strong>：四元组 <span class="arithmatex">\((V_N, V_T, P, S)\)</span>，其中 <span class="arithmatex">\(V_N\)</span> 为非终结符集合，<span class="arithmatex">\(V_T\)</span> 为终结符集合，<span class="arithmatex">\(P\)</span> 为产生式集合，<span class="arithmatex">\(S\)</span> 为开始符号。<span class="arithmatex">\(V_N \cap V_T = \phi\)</span>，<span class="arithmatex">\(V_N \cup V_T = V\)</span>，<span class="arithmatex">\(V\)</span> 为所有符号集合。</li>
 <li><strong>规则</strong>（重写规则、产生式、生成式）：是形如 <span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 或 <span class="arithmatex">\(\alpha ::= \beta\)</span> 的 <span class="arithmatex">\((\alpha, \beta)\)</span> 有序对，其中 <span class="arithmatex">\(\alpha\)</span> 为产生式左部，<span class="arithmatex">\(\beta\)</span> 为产生式右部。<span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 或 <span class="arithmatex">\(\alpha ::= \beta\)</span> 读作 <em>定义为</em> 。</li>
 <li><strong>直接推导</strong>：设 <span class="arithmatex">\(\alpha \to \beta\)</span> 是文法 <span class="arithmatex">\(G=(V_N, V_T, P, S)\)</span> 的规则，<span class="arithmatex">\(\gamma\)</span> 和 <span class="arithmatex">\(\delta\)</span> 是 <span class="arithmatex">\(V^*\)</span> 中的任意符号，若有符号串 <span class="arithmatex">\(v, w\)</span> 满足<span class="arithmatex">\(v = \gamma \alpha \delta,~w = \gamma \beta \delta\)</span>，即说 <span class="arithmatex">\(v\)</span> 直接产生 <span class="arithmatex">\(w\)</span>，或说 <span class="arithmatex">\(v\)</span> 是 <span class="arithmatex">\(w\)</span> 的直接推导，或说 <span class="arithmatex">\(w\)</span> 直接归约到 <span class="arithmatex">\(v\)</span>，记作 <span class="arithmatex">\(v \Rightarrow w\)</span>。</li>
@@ -1744,7 +1829,46 @@ G --&gt; H[目标程序]</code></pre>
 <li><strong>多步推导 <span class="arithmatex">\((\geq 0)\)</span></strong>：<span class="arithmatex">\(v \xRightarrow{*} w\)</span></li>
 <li><strong>句型</strong>：设 <span class="arithmatex">\(G[S]\)</span> 是一个文法，如果符号串 <span class="arithmatex">\(x\)</span> 是从识别符号推导出来的，即有 <span class="arithmatex">\(S \Rightarrow x\)</span>，则称 <span class="arithmatex">\(x\)</span> 是文法 <span class="arithmatex">\(G[S]\)</span> 的句型。</li>
 <li><strong>句子</strong>：若 <span class="arithmatex">\(x\)</span> 仅由终结符号组成，即 <span class="arithmatex">\(S \Rightarrow x, x \in V_T^*\)</span>，则称 <span class="arithmatex">\(x\)</span> 为 <span class="arithmatex">\(G[S]\)</span> 的句子。</li>
-</ol>
+<li><strong>语言</strong>：文法 <span class="arithmatex">\(G\)</span> 所产生的语言定义为集合 <span class="arithmatex">\(\{x \mid S \xRightarrow{*} x, \text{其中 } S \text{ 为文法识别符号, 且 } x \in V_T^*\}\)</span>。可用 <span class="arithmatex">\(L(G)\)</span> 表示该集合。</li>
+<li><strong>等价文法</strong>：若 <span class="arithmatex">\(L(G1)=L(G2)\)</span>，则称这两个文法是等价的。</li>
+</ul>
+<h3 id="_4">文法的类型</h3>
+<ul>
+<li><strong>0 型文法</strong>：设 <span class="arithmatex">\(G = (V_N, V_T, P, S)\)</span>，如果它的每个产生式 <span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 是这样一种结构：<span class="arithmatex">\(\alpha \in (V_N \cup V_T)^*\)</span> 且至少含有一个非终结符，而 <span class="arithmatex">\(\beta \in (V_N \cup V_T)^*\)</span>，则 <span class="arithmatex">\(G\)</span> 是一个 0 型文法。</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">0 型文法｜直观理解</p>
+<p>对于产生式限制最少的文法，基本意思就你是个产生式就行。所以，<span class="arithmatex">\(x(x\geq1)\)</span> 型文法，也都是 0 型文法。</p>
+</div>
+<ul>
+<li><strong>1 型文法</strong>：设 <span class="arithmatex">\(G = (V_N, V_T, P, S)\)</span> 为一个文法，若 <span class="arithmatex">\(P\)</span> 中的每一个产生式 <span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 均满足 <span class="arithmatex">\(|\beta| \geq |\alpha|\)</span>，仅仅 <span class="arithmatex">\(S \rightarrow \varepsilon\)</span> 除外，则文法 <span class="arithmatex">\(G\)</span> 是 1 型或<strong>上下文有关的</strong>（context-sensitive）。</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">1 型文法｜直观理解</p>
+<p>每一步推导都会导致串非严格递增。</p>
+</div>
+<ul>
+<li><strong>2 型文法</strong>：设 <span class="arithmatex">\(G = (V_N, V_T, P, S)\)</span>，若 <span class="arithmatex">\(P\)</span> 中的每一个产生式 <span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 满足：<span class="arithmatex">\(\alpha\)</span> 是一个非终结符，<span class="arithmatex">\(\beta \in (V_N \cup V_T)^*\)</span>，则此文法称为 2 型的或<strong>上下文无关的</strong>（context-free）。</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">2 型文法｜直观理解</p>
+<p>在 0 型文法上增加了限制条件，左边必须是非终结符。</p>
+</div>
+<ul>
+<li><strong>3 型文法</strong>：设 <span class="arithmatex">\(G = (V_N, V_T, P, S)\)</span>，若 <span class="arithmatex">\(P\)</span> 中的每一个产生式的形式都是 <span class="arithmatex">\(A \rightarrow aB\)</span> 或 <span class="arithmatex">\(A \rightarrow a\)</span>，其中 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 都是非终结符，<span class="arithmatex">\(a \in V_T^*\)</span>，则 <span class="arithmatex">\(G\)</span> 是 3 型文法或正规文法。</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">3 型文法｜直观理解</p>
+<p>在 2 型文法上增加了限制条件，右边必须是终结符或终结符加非终结符的形式。</p>
+<p>由于这样的形式，正规文法是<strong>没有左递归</strong>的。</p>
+</div>
+<h3 id="2">上下文无关文法（2 型）文法及其语法树</h3>
+<ul>
+<li><strong>最左推导</strong>：如果在推导的任何一步 <span class="arithmatex">\(\alpha \Rightarrow \beta\)</span>，其中 <span class="arithmatex">\(\alpha\)</span>、<span class="arithmatex">\(\beta\)</span> 是句型，都是对 <span class="arithmatex">\(\alpha\)</span> 中的最左非终结符进行替换，则称这种推导为最左推导。</li>
+<li><strong>最右推导</strong>（规范推导）：如果在推导的任何一步 <span class="arithmatex">\(\alpha \Rightarrow \beta\)</span>，其中 <span class="arithmatex">\(\alpha\)</span>、<span class="arithmatex">\(\beta\)</span> 是句型，都是对 <span class="arithmatex">\(\alpha\)</span> 中的最右非终结符进行替换，则称这种推导为最右推导。</li>
+<li><strong>右句型</strong>（规范句型）：由规范推导所得的句型。</li>
+</ul>
+<h2 id="_5">句型的分析</h2>
 
 
 
