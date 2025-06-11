@@ -53,7 +53,6 @@ extra_javascript:
     - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 extra_css:
     - https://unpkg.com/katex@0/dist/katex.min.css
-
 nav:
     - 首页: index.md
     - 软件工程: 
@@ -73,6 +72,7 @@ nav:
     - 计算机组成原理:
         - 课程简介: principles-of-computer-composition/intro/main.md
         - 笔记: principles-of-computer-composition/note/main.md
+        - 笔记（导图版）: principles-of-computer-composition/note/markmap.html
     - 计算机操作系统:
         - 课程简介: computer-operating-system/intro/main.md
         - 笔记: computer-operating-system/note/main.md
@@ -80,6 +80,7 @@ nav:
     - 信号与系统分析基础:
         - 课程简介: signal-analysis/intro/main.md
         - 笔记: signal-analysis/note/main.md
+        - 笔记（导图版）: signal-analysis/note/markmap.html
     - 汇编语言程序设计:
         - 课程简介: assembly-language/intro/main.md
         - 笔记: assembly-language/note/main.md
@@ -107,3 +108,4 @@ nav:
     - 毛泽东思想和中国特色社会主义理论体系概论:
         - 课程简介: mao-mind/intro/main.md
         - 笔记: mao-mind/note/main.md
+        - 笔记（导图版）: mao-mind/note/markmap.html
