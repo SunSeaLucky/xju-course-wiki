@@ -110,4 +110,4 @@ nav:
         - 课程简介: mao-mind/intro/main.md
         - 笔记: mao-mind/note/main.md
         - 笔记（导图版）: mao-mind/note/markmap.html
-        - 老师划重点: mao-mind/note/important.html
+        # - 老师划重点: mao-mind/note/important.html
