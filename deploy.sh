@@ -1,1 +1,0 @@
-cd xju-course-wiki && mkdocs gh-deploy
