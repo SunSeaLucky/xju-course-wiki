@@ -1,171 +1,240 @@
+---
+markmap:
+    maxWidth: 500
+---
+
+<style>
+/* 初始化各级计数器 */
+body { counter-reset: h1; }
+h1 { counter-reset: h2; }
+h2 { counter-reset: h3; }
+h3 { counter-reset: h4; }
+h4 { counter-reset: h5; }
+h5 { counter-reset: h6; }
+
+/* 每碰到一个标题，就累加对应计数器 */
+h1 { counter-increment: h1; }
+h2 { counter-increment: h2; }
+h3 { counter-increment: h3; }
+h4 { counter-increment: h4; }
+h5 { counter-increment: h5; }
+h6 { counter-increment: h6; }
+
+/* 在标题前插入数字，如 2.3.1 */
+h2::before { content: counter(h2) " "; }
+h3::before { content: counter(h2) "." counter(h3) " "; }
+/* …依次类推到 h6 */
+</style>
 # Android 开发笔记
 
-## 第一章｜安卓系统及其开发过程
+## 安卓系统及其开发过程<!-- markmap: fold -->
 
-不用想你都知道这 sb 课本上又在说什么，发展啦之类的无用玩意。
+### Android 的系统架构
 
-## 第二章｜安卓用户界面设计
+- 应用程序层
+    - 电话拨号程序
+    - 短信程序
+    - 日历
+    - 音乐播放器
+    - 浏览器
+    - 联系人管理程序
+- 应用程序框架层
+    - 活动页管理
+    - 窗口管理
+    - 内容供应
+    - 视图系统
+    - 包管理
+    - 电话管理
+    - 资源管理
+    - 位置管理
+    - 通知管理
+- 系统运行库层
+    - 程序库
+    - Android 运行时库
+        - 该核心库提供了 Java 编程语言核心库的大多数功能，Android 系统的 Dalvik 虚拟机也包含在该运行时库中
+- Linux 核心层
 
-### 启动 Activity 的创建
+### Android 开发分类
 
-在包名处 New 完一个 Activity 之后，需要在 AndroidManifest.xml 文件中注册，并在 MainActivity 中启动它。注意第一个是 ACTION，而第二个是 CATEGORY。
+- 系统移植开发
+- Android 应用程序开发
 
-```xml
-<activity android:name=".MainActivity">
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
-</activity>
-```
+### Android 应用程序开发过程
 
-## ListView 的使用
+- 在 Android Studio 集成环境中生成应用项目框架
+- 修改或编写 XML 源程序
+- 修改或编写 Java 源程序
+- 调用模拟器运行应用程序
 
-1. 在布局的 XML 文件中定义一个 ListView：
+### Android 项目结构
 
-```xml
-<ListView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
-```
+- mainfests
+    - mainfest：XML 文件的根节点，包含了 package 中的所有内容
+    - xmlns:android：命名空间声明
+    - package：应用的包名
+    - uses-sdk：应用的目标 SDK 版本
+    - application：声明一些全局属性，如标签、图标、必要的权限等
+    - android:icon：应用的图标
+    - android:label：应用的名称
+    - activity：与用户交互的图形界面
+    - android:name：默认启动的 Activity
+    - intent-filter：声明一组组件支持的 intent 值
+    - action：声明目标组件执行的 intent 动作
+    - category：指定目标组件支持的 intent 类别
+- java：源代码、测试代码
+- res：资源目录，存储所有的资源
+    - drawable：存放图片资源
+    - layout：存放界面 XML 布局文件
+    - mipmap：存放系统的图片资源
+    - values：存放字符串、颜色、尺寸、数组、主题、类型等资源
+    - raw：任意类型的文件，一般是音频、视频、图片、文档
+    - assets：任意类型，与 raw 相比，**不会在 R 类中生成 id**
+- values：存储 app 引用的信息
+    - colors.xml：颜色定义
+    - strings.xml：字符串定义
+    - dimens.xml：存储了一些公用的 dip 值
+    - styles.xml：样式定义
+- Gradle Scripts：build.gradle 为项目的 gradle 配置文件
 
-2. 在 Activity（或 Fragment）中准备数据源：
+## Android 用户界面设计<!-- markmap: fold -->
 
-```java
-// 1) 查找 ListView
-ListView listView = findViewById(R.id.my_list_view);
+### 用户界面设计和 View 类
 
-// 2) 构造数据源
-List<String> data = Arrays.asList("苹果", "香蕉", "橙子", "西瓜");
+- 应用界面由 **View** 类和 **ViewGroup** 对象构建
+- ViewGroup 对象都是 View 类的子类
+- View 类是所有可视化组件的共同父类
+- View 类的常用属性和方法：
+    - android:background、setBackgroundColor：设置背景颜色
+    - android:id、setId：设置 View 的 id
+    - android:alpha、setAlpha：设置 View 的透明度，取值范围为 0～1
+    - android:view、findViewById：通过 id 获取 View 对象
+    - android:visibility、setVisibility：设置组件的可见性
+    - android:clickable、setClickable：设置组件是否可以点击
 
-// 3) 创建 ArrayAdapter（内置简单布局 android.R.layout.simple_list_item_1）
-ArrayAdapter<String> adapter = new ArrayAdapter<>(
-    this,
-    android.R.layout.simple_list_item_1,
-    data
-);
+### Android 布局管理
 
-// 4) 绑定 Adapter 到 ListView
-listView.setAdapter(adapter);
+- ContraintLayout
+- LinearLayout
+- FrameLayout。将组件放到左上角的位置，当添加多个组件时，**后面的组件将遮盖之前的组件**
+- TableLayout。将页面划分成行列构成的单元格
+    - 表格的列数由 android:shrinkColumns 指定
+    - 表格的行数由 <TableRow></TableRow> 指定
+- GridLayout。主要属性有
+    - alignmentMode：指定组件的对齐方式
+    - columnCount：指定列数
+    - rowCount：指定行数
+    - layout_columnSpan：设置组件占据列数
+    - layout_rowSpan：设置组件占据行数
 
-// 5) 可选：设置点击监听
-listView.setOnItemClickListener((parent, view, position, id) -> {
-    String item = data.get(position);
-    Toast.makeText(this, "你点了: " + item, Toast.LENGTH_SHORT).show();
-});
-```
+### 布局文件的重要属性
 
+- 设置组件大小的单位
+    - px：屏幕上的发光点
+    - dp：设备独立像素，支持多分辨率的抽象单位
+    - sp：比例像素
 
-## 第三章｜多个用户界面的程序设计
+### Button
 
-### 页面之间的跳转
+- java 的类都是 Object 类的子类，View 类也继承自 Object 类，TextView 类继承自 View 类，Button 类继承自 TextView 类
 
-1. 跳过去
+### 文本编辑框也继承自 View 类
 
-保证 Activity 均已被注册：
+- ![alt text](image.png)
 
-```xml
-<activity
-    android:name=".MainActivity2"
-    android:exported="false" />
-<activity
-    android:name=".MainActivity"
-    android:exported="true">
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-        <category android:name="android.intent.category.LAUNCHER"/>
-    </intent-filter>
-</activity>
-```
+### 列表组件类
 
-```java
-Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-startActivity(intent);
-```
+- ![alt text](image-1.png)
+- android.R.layout.simple_list_item_1：单一文本项
+- android.R.layout.simple_list_item_2：一行 title，一行 text
+- android.R.layout.simple_list_item_single_choice：单选列表项
+- android.R.layout.simple_list_item_multiple_choice：多选列表项
 
-2. 跳回来
+## 多个用户界面的程序设计<!-- markmap: fold -->
 
-```java
-finish();
-```
+### 页面切换与传递参数值
 
-3. 带参数
+- Intent 的属性
+    - 动作（Action）
+    - 数据（Data）
+    - 类别（Category）
+    - 类型（Type）
+    - 组件（Component）
+    - 扩展数据（Extra）
 
-发送参数
+### 在 Activity 之间传递数据
 
-```java
-Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-Bundle bundle = new Bundle();
-bundle.putString("t", "test");
-intent.putExtras(bundle);
-startActivity(intent);
-```
+- Bundle 的方法
+    - `putString`
+    - `remove`
+    - `getString`
+- Intent 操作 Bundle 组件的方法
+    - `getExtras`
+    - `putExtras`
 
-接收参数
+### 菜单设计
 
-```java
-Intent intent = this.getIntent();
-Bundle bundle = intent.getExtras();
-bundle.getString("t");
-```
+- 选项菜单
+- 上下文菜单
+- 子菜单
 
-### 右上角菜单
+## 图形与多媒体处理
 
-重写 onCreateOptionsMenu() 和 onOptionsItemSelected() 方法
+### 绘制几何图形
 
-```java
-@Override
-public boolean onCreateOptionsMenu(Menu menu) {
-    menu.add(1, 1, 1, "c");
-    menu.add(1, 2, 2, "b");
-    menu.add(2, 3, 4, "b");
-    return super.onCreateOptionsMenu(menu);
-}
+- Canvas
+- Paint
+- Path
 
-@Override
-public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-    return super.onOptionsItemSelected(item);
-}
-```
+### 简单的触摸屏事件
 
-### Context 菜单
+- MotionEvent.ACTION_DOWN：在屏幕上点击
+- MOtionEvent.ACTION_UP：松开手指
+- MotionEvent.ACTION_MOVE：移动手指
 
-重写 onCreateContextMenu() 和 onContextItemSelected() 方法
+### 多媒体处理播放器
 
-```java
-@Override
-public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-    super.onCreateContextMenu(menu, v, menuInfo);
-    menu.setHeaderTitle("cn");
-    menu.add(1, 1, 1, "b");
-    menu.add(1, 2, 2, "b");
-}
+- MediaPlayer 
+    - 常用方法
+        - create() ：创建多媒体播放器
+        - prepare() ：准备多媒体资源，进行同步处理
+        - prepareAsync() ：准备多媒体资源，进行异步处理
+        - release() ：释放资源
+        - reset() ：重置播放器
+        - seekTo() ：调整播放位置
+        - setDataSource() ：设置多媒体资源路径
+        - setOnCompletionListener() ：设置播放完成监听器
+        - stop() ：停止播放
+        - start() ：开始播放
+        - pause() ：暂停播放
+    - 生命周期
+        - ![alt text](image-2.png)
 
-@Override
-public boolean onContextItemSelected(@NonNull MenuItem item) {
-    Log.i(TAG, String.format("onContextItemSelected: %d", item.getItemId()));
-    return super.onContextItemSelected(item);
-}
-```
+## 后台服务与系统服务
 
-为需要该菜单的组件注册
+### 后台服务
 
-```java
-registerForContextMenu(view);
-```
+- 后台服务（Service）是一种类似于 Activity 的组件，但 Service 没有用户操作界面，也不能自己启动，主要作用是提供后台服务调用，即使用户关闭应用界面，Service 也不会停止。
+- Service 的生命周期
+    - onCreate()：创建 Service
+    - onStartCommand()：启动 Service
+    - onDestroy()：销毁 Service
+- 常用方法
+    - ![alt text](image-3.png)
+- 一个服务只能创建一次、销毁一次，但可以开始多次
+- 设置一个后合服务的应用程序大致有以下几个步骤
+    - 创建 Service 的子类
+        - 编写 onCreate 方法，创建后台服务:
+        - 编写 onStartCommand 方法，启动后台服务:
+        - 编写 onDestoy 方法，终止后台服务，并删除所有调用。
+    - 创建启动和控制 Service 的 Activity：
+        - 创建 Intent 对象，建立 Activity 与 Service 的关联:
+        - 调用 Activity 的 startService(Intent)方法启动 Service 后台服务:
+        - 调用 Activity 的 stopService(Intent)方法关闭 Service 后台服务、
+    - 修改配置文件 AndroidManifest.xml。在配置文件 AndroidManifest.xml 的<application>标签中添加以下代码:`<service android:enabled=""true" android:name=".Audiosry" />`
 
-### 对话框
+## 网络通信
 
-```java
-AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-dialog.setTitle("title");
-dialog.setMessage("message");
-dialog.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-    @Override
-    public void onClick(DialogInterface dialog, int which) {
-        dialog.cancel();
-    }
-});
-dialog.create();
-dialog.show();
-```
+### Web 视图
+
+- WebView 的常用方法
+    - ![alt text](image-4.png)
