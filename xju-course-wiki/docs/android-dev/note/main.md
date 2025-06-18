@@ -116,15 +116,16 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 - ContraintLayout
 - LinearLayout
 - FrameLayout。将组件放到左上角的位置，当添加多个组件时，**后面的组件将遮盖之前的组件**
-- TableLayout。将页面划分成行列构成的单元格
-    - 表格的列数由 android:shrinkColumns 指定
-    - 表格的行数由 <TableRow></TableRow> 指定
-- GridLayout。主要属性有
-    - alignmentMode：指定组件的对齐方式
-    - columnCount：指定列数
-    - rowCount：指定行数
-    - layout_columnSpan：设置组件占据列数
-    - layout_rowSpan：设置组件占据行数
+- TableLayout
+    - `android:shrinkColumns` 属性设置表格的 *列数*
+    - `<TableRow>` 标签设置表格的 *行数*
+    - `android:layout_column` 设置组件属于 *哪一列*
+- GridLayout。Android 4.0 引入的布局
+    - `alignmentMode` ：指定组件的 *对齐方式*
+    - `columnCount` ：指定 *列数*
+    - `rowCount` ：指定 *行数*
+    - `layout_columnSpan` ：设置组件 *占据列数*
+    - `layout_rowSpan` ：设置组件 *占据行数*
 
 ### 布局文件的重要属性
 
@@ -150,6 +151,12 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 - android.R.layout.simple_list_item_multiple_choice：多选列表项
 
 ## 多个用户界面的程序设计<!-- markmap: fold -->
+
+### 显/隐式意图
+
+- 根据“目标组件是否明确指定”，可分为两大类：显示式意图（Explicit Intent）和隐式意图（Implicit Intent）
+    - 显式意图：开发者在 Intent 中直接 指明目标组件的完整名称（包名 + 类名），或通过 setClass() / setComponent() / setClassName() 等方法将目标 Activity / Service 明确指定。
+    - 隐式意图：不指明具体组件，而是 描述要执行的“动作 + 数据 + 类别 + 额外信息”
 
 ### 页面切换与传递参数值
 
@@ -177,7 +184,7 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 - 上下文菜单
 - 子菜单
 
-## 图形与多媒体处理
+## 图形与多媒体处理<!-- markmap: fold -->
 
 ### 绘制几何图形
 
@@ -209,7 +216,7 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
     - 生命周期
         - ![alt text](image-2.png)
 
-## 后台服务与系统服务
+## 后台服务与系统服务<!-- markmap: fold -->
 
 ### 后台服务
 
@@ -231,10 +238,72 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
         - 调用 Activity 的 startService(Intent)方法启动 Service 后台服务:
         - 调用 Activity 的 stopService(Intent)方法关闭 Service 后台服务、
     - 修改配置文件 AndroidManifest.xml。在配置文件 AndroidManifest.xml 的<application>标签中添加以下代码:`<service android:enabled=""true" android:name=".Audiosry" />`
+- `onStartCommand()` 方法的返回值
+    - 如果希望 Service 一直存活并且保留上次启动它的 intent 的数据，那么 return START_REDELIVER_INTENT；
+    - 如果只希望 Service 一直存活不需要 intent 中的数据，那么return START_STICKY；
+    - 如果希望 Service 执行完指定的任务后销毁，那么 return START_NOT_STICKY；
+    - 如果没有什么要求那么直接 return super.onStartCommand ；
 
-## 网络通信
+
+## 网络通信<!-- markmap: fold -->
 
 ### Web 视图
 
 - WebView 的常用方法
     - ![alt text](image-4.png)
+- 记得要设置：`android:usesCleartextTraffic="true"`
+
+## 复习<!-- markmap: fold -->
+
+### Android 复习 Workflow
+
+1. 做实验 x2hours
+1. 做题 x40mins
+    1. 涂答案 3 页
+    1. 做 3 页
+    1. 对答案
+    1. 整理错题
+    1. 返回 1
+1. 看导图 x20mins
+1. 返回 1
+
+### 错题
+
+- 语言
+    - 想让软件支持简体中文、美式英语两种环境，需要在 res 目录下新建两个 values 文件夹，分别命名为 *values-zh-rCH* 和 *values-en-rUS*，并在其中分别创建 strings.xml 文件，然后分别在文件中定义字符串资源
+- 配置
+    - Minimum Required SDK 代表 *程序最低兼容的版本*
+    - SDKManager 是 Android SDK 的管理工具，双击它可以看到所有可下载的额 Android SDK 版本
+    - 用于给 Activity 指定主题的属性是 `theme`
+    - 用于给控件指定主题的属性是 `style`
+    - 设置 Activity 的 `android:theme` 属性可以指定主题样式
+    - 样式文件是在 `styles` 目录下创建的
+    - 通常使用 *主题* 定义一个界面/整个软件的风格，使用 *样式* 定义控件的风格
+    - 在 Activity 代码中也可以引用自定义主题，只需要在 `onCreate` 方法内添加 `setTheme` 即可
+    - ❌样式的标签是用来声明属性值的。
+        - 解析：在 Android 的 `styles.xml` 中，属性值真正是通过 `<item name="属性名">值</item>` 来声明的；`<style>` 标签本身只是用来定义一个样式并对这些 `<item>` 进行分组，而不是直接用来声明单独的属性值。因此说“样式的标签是用来声明属性值的”并不准确。
+    - Android 有自己的国际化规范和方法，布局文件中的所有文字资源只有通过 `R.string.<string_name>` 引用才能起到效果
+    - 设置 Activity 的启动模式：android:launchMode
+    
+- 布局
+    - 在相对布局文件中，把控件显示在另外一个控件的右侧使用的属性是 `layout_toRightOf`
+    - 放入绝对布局的控件需要通过 `android:layout_x` 和 `android:layout_y` 属性来设置它的位置
+- 其他
+    - gen 目录是自动生成的， *不允许* 用户修改
+    - Android 使用 *任务栈* 的方式来管理 Activity 的实例
+    - Intent 传递类对象时，该对象需要实现 Serializable 或 Parcelable 接口
+    - Map 类型不能使用 Intent 传递
+    - 启动系统相机使用的 action 是 IMAGE_CAPTUR
+    - Activity 的生命周期
+        - 运行状态。处于屏幕最前段，可见、有焦点，可以与用户交互
+        - 暂停状态。
+        - 停止状态。
+    - Activity 获取焦点执行的方法是 `onResume()`
+    - 当 Activity 处于运行状态时，Android 会尽可能地保持它的运行，即使出现内存不足的情况，Android 也会先杀死栈底部的 Activity，来确保可见的 Activity 正常运行
+    - Activity 默认的启动模式是 standard，在不指定启动模式的情况下，Acticity 使用的都是 standard 模式
+    - 当 Acticity 处于销毁状态时，将被清理出内存
+    - 关闭 Activity 的界面时，将会执行 onPause、onStop、onDestroy 方法
+    - 从 Activity 启动到完全出现在用户面前会执行 onCreate、onStart、onResume 三个方法
+    - intent 的作用是激活组件和传递参数
+
+    
