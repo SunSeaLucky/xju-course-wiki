@@ -1960,6 +1960,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      老师给的重点逐字词分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#android-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       Android 复习 Workflow
@@ -1969,7 +1978,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -2443,6 +2452,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      老师给的重点逐字词分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#android-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       Android 复习 Workflow
@@ -2452,7 +2470,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       错题
     </span>
@@ -2776,6 +2794,635 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <li>记得要设置：<code>android:usesCleartextTraffic="true"</code></li>
 </ul>
 <h2 id="_15">复习<!-- markmap: fold --></h2>
+<h3 id="_16">老师给的重点逐字词分析</h3>
+<ul>
+<li>ImageView 图片属性 资源路径；<ul>
+<li>图片属性<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>对应方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>android:maxHeight</td>
+<td>setMaxHeight(int)</td>
+<td>为显示图像提供最大高度的可选参数</td>
+</tr>
+<tr>
+<td>android:maxWidth</td>
+<td>setMaxWidth(int)</td>
+<td>为显示图像提供最大宽度的可选参数</td>
+</tr>
+<tr>
+<td>android:scaleType</td>
+<td>setScaleType(ImageView.ScaleType)</td>
+<td>控制图像适合 ImageView 大小的显示方式 (见表 2-13)</td>
+</tr>
+<tr>
+<td>android:src</td>
+<td>setImageResource(int)</td>
+<td>获取图像文件的路径</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>其中 scaleType 的属性<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">属性值常量</th>
+<th style="text-align: center;">值</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">matrix</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">用矩阵来绘图</td>
+</tr>
+<tr>
+<td style="text-align: left;">fitXY</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">拉伸图像（不按宽高比例）以填充 View 的宽高</td>
+</tr>
+<tr>
+<td style="text-align: left;">fitStart</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">按比例拉伸图像，拉伸后图像的高度为 View 的高度，且显示在 View 的左边</td>
+</tr>
+<tr>
+<td style="text-align: left;">fitCenter</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">按比例拉伸图像，拉伸后图像的高度为 View 的高度，且显示在 View 的中间</td>
+</tr>
+<tr>
+<td style="text-align: left;">fitEnd</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">按比例拉伸图像，拉伸后图像的高度为 View 的高度，且显示在 View 的右边</td>
+</tr>
+<tr>
+<td style="text-align: left;">center</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">按原图大小显示图像，当图像宽高大于 View 的宽高时，截取图像中间部分显示</td>
+</tr>
+<tr>
+<td style="text-align: left;">centerCrop</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">按比例放大原图直至等于某边 View 的宽高显示</td>
+</tr>
+<tr>
+<td style="text-align: left;">centerInside</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">当原图宽高等于 View 的宽高时，按原图大小居中显示；否则，将原图缩放至 View 的宽高居中显示</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>资源路径<ul>
+<li>如何设置：通过设置图像组件的 <code>srcCompat</code> 属性设置图片资源路径，设置为形如：<code>@drawable/image_name</code></li>
+<li>图片资源存在于哪里：<code>res\drawable</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>注意各种功能实现的类的类名，各种组件基本用法，各种布局的特性用法等，各章节都要注意；<ul>
+<li>
+<p>布局特性用法</p>
+<ul>
+<li>
+<p>ContraintLayout</p>
+</li>
+<li>
+<p>LinearLayout</p>
+</li>
+<li>FrameLayout。将组件放到左上角的位置，当添加多个组件时，<strong>后面的组件将遮盖之前的组件</strong></li>
+<li>TableLayout<ul>
+<li><code>android:shrinkColumns</code> 属性设置表格的 <em>列数</em>。如 <code>android:shrinkColumns="1, 2, 3"</code> 表示表格有 3 列，编号为 1、2、3 列 </li>
+<li><code>&lt;TableRow&gt;</code> 标签设置表格的 <em>行数</em></li>
+<li><code>android:layout_column</code> 设置组件属于 <em>哪一列</em></li>
+</ul>
+</li>
+<li>GridLayout。Android 4.0 引入的布局<ul>
+<li><code>alignmentMode</code> ：指定组件的 <em>对齐方式</em></li>
+<li><code>columnCount</code> ：指定 <em>列数</em></li>
+<li><code>rowCount</code> ：指定 <em>行数</em></li>
+<li><code>layout_columnSpan</code> ：设置组件 <em>占据列数</em></li>
+<li><code>layout_rowSpan</code> ：设置组件 <em>占据行数</em></li>
+</ul>
+</li>
+<li>布局类型 看布局文件写界面；</li>
+<li>菜单，对话框，消息提示，后台服务类用法，数据库等等<ul>
+<li>菜单</li>
+</ul>
+</li>
+<li>选项菜单<ul>
+<li>要重写的两个方法：onCreateOptionMenu 和 onOptionsItemSelected<ul>
+<li>所有可以重写的方法<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">onCreateOptionsMenu(Menu menu)</td>
+<td style="text-align: left;">用于初始化菜单，menu 为 Menu 对象实例</td>
+</tr>
+<tr>
+<td style="text-align: left;">onPrepareOptionsMenu(Menu menu)</td>
+<td style="text-align: left;">改变菜单状态，在菜单显示前调用</td>
+</tr>
+<tr>
+<td style="text-align: left;">onOptionsMenuClosed(Menu menu)</td>
+<td style="text-align: left;">菜单被关闭时调用</td>
+</tr>
+<tr>
+<td style="text-align: left;">onOptionsItemSelected(MenuItem item)</td>
+<td style="text-align: left;">菜单项被点击时调用，即菜单项的监听方法</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>设计菜单项要用 Menu、MenuItem，一个 Menu 代表一个菜单，在 Menu 对象中可以添加菜单项 MenuItem 对象，也可以添加子菜单</li>
+<li>添加菜单项 MenuItem 的方法：add()<ul>
+<li>groupId，组别，不分组写 Menu.NONE；</li>
+<li>itemId，必须写，像资源 id 一样的</li>
+<li>order，哪个菜单项在前面由这个参数的大小决定</li>
+<li>title，菜单项的显示文本</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>上下文菜单<ul>
+<li>上下文菜单最常见的是用于 ListView 的 item</li>
+<li>要重写的两个方法：onCreateContextMenu 和 onContextItemSelected</li>
+<li>要为视图注册上下文菜单：registerForContextMenu(View view)</li>
+<li>对话框</li>
+</ul>
+</li>
+<li>AlertDialog 对话框是应用程序设计最常用的对话框</li>
+<li>常用方法<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AlertDialog.Builder(Context)</td>
+<td style="text-align: left;">对话框 Builder 对象的构造方法</td>
+</tr>
+<tr>
+<td style="text-align: left;">create();</td>
+<td style="text-align: left;">创建 AlertDialog 对象</td>
+</tr>
+<tr>
+<td style="text-align: left;">setTitle();</td>
+<td style="text-align: left;">设置对话框标题</td>
+</tr>
+<tr>
+<td style="text-align: left;">setIcon();</td>
+<td style="text-align: left;">设置对话框图标</td>
+</tr>
+<tr>
+<td style="text-align: left;">setMessage();</td>
+<td style="text-align: left;">设置对话框的提示信息</td>
+</tr>
+<tr>
+<td style="text-align: left;">setItems();</td>
+<td style="text-align: left;">设置对话框要显示的一个 list</td>
+</tr>
+<tr>
+<td style="text-align: left;">setPositiveButton();</td>
+<td style="text-align: left;">在对话框中添加 yes 按钮</td>
+</tr>
+<tr>
+<td style="text-align: left;">setNegativeButton();</td>
+<td style="text-align: left;">在对话框中添加 no 按钮</td>
+</tr>
+<tr>
+<td style="text-align: left;">show();</td>
+<td style="text-align: left;">显示对话框</td>
+</tr>
+<tr>
+<td style="text-align: left;">dismiss();</td>
+<td style="text-align: left;">关闭对话框</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>创建对话框：
+    <div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="n">Builder</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AlertDialog</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span><span id="__span-0-2"><span class="n">builder</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;标题&quot;</span><span class="p">);</span>
+</span><span id="__span-0-3"><span class="n">builder</span><span class="p">.</span><span class="na">setMessage</span><span class="p">(</span><span class="s">&quot;提示信息&quot;</span><span class="p">);</span>
+</span><span id="__span-0-4"><span class="n">builder</span><span class="p">.</span><span class="na">setPositiveButton</span><span class="p">(</span><span class="s">&quot;确定&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DialogInterface</span><span class="p">.</span><span class="na">OnClickListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-0-6"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onClick</span><span class="p">(</span><span class="n">DialogInterface</span><span class="w"> </span><span class="n">dialog</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">which</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-7"><span class="w">        </span><span class="c1">// 点击确定按钮的监听</span>
+</span><span id="__span-0-8"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-9"><span class="p">});</span>
+</span><span id="__span-0-10"><span class="n">builder</span><span class="p">.</span><span class="na">setNegativeButton</span><span class="p">(</span><span class="s">&quot;取消&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DialogInterface</span><span class="p">.</span><span class="na">OnClickListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-0-12"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onClick</span><span class="p">(</span><span class="n">DialogInterface</span><span class="w"> </span><span class="n">dialog</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">which</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-13"><span class="w">        </span><span class="c1">// 点击取消按钮的监听</span>
+</span><span id="__span-0-14"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-15"><span class="p">});</span>
+</span><span id="__span-0-16"><span class="n">builder</span><span class="p">.</span><span class="na">create</span><span class="p">();</span>
+</span><span id="__span-0-17"><span class="n">builder</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>使用 XML 文件作为对话框的布局时，要注意 <code>login = (LinearLayout)getLayoutInflater().inflate(R.layout.login, null);</code>。
+这里 inflate() 是将组件从一个 XML 中定义的布局找出来。在一个 Activity 中如果直接用 findViewById()，对应的是 setConentView() 中的那个 Layout 中的组件。如果 Activity 中用到其他 Layout 布局，比如对话框上的 Layout，还要设置对话框上的 Layout 中的组件(像图片 ImageView、文字 TextView)上的内容，这就必须用 inflate() 先将对话框上的 Layout 找出来，然后再用这个 Layout 对象找到它上面的组件</li>
+<li>其他常用对话框<ul>
+<li>进度条对话框</li>
+<li>日期对话框</li>
+<li>时间对话框</li>
+</ul>
+</li>
+<li>消息提示</li>
+</ul>
+</li>
+<li>消息提示类不获得焦点</li>
+<li>makeText() 之后必须要 show() 才能显示</li>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Toast(Context context)</code></td>
+<td style="text-align: left;">Toast 的构造方法，构造一个空的 Toast 对象</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>makeText(Context context, CharSequence text, int duration)</code></td>
+<td style="text-align: left;">以特定时长显示文本内容，参数 text 为显示的文本，参数 duration 为显示的时间，较长时间取值 <code>LENGTH_LONG</code>，较短时间取值 <code>LENGTH_SHORT</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>setDuration(int duration)</code></td>
+<td style="text-align: left;">设置存续时间</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>setView(View view)</code></td>
+<td style="text-align: left;">设置要显示的视图</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>setGravity(int gravity, int xOffset, int yOffset)</code></td>
+<td style="text-align: left;">设置提示信息在屏幕上的显示位置</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>setText(int resId)</code></td>
+<td style="text-align: left;">更新 <code>makeText()</code> 方法所设置的文本内容</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>show()</code></td>
+<td style="text-align: left;">显示提示信息</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LENGTH_LONG</code></td>
+<td style="text-align: left;">提示信息显示较长时间的常量</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LENGTH_SHORT</code></td>
+<td style="text-align: left;">提示信息显示较短时间的常量</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>后台服务类用法</li>
+</ul>
+</li>
+<li>Service 的生命周期<ul>
+<li>onCreate()：创建 Service</li>
+<li>onStartCommand()：启动 Service</li>
+<li>onDestroy()：销毁 Service</li>
+</ul>
+</li>
+<li>常用方法<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>onCreate()</code></td>
+<td style="text-align: left;">创建后台服务</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>onStartCommand(Intent intent, int flags, int startId)</code></td>
+<td style="text-align: left;">启动后台服务</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>onDestroy()</code></td>
+<td style="text-align: left;">销毁后台服务，并删除所有调用</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sendBroadcast(Intent intent)</code></td>
+<td style="text-align: left;">继承父类 Context 的 sendBroadcast()方法，实现发送广播机制的消息</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>onBind(Intent intent)</code></td>
+<td style="text-align: left;">与服务通信的信道进行绑定，服务程序必须实现该方法</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>onUnbind(Intent intent)</code></td>
+<td style="text-align: left;">撤销与服务信道的绑定</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>用法：<ol>
+<li>创建 Service 的子类，重写 onCreate()、onStartCommand()、onDestroy() 方法</li>
+<li>在 AndroidManifest.xml 文件中注册 Service：<code>&lt;service android:name=".MyService" /&gt;</code></li>
+<li>启动 Service：<code>Intent intent = new Intent(this, MyService.class); startService(intent);</code></li>
+<li>停止 Service：<code>Intent intent = new Intent(this, MyService.class); stopService(intent);</code></li>
+</ol>
+</li>
+<li>一个服务个服务只能创建一次、销毁一次，但可以开始多次</li>
+<li><code>onStartCommand()</code> 方法的返回值<ul>
+<li>如果希望 Service 一直存活并且保留上次启动它的 intent 的数据，那么 return START_REDELIVER_INTENT；</li>
+<li>如果只希望 Service 一直存活不需要 intent 中的数据，那么return START_STICKY；</li>
+<li>如果希望 Service 执行完指定的任务后销毁，那么 return START_NOT_STICKY；</li>
+<li>如果没有什么要求那么直接 return super.onStartCommand ；</li>
+<li>数据库</li>
+</ul>
+</li>
+<li>内部存储空间和外部存储空间<ul>
+<li>示意图：<br/><img alt="alt text" src="../image-7.png" /></li>
+<li>外部存储空间可以通过插入 SD 卡来扩展容量</li>
+<li>内部存储空间<ul>
+<li>根目录：data\data</li>
+<li>应用程序数据目录为：data\data\包名。SQLite 数据库、保存在应用程序中的资源文件以及 SharedPreferences 文件都在这里</li>
+</ul>
+</li>
+<li>外部存储空间<ul>
+<li>根目录：storage\emulated\0。其下有一些特定类型的子目录，可以通过 Environment.getExternalStorageDirectory(String type) 函数获取。如警报铃声、相机拍摄的图片/视频等</li>
+<li>若插入 SD 卡的话，则 SD 卡的根目录为：storage\emulated\1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SQLite 数据库<ul>
+<li>SQLiteDatabase 类。主要类，主要由此类执行增删改查操作<ul>
+<li>常用方法<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>openOrCreateDatabase(String path, SQLiteDatabase.CursorFactory factory)</code></td>
+<td style="text-align: left;">打开或创建数据库</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>openDatabase(String path, SQLiteDatabase.CursorFactory factory, int flags)</code></td>
+<td style="text-align: left;">打开指定的数据库</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>insert(String table, String nullColumnHack, ContentValues values)</code></td>
+<td style="text-align: left;">新增一条记录</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>delete(String table, String whereClause, String[] whereArgs)</code></td>
+<td style="text-align: left;">删除一条记录</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy)</code></td>
+<td style="text-align: left;">查询一条记录</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>update(String table, ContentValues values, String whereClause, String[] whereArgs)</code></td>
+<td style="text-align: left;">修改一条记录</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>execSQL(String sql)</code></td>
+<td style="text-align: left;">执行一条 SQL 语句</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>close()</code></td>
+<td style="text-align: left;">关闭数据库</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SQLiteOpenHelper 类。辅助类，主要用于创建数据库、管理数据库版本<ul>
+<li>常用方法<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>onCreate(SQLiteDatabase)</code></td>
+<td style="text-align: left;">首次生成数据库时调用该方法</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>onOpen(SQLiteDatabase)</code></td>
+<td style="text-align: left;">调用已经打开的数据库</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>onUpgrade(SQLiteDatabase, int, int)</code></td>
+<td style="text-align: left;">升级数据库时调用</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>getWritableDatabase()</code></td>
+<td style="text-align: left;">以读/写方式创建或打开数据库</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>getReadableDatabase()</code></td>
+<td style="text-align: left;">创建或打开数据库</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对数据库操作<ul>
+<li>创建数据库<ul>
+<li>方法一：SQLiteDatabase 对象 openDatabase() 方法或 openOrCreateDatabase() 方法</li>
+<li>方法二：SQLiteHelper 的子类</li>
+<li>方法三：使用 Activity 继承于父类 android.content.Context 创建数据库的方法 openOrCreateDatabase()</li>
+<li>openOrCreateDatabase(name, mode, factory) 中<ul>
+<li>name 为数据库名称</li>
+<li>mode 为打开的模式<ul>
+<li>MODE_PRIVATE：只可访问或调用模式，默认模式</li>
+<li>MODE_WORLD_READABLE：只读模式</li>
+<li>MODE_WORLD_WRITEABLE：只写模式</li>
+</ul>
+</li>
+<li>factory 为数据库创建工厂，一般为 null</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>删除数据库：<code>MainActivity.this.deleteDatabase("mydatabase.db");</code></li>
+</ul>
+</li>
+<li>对数据表操作<ul>
+<li>创建数据表<ol>
+<li>编写创建表 SQL 语句</li>
+<li>调用 SQLiteDatabase 的 execSQL() 执行 SQL 语句</li>
+</ol>
+</li>
+<li>删除数据表<ol>
+<li>编写删除表 SQL 语句</li>
+<li>调用 SQLiteDatabase 的 execSQL() 执行 SQL 语句</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>对记录操作<ul>
+<li>方法一：使用 SQL 语句进行操作</li>
+<li>方法二：使用 SQLiteDatabase 对象的相应方法<ul>
+<li>增<ul>
+<li>SQLiteDatabase 的 insert(String table, String nullColumnHack, ContentValues values) 方法。<ul>
+<li>table，增加记录的数据表</li>
+<li>nullColumnHack，空列的默认值，一般为 null</li>
+<li>values，ContentValues 对象</li>
+</ul>
+</li>
+<li>ContentValues 类。用于存储一组键值对数据，可以用于向数据库插入数据</li>
+<li>示例
+    <code>java
+    ContentValues values = new ContentValues();
+    values.put("name", "Tom");
+    values.put("age", 20);
+    db.insert("person", null, values);</code></li>
+</ul>
+</li>
+<li>删<ul>
+<li>SQLiteDatabase 的 <code>delete(String table, String whereClause, String[] whereArgs)</code> 方法</li>
+<li>示例
+    <code>java
+    db.delete("person", "name=?", new String[] {"Tom"});</code></li>
+</ul>
+</li>
+<li>改<ul>
+<li>SQLiteDatabase 的 <code>update(String table, ContentValues values, String whereClause, String[] whereArgs)</code> 方法。<ul>
+<li>whereClause，修改条件</li>
+<li>whereArgs，修改条件的参数</li>
+</ul>
+</li>
+<li>示例
+    ```java
+    ContentValues values = new ContentValues();
+    values.put("age", 25);
+    db.update("person", values, "name=?", new String[] {"Tom"});</li>
+</ul>
+</li>
+<li>查<ul>
+<li>SQLiteDatabase 的 <code>query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy)</code> 方法。<ul>
+<li>columns，查询的列名</li>
+<li>selection，查询条件</li>
+<li>selectionArgs，查询条件的参数</li>
+<li>groupBy，分组条件</li>
+<li>having，过滤条件</li>
+<li>orderBy，排序条件</li>
+</ul>
+</li>
+<li>示例
+    <div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="n">Cursor</span><span class="w"> </span><span class="n">cursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="na">query</span><span class="p">(</span><span class="s">&quot;person&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+</span><span id="__span-1-2"><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="na">moveToNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cursor</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="na">getColumnIndex</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">));</span>
+</span><span id="__span-1-4"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cursor</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="na">getColumnIndex</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">));</span>
+</span><span id="__span-1-5"><span class="w">    </span><span class="c1">// do something with name and age</span>
+</span><span id="__span-1-6"><span class="p">}</span>
+</span><span id="__span-1-7"><span class="n">cursor</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>对查询结果进行处理<ul>
+<li>query 查询的数据会封装到 Cursor 对象中，Cursor 常用方法如下<ul>
+<li>moveToFirst()：移动到第一条记录</li>
+<li>moveToLast()：移动到最后一条记录</li>
+<li>moveToNext()：移动到下一条记录</li>
+<li>moveToPosition(int position)：移动到指定位置的记录</li>
+<li>moveToPrevious()：移动到上一条记录</li>
+<li>moveToNext()：移动到下一条记录</li>
+<li>isBeforeFirst()：是否位于第一条记录之前</li>
+<li>isAfterLast()：是否位于最后一条记录之后</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="android-workflow">Android 复习 Workflow</h3>
 <ol>
 <li>做实验 x2hours</li>
@@ -2790,7 +3437,7 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <li>看导图 x20mins</li>
 <li>返回 1</li>
 </ol>
-<h3 id="_16">错题</h3>
+<h3 id="_17">错题</h3>
 <ul>
 <li>语言<ul>
 <li>想让软件支持简体中文、美式英语两种环境，需要在 res 目录下新建两个 values 文件夹，分别命名为 <em>values-zh-rCH</em> 和 <em>values-en-rUS</em>，并在其中分别创建 strings.xml 文件，然后分别在文件中定义字符串资源</li>
