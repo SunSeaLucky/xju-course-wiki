@@ -2773,6 +2773,7 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <li><img alt="alt text" src="../image-4.png" /></li>
 </ul>
 </li>
+<li>记得要设置：<code>android:usesCleartextTraffic="true"</code></li>
 </ul>
 <h2 id="_15">复习<!-- markmap: fold --></h2>
 <h3 id="android-workflow">Android 复习 Workflow</h3>
@@ -2791,28 +2792,57 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </ol>
 <h3 id="_16">错题</h3>
 <ul>
+<li>语言<ul>
+<li>想让软件支持简体中文、美式英语两种环境，需要在 res 目录下新建两个 values 文件夹，分别命名为 <em>values-zh-rCH</em> 和 <em>values-en-rUS</em>，并在其中分别创建 strings.xml 文件，然后分别在文件中定义字符串资源</li>
+</ul>
+</li>
+<li>
+<p>配置</p>
+<ul>
 <li>Minimum Required SDK 代表 <em>程序最低兼容的版本</em></li>
-<li>gen 目录是自动生成的， <em>不允许</em> 用户修改</li>
 <li>SDKManager 是 Android SDK 的管理工具，双击它可以看到所有可下载的额 Android SDK 版本</li>
-<li>在相对布局文件中，把控件显示在另外一个控件的右侧使用的属性是 <code>layout_toRightOf</code></li>
 <li>用于给 Activity 指定主题的属性是 <code>theme</code></li>
 <li>用于给控件指定主题的属性是 <code>style</code></li>
 <li>设置 Activity 的 <code>android:theme</code> 属性可以指定主题样式</li>
 <li>样式文件是在 <code>styles</code> 目录下创建的</li>
-<li>放入绝对布局的控件需要通过 <code>android:layout_x</code> 和 <code>android:layout_y</code> 属性来设置它的位置</li>
 <li>通常使用 <em>主题</em> 定义一个界面/整个软件的风格，使用 <em>样式</em> 定义控件的风格</li>
 <li>在 Activity 代码中也可以引用自定义主题，只需要在 <code>onCreate</code> 方法内添加 <code>setTheme</code> 即可</li>
 <li>❌样式的标签是用来声明属性值的。<ul>
 <li>解析：在 Android 的 <code>styles.xml</code> 中，属性值真正是通过 <code>&lt;item name="属性名"&gt;值&lt;/item&gt;</code> 来声明的；<code>&lt;style&gt;</code> 标签本身只是用来定义一个样式并对这些 <code>&lt;item&gt;</code> 进行分组，而不是直接用来声明单独的属性值。因此说“样式的标签是用来声明属性值的”并不准确。</li>
 </ul>
 </li>
-<li>想让软件支持简体中文、美式英语两种环境，需要在 res 目录下新建两个 values 文件夹，分别命名为 <em>values-zh-rCH</em> 和 <em>values-en-rUS</em>，并在其中分别创建 strings.xml 文件，然后分别在文件中定义字符串资源</li>
 <li>Android 有自己的国际化规范和方法，布局文件中的所有文字资源只有通过 <code>R.string.&lt;string_name&gt;</code> 引用才能起到效果</li>
+<li>设置 Activity 的启动模式：android:launchMode</li>
+</ul>
+</li>
+<li>
+<p>布局</p>
+<ul>
+<li>在相对布局文件中，把控件显示在另外一个控件的右侧使用的属性是 <code>layout_toRightOf</code></li>
+<li>放入绝对布局的控件需要通过 <code>android:layout_x</code> 和 <code>android:layout_y</code> 属性来设置它的位置</li>
+</ul>
+</li>
+<li>其他<ul>
+<li>gen 目录是自动生成的， <em>不允许</em> 用户修改</li>
 <li>Android 使用 <em>任务栈</em> 的方式来管理 Activity 的实例</li>
 <li>Intent 传递类对象时，该对象需要实现 Serializable 或 Parcelable 接口</li>
 <li>Map 类型不能使用 Intent 传递</li>
-<li>设置 Activity 的启动模式：android:launchMode</li>
-<li>启动系统相机使用的 action 是 IMAGE_CAPTURE</li>
+<li>启动系统相机使用的 action 是 IMAGE_CAPTUR</li>
+<li>Activity 的生命周期<ul>
+<li>运行状态。处于屏幕最前段，可见、有焦点，可以与用户交互</li>
+<li>暂停状态。</li>
+<li>停止状态。</li>
+</ul>
+</li>
+<li>Activity 获取焦点执行的方法是 <code>onResume()</code></li>
+<li>当 Activity 处于运行状态时，Android 会尽可能地保持它的运行，即使出现内存不足的情况，Android 也会先杀死栈底部的 Activity，来确保可见的 Activity 正常运行</li>
+<li>Activity 默认的启动模式是 standard，在不指定启动模式的情况下，Acticity 使用的都是 standard 模式</li>
+<li>当 Acticity 处于销毁状态时，将被清理出内存</li>
+<li>关闭 Activity 的界面时，将会执行 onPause、onStop、onDestroy 方法</li>
+<li>从 Activity 启动到完全出现在用户面前会执行 onCreate、onStart、onResume 三个方法</li>
+<li>intent 的作用是激活组件和传递参数</li>
+</ul>
+</li>
 </ul>
 
 
