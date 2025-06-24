@@ -3215,7 +3215,7 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </ul>
 </li>
 <li>符号串的运算：<ul>
-<li>【不重要】符号串的头尾，固有头和固有尾</li>
+<li>符号串的头尾，固有头和固有尾</li>
 <li>连接</li>
 <li>方幂</li>
 </ul>
@@ -3614,7 +3614,11 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </li>
 </ul>
 </li>
-<li>三地址码/四元式<ul>
+<li>三元式<ul>
+<li><img alt="alt text" src="../image-4.png" /></li>
+</ul>
+</li>
+<li>三地址码/四元式/TAC<ul>
 <li>例：把 <code>x 0 = i 1 = i 20 &lt;= 24 FJ x 4 i * = i i 1 + = 7 RJ</code> 转成 TAC 序列<ol>
 <li><span class="arithmatex">\((=~~0~~/~~x)\)</span></li>
 <li><span class="arithmatex">\((=~~1~~/~~i)\)</span></li>
@@ -3729,8 +3733,8 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </ul>
 </li>
 <li>在编译中产生语法树是为了语法分析</li>
-<li>程序语言的生成机构是 <strong>自动机</strong></li>
-<li>识别机构是 <strong>文法</strong></li>
+<li>程序语言的生成机构是 <strong>文法</strong></li>
+<li>识别机构是 <strong>自动机</strong></li>
 <li>词法分析器可以用自动机来实现</li>
 <li>❌编译程序在对程序进行优化时，可能会去处理注释</li>
 <li>一般情况下，语法分析只产生中间代码，不产生目标代码</li>
@@ -3752,7 +3756,7 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <li>A、过程  </li>
 <li>B、程序  </li>
 <li>C、批量  </li>
-<li>D、遍  </li>
+<li>D、遍(若干遍扫描)</li>
 </ul>
 </li>
 <li>编译的6个阶段 这些工作往往是<strong>穿插</strong>进行的</li>
@@ -3816,9 +3820,9 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </li>
 <li>过程和过程引用信息交换的方法是<strong>参数传递</strong>和<strong>全局变量使用</strong></li>
 <li>允许动态申请和释放空间，采用的存储分配的技术是<strong>堆</strong></li>
-<li>Pascal中过程说明的局部变量地址分配在<strong>B</strong>。<ul>
+<li>Pascal中过程说明的局部变量地址分配在。<ul>
 <li>A. 调用者的数据区中</li>
-<li>C. 被调用者的数据区中</li>
+<li>✅B. 被调用者的数据区中</li>
 <li>C. 主程序的数据区中</li>
 <li>D. 公共数据区中</li>
 </ul>
