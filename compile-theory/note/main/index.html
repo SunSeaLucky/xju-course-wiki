@@ -1641,7 +1641,7 @@
           <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      上下文无关文法（2 型）文法及其语法树
+      上下文无关文法/ 2 型文法及其语法树
     </span>
   </a>
   
@@ -1804,7 +1804,7 @@
           <li class="md-nav__item">
   <a href="#lr0_2" class="md-nav__link">
     <span class="md-ellipsis">
-      LR(0) 项目集规范族的构造
+      \(LR(0)\) 项目集规范族的构造
     </span>
   </a>
   
@@ -2532,7 +2532,7 @@
           <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      上下文无关文法（2 型）文法及其语法树
+      上下文无关文法/ 2 型文法及其语法树
     </span>
   </a>
   
@@ -2695,7 +2695,7 @@
           <li class="md-nav__item">
   <a href="#lr0_2" class="md-nav__link">
     <span class="md-ellipsis">
-      LR(0) 项目集规范族的构造
+      \(LR(0)\) 项目集规范族的构造
     </span>
   </a>
   
@@ -3115,58 +3115,92 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <h1 id="_1">编译原理笔记</h1>
 <h2 id="_2">引论<!-- markmap: fold --></h2>
 <ul>
-<li><strong>编译的基本概念</strong>：把一种 <strong>源语言</strong> 书写的程序翻译成 <strong>目标语言</strong> 的等价程序。</li>
-<li>三种翻译程序的区别</li>
-<li>编译的过程：源程序 -&gt; 词法分析 -&gt; 语法分析 -&gt; 语义分析 -&gt; 代码生成 -&gt; 中间代码生成 -&gt; 代码优化 -&gt; 目标代码生成<ul>
-<li>和所有阶段都有关系：表格管理、出错处理</li>
-<li>每个阶段的任务<ul>
-<li>词法分析：将源程序分解成词素序列</li>
-<li>语法分析：将词素序列构造成语法树</li>
-<li>语义分析：检查语法树的语义正确性</li>
-<li>中间代码生成：将语义树转换成中间代码</li>
-<li>代码优化：对中间代码进行优化</li>
-<li>目标代码生成：将中间代码转换成目标代码</li>
-</ul>
-</li>
-<li>每个阶段的输入、输出<ul>
-<li>词法分析<ul>
+<li>编译<ul>
+<li>定义：<strong>把一种源语言书写的程序翻译成目标语言的等价程序</strong></li>
+<li>过程：<strong>源程序 -&gt; 词法分析 -&gt; 语法分析 -&gt; 语义分析 -&gt; 代码生成 -&gt; 中间代码生成 -&gt; 代码优化 -&gt; 目标代码生成</strong></li>
+<li>每阶段任务<ul>
+<li>词法分析：将源程序分解成词素序列<ul>
 <li>输入：源程序</li>
 <li>输出：单词序列</li>
 </ul>
 </li>
-<li>语法分析<ul>
+<li>语法分析：将词素序列构造成语法树<ul>
 <li>输入：单词序列</li>
 <li>输出：语法树/语法短语/语法单位</li>
 </ul>
 </li>
-<li>语义分析<ul>
+<li>语义分析：检查语法树的语义正确性<ul>
 <li>输入：语法树/语法短语/语法单位</li>
 <li>输出：语义树/语义短语/语义单位</li>
 </ul>
 </li>
-<li>中间代码生成<ul>
+<li>中间代码生成：将语义树转换成中间代码<ul>
 <li>输入：语义树/语义短语/语义单位</li>
 <li>输出：中间代码</li>
 </ul>
 </li>
-<li>代码优化<ul>
+<li>代码优化：对中间代码进行优化<ul>
 <li>输入：中间代码</li>
 <li>输出：优化后的中间代码</li>
 </ul>
 </li>
-<li>目标代码生成<ul>
+<li>目标代码生成：将中间代码转换成目标代码<ul>
 <li>输入：优化后的中间代码</li>
 <li>输出：目标代码</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>和所有阶段都有关系：<strong>表格管理、出错处理</strong></li>
 </ul>
 </li>
-<li>遍</li>
-<li>趟</li>
-<li>前端</li>
-<li>后端</li>
+<li>
+<p>三种翻译程序的区别</p>
+<ul>
+<li>汇编程序<ul>
+<li>输入：汇编语言</li>
+<li>输出：目标机器代码</li>
+</ul>
+</li>
+<li>编译程序<ul>
+<li>输入：高级语言源程序</li>
+<li>输出：等价的目标程序</li>
+</ul>
+</li>
+<li>解释程序<ul>
+<li>输入：源程序或中间表示</li>
+<li>输出：执行结果</li>
+<li>特点：不产生独立的机器目标文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>遍/趟：<strong>对源程序或其等价的中间语言程序从头到尾扫描并完成规定任务的过程</strong></p>
+</li>
+<li>前端<ul>
+<li>依赖于 <strong>源语言</strong> 而与目标机无关</li>
+<li>具体工作<ul>
+<li>词法分析</li>
+<li>语法分析</li>
+<li>中间代码生成</li>
+<li>部分优化工作</li>
+<li>出错处理</li>
+<li>符号表管理</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>后端<ul>
+<li>不依赖于源语言，只与 <strong>中间代码</strong> 有关的那些阶段的工作</li>
+<li>具体工作<ul>
+<li>目标代码生成</li>
+<li>出错处理</li>
+<li>符号表操作</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="_3">文法和语言<!-- markmap: fold --></h2>
 <h3 id="_4">文法的直观概念</h3>
@@ -3196,7 +3230,7 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <h3 id="_6">文法和语言的形式定义</h3>
 <ul>
 <li><strong>文法</strong>：四元组 <span class="arithmatex">\((V_N, V_T, P, S)\)</span>，其中 <span class="arithmatex">\(V_N\)</span> 为非终结符集合，<span class="arithmatex">\(V_T\)</span> 为终结符集合，<span class="arithmatex">\(P\)</span> 为产生式集合，<span class="arithmatex">\(S\)</span> 为开始符号。<span class="arithmatex">\(V_N \cap V_T = \phi\)</span>，<span class="arithmatex">\(V_N \cup V_T = V\)</span>，<span class="arithmatex">\(V\)</span> 为所有符号集合。<strong>语言的指导规则。</strong></li>
-<li><strong>规则</strong>（重写规则、产生式、生成式）：是形如 <span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 或 <span class="arithmatex">\(\alpha ::= \beta\)</span> 的 <span class="arithmatex">\((\alpha, \beta)\)</span> 有序对，其中 <span class="arithmatex">\(\alpha\)</span> 为产生式左部，<span class="arithmatex">\(\beta\)</span> 为产生式右部。<span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 或 <span class="arithmatex">\(\alpha ::= \beta\)</span> 读作 <em>定义为</em> 。</li>
+<li><strong>规则</strong>/重写规则/产生式/生成式）：是形如 <span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 或 <span class="arithmatex">\(\alpha ::= \beta\)</span> 的 <span class="arithmatex">\((\alpha, \beta)\)</span> 有序对，其中 <span class="arithmatex">\(\alpha\)</span> 为产生式左部，<span class="arithmatex">\(\beta\)</span> 为产生式右部。<span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 或 <span class="arithmatex">\(\alpha ::= \beta\)</span> 读作 <em>定义为</em> 。</li>
 <li><strong>直接推导</strong>：设 <span class="arithmatex">\(\alpha \to \beta\)</span> 是文法 <span class="arithmatex">\(G=(V_N, V_T, P, S)\)</span> 的规则，<span class="arithmatex">\(\gamma\)</span> 和 <span class="arithmatex">\(\delta\)</span> 是 <span class="arithmatex">\(V^*\)</span> 中的任意符号，若有符号串 <span class="arithmatex">\(v, w\)</span> 满足<span class="arithmatex">\(v = \gamma \alpha \delta,~w = \gamma \beta \delta\)</span>，即说 <span class="arithmatex">\(v\)</span> 直接产生 <span class="arithmatex">\(w\)</span>，或说 <span class="arithmatex">\(v\)</span> 是 <span class="arithmatex">\(w\)</span> 的直接推导，或说 <span class="arithmatex">\(w\)</span> 直接归约到 <span class="arithmatex">\(v\)</span>，记作 <span class="arithmatex">\(v \Rightarrow w\)</span>。</li>
 <li><strong>多步推导 <span class="arithmatex">\((\geq 1)\)</span></strong>：<span class="arithmatex">\(v \xRightarrow{+} w\)</span></li>
 <li><strong>多步推导 <span class="arithmatex">\((\geq 0)\)</span></strong>：<span class="arithmatex">\(v \xRightarrow{*} w\)</span></li>
@@ -3230,14 +3264,14 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </ul>
 </li>
 </ul>
-<h3 id="2">上下文无关文法（2 型）文法及其语法树</h3>
+<h3 id="2">上下文无关文法/ 2 型文法及其语法树</h3>
 <ul>
 <li>定义<ul>
 <li>最左推导：如果在推导的任何一步 <span class="arithmatex">\(\alpha \Rightarrow \beta\)</span>（<span class="arithmatex">\(\alpha\)</span>、<span class="arithmatex">\(\beta\)</span> 是句型），都是对 <span class="arithmatex">\(\alpha\)</span> 中的最左非终结符进行替换，则称这种推导为最左推导。</li>
-<li>最右推导（规范推导）：如果在推导的任何一步 <span class="arithmatex">\(\alpha \Rightarrow \beta\)</span>（<span class="arithmatex">\(\alpha\)</span>、<span class="arithmatex">\(\beta\)</span> 是句型），都是对 <span class="arithmatex">\(\alpha\)</span> 中的最右非终结符进行替换，则称这种推导为最右推导。</li>
-<li>右句型（规范句型）：由规范推导所得的句型。</li>
-<li><strong>二义</strong>：一个文法存在某个句子，对应两颗不同的语法树。或者说，一个文法中存在某个句子，它有两个不同的最左（最右）推导<ul>
-<li>文法的二义性和语言的二义是两个不同的概念。即 <span class="arithmatex">\(\exists G, G'\)</span>，<span class="arithmatex">\(G\)</span> 是二义的，而 <span class="arithmatex">\(G'\)</span> 不是，但 <span class="arithmatex">\(L(G)=L(G')\)</span></li>
+<li>最右推导/<strong>规范推导</strong>：如果在推导的任何一步 <span class="arithmatex">\(\alpha \Rightarrow \beta\)</span>（<span class="arithmatex">\(\alpha\)</span>、<span class="arithmatex">\(\beta\)</span> 是句型），都是对 <span class="arithmatex">\(\alpha\)</span> 中的最右非终结符进行替换，则称这种推导为最右推导。</li>
+<li>右句型/<strong>规范句型</strong>：由规范推导所得的句型。</li>
+<li><strong>二义</strong>：一个文法存在某个句子，<strong>对应两颗不同的语法树</strong>。或者说，一个文法中存在某个句子，它有两个不同的最左（最右）推导<ul>
+<li>文法的二义性和语言的二义是两个不同的概念。即 <span class="arithmatex">\(\exists G, G'\)</span>，使得 <span class="arithmatex">\(G\)</span> 是二义的，而 <span class="arithmatex">\(G'\)</span> 不是，但 <span class="arithmatex">\(L(G)=L(G')\)</span></li>
 </ul>
 </li>
 </ul>
@@ -3251,7 +3285,7 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <li><strong>短语</strong>：一颗子树的所有叶子，自左至右排列，是相对于子树根的短语</li>
 <li><strong>直接短语/简单短语</strong>：短语中只有父子两代的</li>
 <li><strong>子树</strong>：一颗语法树中的特有结点连同其全部后裔，以及联结后裔的边，以及这些节点的标记</li>
-<li>句柄：一个右句型的直接短语，称为该句型的句柄。无二义文法，一个右句型的唯一句柄是其所有直接短语中最左边的那一个</li>
+<li><strong>句柄</strong>：一个右句型的直接短语，称为该句型的句柄。无二义文法，一个右句型的唯一句柄是其所有直接短语中最左边的那一个</li>
 </ul>
 </li>
 </ul>
@@ -3268,13 +3302,13 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <h3 id="_11">单词的形式化描述工具</h3>
 <ul>
 <li>正规文法</li>
-<li>正规式（也成正则表达式，也是表示正规集的工具）<ul>
+<li>正规式/正则表达式（也是表示正规集的工具）<ul>
 <li>正规式服从的代数规律如下<ul>
 <li>“或”的交换律</li>
-<li>“或”的可结合律</li>
+<li><strong>“或”的可结合律</strong></li>
 <li>“连接”的可分配律</li>
 <li>分配律</li>
-<li>“或”的抽取律</li>
+<li><strong>“或”的抽取律</strong></li>
 </ul>
 </li>
 </ul>
@@ -3296,9 +3330,9 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <li>NFA</li>
 <li>NFA 转化为 DFA（NFA 的确定化）</li>
 <li>DFA 的化简（DFA 的最小化）<ul>
-<li>两个状态等价的条件<ul>
-<li>一致性条件。必须同时为终态或非终态</li>
-<li>蔓延性条件。对于所有的输入符号，必须转换到等价的状态里</li>
+<li><strong>两个状态等价的条件</strong><ul>
+<li><strong>一致性条件。必须同时为终态或非终态</strong></li>
+<li><strong>蔓延性条件。对于所有的输入符号，必须转换到等价的状态里</strong></li>
 </ul>
 </li>
 </ul>
@@ -3357,7 +3391,12 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <li>基本思想：只考虑终结符的优先关系，在规约过程中找到可规串就规约，不考虑规约到哪个非终结符，不是规范规约</li>
 <li>算符优先文法的定义<ul>
 <li>如果文法 <span class="arithmatex">\(G\)</span> 中没有形如 <span class="arithmatex">\(A\rightarrow ...BC...\)</span> 的产生式，其中 <span class="arithmatex">\(B\)</span> 和 <span class="arithmatex">\(C\)</span> 为非终结符，则称 <span class="arithmatex">\(G\)</span> 为算符文法，也称 OG 文法</li>
-<li>三种算符优先关系</li>
+<li>三种算符优先关系<ul>
+<li><span class="arithmatex">\(=\)</span>：这样出现 <span class="arithmatex">\(\#E\#\)</span> 或者这样出现 <span class="arithmatex">\(\#\#\)</span>，# 和 # 都是 = 关系</li>
+<li><span class="arithmatex">\(&lt;\)</span>：<span class="arithmatex">\(\#E\)</span>，则 <span class="arithmatex">\(\# &lt; FIRSTVT(E)\)</span></li>
+<li><span class="arithmatex">\(&gt;\)</span>：<span class="arithmatex">\(E\#\)</span>，则 <span class="arithmatex">\(LASTVT(E) &gt; \#\)</span></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>算符优先分析表。只看第一/第二位，只看倒数第一/倒数第二位<ul>
@@ -3381,8 +3420,8 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <li>
 <p>LR 分析器有 3 部分：</p>
 <ul>
-<li>总控程序（驱动程序），所有的 LR 分析器的总控程序都是相同的</li>
-<li>分析表（分析函数）</li>
+<li>总控程序/驱动程序，所有的 LR 分析器的总控程序都是相同的</li>
+<li>分析表/分析函数</li>
 <li>分析栈</li>
 </ul>
 </li>
@@ -3403,11 +3442,11 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </ul>
 <h4 id="_16">可归前缀、活前缀</h4>
 <ul>
-<li>可归前缀：感觉就是规范句型中，可以进行规约的前缀</li>
+<li>可归前缀：规范句型中，可以进行规约的前缀</li>
 <li>活前缀：若 <span class="arithmatex">\(S' \xRightarrow[R]{} \alpha A \omega \xRightarrow[R]{} \alpha \beta \omega\)</span> 是文法 <span class="arithmatex">\(G\)</span> 的扩广文法 <span class="arithmatex">\(G'\)</span> 中的一个规范推导，符号串 <span class="arithmatex">\(\gamma\)</span> 是 <span class="arithmatex">\(\alpha\beta\)</span> 的前缀，则称 <span class="arithmatex">\(\gamma\)</span> 是 <span class="arithmatex">\(G\)</span> 的一个活前缀。</li>
 <li>把在规范句型中形成可归前缀之前，包括可归前缀在内的、所有前缀都称为活前缀。</li>
 </ul>
-<h4 id="lr0_2">LR(0) 项目集规范族的构造</h4>
+<h4 id="lr0_2"><span class="arithmatex">\(LR(0)\)</span> 项目集规范族的构造</h4>
 <ul>
 <li>状态转换图中，每个状态包含若干个项目。项目类型：<ul>
 <li>移进项目。点后面是终结符的</li>
@@ -3520,22 +3559,21 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </ul>
 <h3 id="lr_2">LR 比较</h3>
 <ul>
-<li>如果一个文法是 LR(0) 文法，那么它必然是 SLR(1) 文法，也必然是 LR(1) 文法。反之不一定</li>
-<li>LR(1) 分析法 强于 LALR(1) 分析法，LALR(1) 分析法 强于 SLR(1) 分析法</li>
+<li>如果一个文法是 LR(0) 文法，那么它必然是 SLR(1) 文法，也必然是 LR(1) 文法，也一定是 LALR(1) 文法。反之不一定</li>
+<li>LR(1) 分析法 <strong>强于</strong> LALR(1) 分析法，LALR(1) 分析法 <strong>强于</strong> SLR(1) 分析法</li>
 </ul>
 <h3 id="lr_3">二义性文法在 LR 分析中的应用</h3>
 <h2 id="_17">语法制导的语义计算<!-- markmap: fold --></h2>
 <h3 id="_18">基于属性文法的语义计算</h3>
 <ul>
 <li>在文法 <span class="arithmatex">\(G[S]\)</span> 基础上，为文法符号关联有特定意义的属性，并为产生式关联相应的语义动作/语义子程序/条件谓词，称之为属性文法，并称文法 <span class="arithmatex">\(G[S]\)</span> 是这一属性文法的基础文法</li>
+<li>综合属性：条件谓词在 <strong>产生式左部</strong> </li>
+<li>继承属性：条件谓词在 <strong>产生式右部</strong> </li>
 </ul>
 <h2 id="_19">静态语义分析和中间代码生成<!-- markmap: fold --></h2>
 <h3 id="_20">符号表</h3>
 <ul>
-<li>符号表的作用：<ul>
-<li>在语义分析中，符号表所登记的内容是进行上下语义合法性检查的依据，检查标识符属性在上下文中的一致性和合法性</li>
-</ul>
-</li>
+<li>作用：在语义分析中，符号表所登记的内容是进行 <strong>上下语义合法性检查</strong> 的依据，检查标识符属性在上下文中的一致性和合法性</li>
 </ul>
 <h3 id="_21">静态语义分析</h3>
 <ul>
@@ -3547,12 +3585,12 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <li>类型检查</li>
 </ul>
 </li>
-<li>中间代码生成<ul>
-<li>中间代码是源程序的不同表现形式，也称为中间表示</li>
-<li>中间代码的作用<ul>
-<li>用于源语言和目标语言之间的桥梁，避开二者之间较大的语义跨度</li>
-<li>利于编译程序的重定向</li>
-<li>利于进行与目标机无关的优化</li>
+<li>中间代码生成/中间表示<ul>
+<li>源程序的不同表现形式</li>
+<li>作用<ul>
+<li>用于源语言和目标语言之间的 <strong>桥梁</strong> ，避开二者之间较大的语义跨度</li>
+<li>利于编译程序的 <strong>重定向</strong> </li>
+<li>利于进行与目标机无关的 <strong>优化</strong> </li>
 </ul>
 </li>
 </ul>
@@ -3570,10 +3608,10 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 <li>逆波兰表达式<ul>
 <li><code>if &lt;exp&gt; then &lt;s1&gt; else &lt;s2&gt;</code> <span class="arithmatex">\(\Leftrightarrow\)</span> 
   <code>&lt;exp逆&gt; &lt;N1&gt; FJ &lt;s1逆&gt; &lt;N2&gt; RJ &lt;s2逆&gt;</code></li>
-</ul>
-</li>
 <li>例：把 <code>for i=1 to 20 do x=4*i</code> 转换为逆波兰式<ul>
 <li><code>x 0 = i 1 = i 20 &lt;= 24 FJ x 4 i * = i i 1 + = 7 RJ</code></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>三地址码/四元式<ul>
@@ -3614,8 +3652,8 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </li>
 <li>存储分配策略<ul>
 <li>静态存储分配。在编译期间为数据对象分配存储空间。这要求在编译期间就可确定数据对象的大小，同时还可以确定数据对象的数目</li>
-<li>栈式存储分配。在编译期间，过程、函数以及嵌套程序块的活动记录大小（最大值）应该是可以确定的（以便进入的时候动态地分配活动记录的空间），这是进行栈式存储分配的必要条件，如果不满足，则应该使用堆式存储分配</li>
-<li>堆式存储分配。当数据对象的生存期与创建它的过程/函数的执行期无关时，某些数据对象可能在该过程/函数结束之后仍然长期存在，就不适合机进行栈式存储分配。一种灵活但是较昂贵的存储分配方式是堆式存储分配</li>
+<li><strong>栈式存储分配</strong>。在编译期间，过程、函数以及嵌套程序块的活动记录<strong>大小（最大值）应该是可以确定的</strong>（以便进入的时候动态地分配活动记录的空间），这是进行栈式存储分配的必要条件，如果不满足，则应该使用堆式存储分配</li>
+<li><strong>堆式存储分配</strong>。<strong>当数据对象的生存期与创建它的过程/函数的执行期无关时</strong>，某些数据对象可能在该过程/函数结束之后仍然长期存在，就不适合机进行栈式存储分配。一种灵活但是较昂贵的存储分配方式是堆式存储分配</li>
 </ul>
 </li>
 </ul>
@@ -3628,14 +3666,14 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </ul>
 <h3 id="_24">基本块、流图和循环</h3>
 <ul>
-<li>基本块的划分<ol>
-<li>找入口<ul>
+<li><strong>基本块的划分</strong><ol>
+<li><strong>找入口</strong><ul>
 <li>程序的 <strong>第一条语句</strong></li>
 <li>跳转的 <strong>目标语句</strong></li>
 <li>条件跳转的 <strong>下一条语句</strong></li>
 </ul>
 </li>
-<li>对每个入口，找出口<ul>
+<li><strong>对每个入口，找出口</strong><ul>
 <li>下一入口的 <strong>上一条语句</strong></li>
 <li>跳转语句</li>
 <li>停语句</li>
@@ -3670,18 +3708,15 @@ h3::before { content: counter(h2) "." counter(h3) " "; }
 </ul>
 <h3 id="_26">目标代码生成技术</h3>
 <ul>
-<li>问题：包括指令选择、寄存器分配、指令调度</li>
-<li>指令选择<ul>
-<li>为每条中间语言语句选择恰当的目标机指令或指令序列</li>
+<li>问题：包括 <strong>指令选择、寄存器分配、指令调度</strong></li>
+<li><strong>指令选择：为每条中间语言语句选择恰当的目标机指令或指令序列</strong></li>
+<li><strong>寄存器分配：在生成的代码中，尽可能多地、有效地利用寄存器非常重要</strong><ul>
+<li><strong>分配</strong> 期间：为程序的某一点选择驻留在寄存器中的一组变量</li>
+<li><strong>指派</strong> 期间：挑出变量将要驻留的具体寄存器，即寄存器赋值</li>
+<li>在基本块范围内的寄存器分配称为 <strong>局部寄存器分配</strong>，在过程范围内的寄存器分配称为 <strong>过程级寄存器分配/全局寄存器分配</strong></li>
 </ul>
 </li>
-<li>寄存器分配。在生成的代码中，尽可能多地、有效地利用寄存器非常重要<ul>
-<li>分配期间。为程序的某一点选择驻留在寄存器中的一组变量</li>
-<li>指派期间，挑出变量将要驻留的具体寄存器，即寄存器赋值</li>
-<li>在基本块范围内的寄存器分配称为局部寄存器分配，在过程范围内的寄存器分配称为过程级寄存器分配/全局寄存器分配</li>
-</ul>
-</li>
-<li>指令调度。指对指令的执行顺序进行适当的调整，从而使得整个程序得到优化的执行效果</li>
+<li><strong>指令调度：指对指令的执行顺序进行适当的调整，从而使得整个程序得到优化的执行效果</strong></li>
 </ul>
 <h2 id="_27">🔥 老师上课给出的一些问题<!-- markmap: fold --></h2>
 <p><strong>据老师说，能让你从 80 到 90。</strong></p>
