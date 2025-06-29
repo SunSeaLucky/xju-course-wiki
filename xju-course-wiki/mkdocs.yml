@@ -76,6 +76,7 @@ nav:
     - 计算机操作系统:
         - 课程简介: computer-operating-system/intro/main.md
         - 笔记: computer-operating-system/note/main.md
+        - 笔记（导图版）: computer-operating-system/note/markmap.html
         - 实验: computer-operating-system/lab/main.md
     - 信号与系统分析基础:
         - 课程简介: signal-analysis/intro/main.md
