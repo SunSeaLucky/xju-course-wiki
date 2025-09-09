@@ -47,7 +47,14 @@ markdown_extensions:
         generic: true
     - admonition
     - pymdownx.details
+    - attr_list
+    - md_in_html
+    - admonition
+    - pymdownx.details
     - pymdownx.superfences
+    - pymdownx.blocks.tab
+    - pymdownx.blocks.admonition
+    - pymdownx.blocks.html
 extra_javascript:
   - javascripts/katex.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js
