@@ -6,34 +6,34 @@
 
 ## 📚 课程导航
 
-### 理论基础课
-- [:material-function-variant: 离散数学](discrete-math/intro/main.md)
-- [:material-function: 线性代数](linear-algebra/intro/main.md)
+=== "理论基础课"
+    - [:material-function-variant: 离散数学](discrete-math/intro/main.md)
+    - [:material-function: 线性代数](linear-algebra/intro/main.md)
 
-### 通识必修课
-- [:material-book-open-page-variant: 习概](xi-mind/intro/main.md)
-- [:material-book-open-page-variant: 毛泽东思想和中国特色社会主义理论体系概论](mao-mind/intro/main.md)
+=== "通识必修课"
+    - [:material-book-open-page-variant: 习概](xi-mind/intro/main.md)
+    - [:material-book-open-page-variant: 毛泽东思想和中国特色社会主义理论体系概论](mao-mind/intro/main.md)
 
-### 编程 / 数据 / 开发
-- [:material-database: 数据库](database/intro/main.md)
-- [:material-language-python: Python](python/intro/main.md)
-- [:material-console: Linux](linux/intro/main.md)
-- [:material-memory: 汇编语言程序设计](assembly-language/intro/main.md)
-- [:material-android: Android 开发](android-dev/intro/main.md)
-- [:material-chip: 嵌入式](emb-linux/intro/main.md)
+=== "编程/数据/开发"
+    - [:material-database: 数据库](database/intro/main.md)
+    - [:material-language-python: Python](python/intro/main.md)
+    - [:material-console: Linux](linux/intro/main.md)
+    - [:material-memory: 汇编语言程序设计](assembly-language/intro/main.md)
+    - [:material-android: Android 开发](android-dev/intro/main.md)
+    - [:material-chip: 嵌入式](emb-linux/intro/main.md)
 
-### 408课程
-- [:material-chip: 计算机组成原理](principles-of-computer-composition/intro/main.md)
-- [:material-laptop: 计算机操作系统](computer-operating-system/intro/main.md)
+=== "408课程"
+    - [:material-chip: 计算机组成原理](principles-of-computer-composition/intro/main.md)
+    - [:material-laptop: 计算机操作系统](computer-operating-system/intro/main.md)
 
-### 理论课程
-- [:material-chart-line: 算法设计与分析](algorithm/intro/main.md)
-- [:material-cog: 软件工程](software-engineering/intro/main.md)
-- [:material-code-tags: 编译原理](compile-theory/intro/main.md)
+=== "理论课程"
+    - [:material-chart-line: 算法设计与分析](algorithm/intro/main.md)
+    - [:material-cog: 软件工程](software-engineering/intro/main.md)
+    - [:material-code-tags: 编译原理](compile-theory/intro/main.md)
 
-### 硬件与信号
-- [:material-circuit-board: 电路与模电](circuits-analog-electronics/intro/main.md)
-- [:material-waveform: 信号与系统分析基础](signal-analysis/intro/main.md)
+=== "硬件与信号"
+    - [:material-circuit-board: 电路与模电](circuits-analog-electronics/intro/main.md)
+    - [:material-waveform: 信号与系统分析基础](signal-analysis/intro/main.md)
 
 </div>
 
@@ -50,7 +50,7 @@
 - 李延冰（计算机学院）<- 喜欢虐待、阴阳、辱骂学生，给分贼低
 - 范永强（数学院） <- 事情不算多，给分很低
 
-## 声明
+!! note "声明"
 
 这里是个人创建创建的课程资料 Wiki，任何内容**不代表新疆大学立场**，**均为本人胡言乱语**，仅供参考。本站任何资料、内容如有侵权，请立即联系本人删除：**sunsealucky@qq.com**。
 
