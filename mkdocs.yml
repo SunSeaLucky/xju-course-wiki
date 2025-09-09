@@ -48,11 +48,12 @@ markdown_extensions:
     - pymdownx.details
     - pymdownx.superfences
 extra_javascript:
-    - javascripts/katex.js
-    - https://unpkg.com/katex@0/dist/katex.min.js
-    - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - javascripts/katex.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js
+
 extra_css:
-    - https://unpkg.com/katex@0/dist/katex.min.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css
 nav:
     - 首页: index.md
     - 软件工程: 
