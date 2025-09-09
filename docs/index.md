@@ -1,4 +1,45 @@
 # XJU Course Wiki
+<div class="grid grid-cols-2 gap-6">
+
+<!-- 左侧：课程卡片导航 -->
+<div>
+
+## 📚 课程导航
+
+### 理论基础课
+- [:material-function-variant: 离散数学](discrete-math/intro/main.md)
+- [:material-function: 线性代数](linear-algebra/intro/main.md)
+
+### 通识必修课
+- [:material-book-open-page-variant: 习概](xi-mind/intro/main.md)
+- [:material-book-open-page-variant: 毛泽东思想和中国特色社会主义理论体系概论](mao-mind/intro/main.md)
+
+### 编程 / 数据 / 开发
+- [:material-database: 数据库](database/intro/main.md)
+- [:material-language-python: Python](python/intro/main.md)
+- [:material-console: Linux](linux/intro/main.md)
+- [:material-memory: 汇编语言程序设计](assembly-language/intro/main.md)
+- [:material-android: Android 开发](android-dev/intro/main.md)
+- [:material-chip: 嵌入式](emb-linux/intro/main.md)
+
+### 408课程
+- [:material-chip: 计算机组成原理](principles-of-computer-composition/intro/main.md)
+- [:material-laptop: 计算机操作系统](computer-operating-system/intro/main.md)
+
+### 理论课程
+- [:material-chart-line: 算法设计与分析](algorithm/intro/main.md)
+- [:material-cog: 软件工程](software-engineering/intro/main.md)
+- [:material-code-tags: 编译原理](compile-theory/intro/main.md)
+
+### 硬件与信号
+- [:material-circuit-board: 电路与模电](circuits-analog-electronics/intro/main.md)
+- [:material-waveform: 信号与系统分析基础](signal-analysis/intro/main.md)
+
+</div>
+
+<!-- 右侧：概述介绍 -->
+<div>
+
 
 ## 重要
 
@@ -56,3 +97,7 @@
         crossorigin="anonymous"
         async>
 </script>
+
+</div>
+
+</div>
