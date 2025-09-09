@@ -2,9 +2,10 @@ site_name: XJU Course Wiki
 theme: 
     name: material
     features:
-        # - navigation.tabs
+        - navigation.tabs
         - navigation.top
         - content.code.copy # Code Block Copy Button
+        - navigation.sections
     # ------ Dark and Light Mode ------
     palette:
         # Palette toggle for automatic mode
@@ -56,64 +57,71 @@ extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css
 nav:
     - 首页: index.md
-    - 软件工程: 
-        - 课程简介: software-engineering/intro/main.md
-        - 笔记: software-engineering/note/main.md
-        - Pre: software-engineering/pre/main.md
-    - 习概:
-        - 课程简介: xi-mind/intro/main.md
-        - 笔记: xi-mind/note/main.md
-    - Linux:
-        - 课程简介: linux/intro/main.md
-        - 笔记: linux/note/main.md
-        - 实验: linux/lab/main.md
-    - Python:
-        - 课程简介: python/intro/main.md
-        - 笔记: python/note/main.md
-    - 计算机组成原理:
-        - 课程简介: principles-of-computer-composition/intro/main.md
-        - 笔记: principles-of-computer-composition/note/main.md
-        - 笔记（导图版）: principles-of-computer-composition/note/markmap.html
-    - 计算机操作系统:
-        - 课程简介: computer-operating-system/intro/main.md
-        - 笔记: computer-operating-system/note/main.md
-        - 笔记（导图版）: computer-operating-system/note/markmap.html
-        - 实验: computer-operating-system/lab/main.md
-    - 信号与系统分析基础:
-        - 课程简介: signal-analysis/intro/main.md
-        - 笔记: signal-analysis/note/main.md
-        - 笔记（导图版）: signal-analysis/note/markmap.html
-    - 汇编语言程序设计:
-        - 课程简介: assembly-language/intro/main.md
-        - 笔记: assembly-language/note/main.md
-    - 离散数学:
-        - 课程简介: discrete-math/intro/main.md
-        - 笔记: discrete-math/note/main.md
-    - 数据库:
-        - 课程简介: database/intro/main.md
-        - 笔记: database/note/main.md
-    - 线性代数:
-        - 课程简介: linear-algebra/intro/main.md
-        - 笔记: linear-algebra/note/main.md
-    - 嵌入式:
-        - 课程简介: emb-linux/intro/main.md
-        - 笔记: emb-linux/note/main.md
-    - 算法设计与分析:
-        - 课程简介: algorithm/intro/main.md
-        - 笔记: algorithm/note/main.md
-    - 编译原理:
-        - 课程简介: compile-theory/intro/main.md
-        - 笔记: compile-theory/note/main.md
-        - 笔记（导图版）: compile-theory/note/markmap.html
-    - Android 开发:
-        - 课程简介: android-dev/intro/main.md
-        - 笔记: android-dev/note/main.md
-        - 笔记（导图版）: android-dev/note/markmap.html
-    - 毛泽东思想和中国特色社会主义理论体系概论:
-        - 课程简介: mao-mind/intro/main.md
-        - 笔记: mao-mind/note/main.md
-        - 笔记（导图版）: mao-mind/note/markmap.html
-        - 老师划重点（2025）: mao-mind/note/important.html
-    - 电路与模电:
-        - 课程简介: circuits-analog-electronics/intro/main.md
-        - 笔记
+    - 理论基础课:
+        - 离散数学:
+            - 课程简介: discrete-math/intro/main.md
+            - 笔记: discrete-math/note/main.md
+        - 线性代数:
+            - 课程简介: linear-algebra/intro/main.md
+            - 笔记: linear-algebra/note/main.md
+    - 通识必修课:
+        - 习概:
+            - 课程简介: xi-mind/intro/main.md
+            - 笔记: xi-mind/note/main.md
+        - 毛泽东思想和中国特色社会主义理论体系概论:
+            - 课程简介: mao-mind/intro/main.md
+            - 笔记: mao-mind/note/main.md
+            - 笔记（导图版）: mao-mind/note/markmap.html
+            - 老师划重点（2025）: mao-mind/note/important.html
+    - 编程/数据/开发:
+        - 数据库:
+            - 课程简介: database/intro/main.md
+            - 笔记: database/note/main.md
+        - Python:
+            - 课程简介: python/intro/main.md
+            - 笔记: python/note/main.md
+        - Linux:
+            - 课程简介: linux/intro/main.md
+            - 笔记: linux/note/main.md
+            - 实验: linux/lab/main.md
+        - 汇编语言程序设计:
+            - 课程简介: assembly-language/intro/main.md
+            - 笔记: assembly-language/note/main.md
+        - Android 开发:
+            - 课程简介: android-dev/intro/main.md
+            - 笔记: android-dev/note/main.md
+            - 笔记（导图版）: android-dev/note/markmap.html
+        - 嵌入式:
+            - 课程简介: emb-linux/intro/main.md
+            - 笔记: emb-linux/note/main.md
+    - 408课程:
+        - 计算机组成原理:
+            - 课程简介: principles-of-computer-composition/intro/main.md
+            - 笔记: principles-of-computer-composition/note/main.md
+            - 笔记（导图版）: principles-of-computer-composition/note/markmap.html
+        - 计算机操作系统:
+            - 课程简介: computer-operating-system/intro/main.md
+            - 笔记: computer-operating-system/note/main.md
+            - 笔记（导图版）: computer-operating-system/note/markmap.html
+            - 实验: computer-operating-system/lab/main.md
+    - 理论课程:
+        - 算法设计与分析:
+            - 课程简介: algorithm/intro/main.md
+            - 笔记: algorithm/note/main.md 
+        - 软件工程: 
+            - 课程简介: software-engineering/intro/main.md
+            - 笔记: software-engineering/note/main.md
+            - Pre: software-engineering/pre/main.md
+        - 编译原理:
+            - 课程简介: compile-theory/intro/main.md
+            - 笔记: compile-theory/note/main.md
+            - 笔记（导图版）: compile-theory/note/markmap.html
+    - 硬件与信号:
+        - 电路与模电:
+            - 课程简介: circuits-analog-electronics/intro/main.md
+            - 笔记 
+        - 信号与系统分析基础:
+            - 课程简介: signal-analysis/intro/main.md
+            - 笔记: signal-analysis/note/main.md
+            - 笔记（导图版）: signal-analysis/note/markmap.html
+       
