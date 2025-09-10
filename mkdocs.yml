@@ -61,6 +61,7 @@ extra_css:
 site_name: "XJU Course Wiki"
 nav:
     - 首页: index.md
+    - 副页: contact.md
     - 理论基础课:
         - 离散数学:
             - 课程简介: discrete-math/intro/main.md
