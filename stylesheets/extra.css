@@ -1,72 +1,145 @@
-/* 首页布局样式 */
-.homepage-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 1rem;
-}
-
-.course-navigation {
-    flex: 1;
-    min-width: 300px;
-}
-
-.overview-content {
-    flex: 1;
-    min-width: 300px;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .homepage-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-
-/* 隐藏首页在导航中的显示 - 只对首页生效 */
-body[data-md-component="container"] .md-nav--primary > .md-nav__list > .md-nav__item:first-child {
-    display: none;
-}
-
-/* 调整内容区域，减少右侧空白 */
+/* 隐藏侧边栏后的布局调整 */
 .md-main__inner {
     max-width: none;
 }
 
 .md-content {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
-/* 确保选项卡功能正常工作 */
-.tabbed-set {
-    margin-bottom: 1rem;
+/* 确保网格在首页正常显示为两列 */
+.md-typeset .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
 }
 
-.tabbed-content {
-    padding: 1rem;
+/* 响应式：小屏幕时变为单列 */
+@media screen and (max-width: 76.25em) {
+    .md-typeset .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .md-content {
+        padding: 0 1rem;
+    }
 }
 
-/* 美化链接列表 */
-.course-navigation ul {
-    list-style: none;
-    padding-left: 0;
+/* 自定义标签样式 */
+.course-tabs {
+    margin: 1rem 0;
 }
 
-.course-navigation li {
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-left: 3px solid var(--md-primary-fg-color);
-    background-color: var(--md-code-bg-color);
-    border-radius: 0.2rem;
+.tab-container {
+    background: var(--md-default-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
-.course-navigation a {
-    text-decoration: none;
+.tab-input {
+    display: none;
+}
+
+.tab-label {
+    display: block;
+    padding: 1rem 1.5rem;
+    background: var(--md-default-fg-color--lightest);
+    color: var(--md-default-fg-color);
+    cursor: pointer;
+    border-bottom: 1px solid var(--md-default-fg-color--lighter);
+    transition: all 0.3s ease;
     font-weight: 500;
+    user-select: none;
 }
 
-.course-navigation a:hover {
-    text-decoration: underline;
+.tab-label:hover {
+    background: var(--md-accent-fg-color--transparent);
+    color: var(--md-accent-fg-color);
+}
+
+.tab-input:checked + .tab-label {
+    background: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+}
+
+.tab-content {
+    display: none;
+    padding: 1.5rem;
+    background: var(--md-default-bg-color);
+}
+
+.tab-input:checked + .tab-label + .tab-content {
+    display: block;
+}
+
+/* 课程卡片网格 */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--md-default-fg-color--lighter);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--md-default-fg-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: var(--md-primary-fg-color);
+    color: var(--md-primary-fg-color);
+    text-decoration: none;
+}
+
+.course-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.course-title {
+    font-weight: 500;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+/* 暗色主题适配 */
+[data-md-color-scheme="slate"] .tab-container {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+[data-md-color-scheme="slate"] .course-card {
+    background: var(--md-code-bg-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+[data-md-color-scheme="slate"] .course-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* 确保 admonition 在网格中正常显示 */
+.md-typeset .grid .admonition {
+    margin: 1rem 0;
+}
+
+/* 调整右侧内容的间距 */
+.md-typeset .grid > div:last-child h2 {
+    margin-top: 0;
 }

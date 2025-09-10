@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation  # 隐藏左侧导航栏
+  - toc         # 隐藏右侧目录栏
+---
+
 # XJU Course Wiki
 
 <div class="grid" markdown>
@@ -6,34 +12,119 @@
 
 ## 📚 课程导航
 
-=== "理论基础课"
-    - [:material-function-variant: 离散数学](discrete-math/intro/main.md)
-    - [:material-function: 线性代数](linear-algebra/intro/main.md)
+<div class="course-tabs">
+  <div class="tab-container">
+    <input type="radio" name="course-tabs" id="tab1" class="tab-input" checked>
+    <label for="tab1" class="tab-label">理论基础课</label>
+    <div class="tab-content">
+      <div class="course-grid">
+        <a href="discrete-math/intro/main.md" class="course-card">
+          <span class="course-icon">📐</span>
+          <span class="course-title">离散数学</span>
+        </a>
+        <a href="linear-algebra/intro/main.md" class="course-card">
+          <span class="course-icon">📏</span>
+          <span class="course-title">线性代数</span>
+        </a>
+      </div>
+    </div>
 
-=== "通识必修课"
-    - [:material-book-open-page-variant: 习概](xi-mind/intro/main.md)
-    - [:material-book-open-page-variant: 毛泽东思想和中国特色社会主义理论体系概论](mao-mind/intro/main.md)
+    <input type="radio" name="course-tabs" id="tab2" class="tab-input">
+    <label for="tab2" class="tab-label">通识必修课</label>
+    <div class="tab-content">
+      <div class="course-grid">
+        <a href="xi-mind/intro/main.md" class="course-card">
+          <span class="course-icon">📖</span>
+          <span class="course-title">习概</span>
+        </a>
+        <a href="mao-mind/intro/main.md" class="course-card">
+          <span class="course-icon">📚</span>
+          <span class="course-title">毛概</span>
+        </a>
+      </div>
+    </div>
 
-=== "编程/数据/开发"
-    - [:material-database: 数据库](database/intro/main.md)
-    - [:material-language-python: Python](python/intro/main.md)
-    - [:material-console: Linux](linux/intro/main.md)
-    - [:material-memory: 汇编语言程序设计](assembly-language/intro/main.md)
-    - [:material-android: Android 开发](android-dev/intro/main.md)
-    - [:material-chip: 嵌入式](emb-linux/intro/main.md)
+    <input type="radio" name="course-tabs" id="tab3" class="tab-input">
+    <label for="tab3" class="tab-label">编程/数据/开发</label>
+    <div class="tab-content">
+      <div class="course-grid">
+        <a href="database/intro/main.md" class="course-card">
+          <span class="course-icon">🗄️</span>
+          <span class="course-title">数据库</span>
+        </a>
+        <a href="python/intro/main.md" class="course-card">
+          <span class="course-icon">🐍</span>
+          <span class="course-title">Python</span>
+        </a>
+        <a href="linux/intro/main.md" class="course-card">
+          <span class="course-icon">🐧</span>
+          <span class="course-title">Linux</span>
+        </a>
+        <a href="assembly-language/intro/main.md" class="course-card">
+          <span class="course-icon">⚙️</span>
+          <span class="course-title">汇编语言</span>
+        </a>
+        <a href="android-dev/intro/main.md" class="course-card">
+          <span class="course-icon">📱</span>
+          <span class="course-title">Android 开发</span>
+        </a>
+        <a href="emb-linux/intro/main.md" class="course-card">
+          <span class="course-icon">🔧</span>
+          <span class="course-title">嵌入式</span>
+        </a>
+      </div>
+    </div>
 
-=== "408课程"
-    - [:material-chip: 计算机组成原理](principles-of-computer-composition/intro/main.md)
-    - [:material-laptop: 计算机操作系统](computer-operating-system/intro/main.md)
+    <input type="radio" name="course-tabs" id="tab4" class="tab-input">
+    <label for="tab4" class="tab-label">408课程</label>
+    <div class="tab-content">
+      <div class="course-grid">
+        <a href="principles-of-computer-composition/intro/main.md" class="course-card">
+          <span class="course-icon">💻</span>
+          <span class="course-title">计算机组成原理</span>
+        </a>
+        <a href="computer-operating-system/intro/main.md" class="course-card">
+          <span class="course-icon">🖥️</span>
+          <span class="course-title">计算机操作系统</span>
+        </a>
+      </div>
+    </div>
 
-=== "理论课程"
-    - [:material-chart-line: 算法设计与分析](algorithm/intro/main.md)
-    - [:material-cog: 软件工程](software-engineering/intro/main.md)
-    - [:material-code-tags: 编译原理](compile-theory/intro/main.md)
+    <input type="radio" name="course-tabs" id="tab5" class="tab-input">
+    <label for="tab5" class="tab-label">理论课程</label>
+    <div class="tab-content">
+      <div class="course-grid">
+        <a href="algorithm/intro/main.md" class="course-card">
+          <span class="course-icon">📊</span>
+          <span class="course-title">算法设计与分析</span>
+        </a>
+        <a href="software-engineering/intro/main.md" class="course-card">
+          <span class="course-icon">⚙️</span>
+          <span class="course-title">软件工程</span>
+        </a>
+        <a href="compile-theory/intro/main.md" class="course-card">
+          <span class="course-icon">🔄</span>
+          <span class="course-title">编译原理</span>
+        </a>
+      </div>
+    </div>
 
-=== "硬件与信号"
-    - [:material-circuit-board: 电路与模电](circuits-analog-electronics/intro/main.md)
-    - [:material-waveform: 信号与系统分析基础](signal-analysis/intro/main.md)
+    <input type="radio" name="course-tabs" id="tab6" class="tab-input">
+    <label for="tab6" class="tab-label">硬件与信号</label>
+    <div class="tab-content">
+      <div class="course-grid">
+        <a href="circuits-analog-electronics/intro/main.md" class="course-card">
+          <span class="course-icon">🔌</span>
+          <span class="course-title">电路与模电</span>
+        </a>
+        <a href="signal-analysis/intro/main.md" class="course-card">
+          <span class="course-icon">📡</span>
+          <span class="course-title">信号与系统分析基础</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 
