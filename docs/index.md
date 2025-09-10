@@ -9,6 +9,7 @@ hide:
 <head>
     <meta charset="utf-8">
     <title>XJU Course Wiki</title>
+    <link rel="stylesheet" href="../stylesheets/extra.css">
 </head>
 <body>
 
