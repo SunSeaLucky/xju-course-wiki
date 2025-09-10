@@ -107,6 +107,7 @@ hide:
 
     /* ======================= 主标题（XJU Course Wiki）======================= */
     .main-title {
+        display: none;
         text-align: center;
         font-size: 2.8em;
         margin: 20px 0;
@@ -266,6 +267,7 @@ hide:
         </style>
     </head>
     <body>
+            <h1 class="main-title">XJU Course Wiki</h1> 
             <div class="grid-container">
                 <!-- 左侧：课程导航 -->
                 <div class="tab-container">
