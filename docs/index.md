@@ -1,50 +1,8 @@
 # XJU Course Wiki
 
-<style>
-.homepage-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 1rem;
-}
+<div class="grid" markdown>
 
-.course-navigation {
-    flex: 1;
-    min-width: 300px;
-}
-
-.overview-content {
-    flex: 1;
-    min-width: 300px;
-}
-
-@media (max-width: 768px) {
-    .homepage-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-
-/* 隐藏首页的左侧目录导航 */
-.md-nav--primary .md-nav__item:first-child {
-    display: none;
-}
-
-/* 调整内容区域宽度，减少右侧空白 */
-.md-main__inner {
-    max-width: none;
-}
-
-.md-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-</style>
-
-<div class="homepage-container">
-
-<!-- 左侧：课程卡片导航 -->
-<div class="course-navigation">
+<div markdown>
 
 ## 📚 课程导航
 
@@ -79,7 +37,7 @@
 
 </div>
 
-<div class="overview-content" markdown="1">
+<div markdown>
 
 ## 重要
 
