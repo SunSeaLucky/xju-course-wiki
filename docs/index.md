@@ -2,6 +2,7 @@
 hide:
   - navigation
   - toc
+  - header
 ---
 
 <!DOCTYPE html>
@@ -178,7 +179,6 @@ hide:
 
     /* ======================= 课程卡片（左侧内容）======================= */
     .course-card {
-        font-size: 1.2em;
         display: block;
         background: var(--background-color);
         border-radius: 12px;
@@ -273,11 +273,11 @@ hide:
                     <input type="radio" name="course-tabs" id="tab1" class="tab-input" checked>
                     <label for="tab1" class="toggle">理论基础课</label>
                     <div class="tab-content">
-                        <a href="docs/discrete-math/intro/main.md" class="course-card">
+                        <a href="docs/discrete-math/intro/main" class="course-card">
                             <span class="course-icon">📐</span>
                             <span class="course-title">离散数学</span>
                         </a>
-                        <a href="docs/linear-algebra/intro/main.md" class="course-card">
+                        <a href="docs/linear-algebra/intro/main" class="course-card">
                             <span class="course-icon">📏</span>
                             <span class="course-title">线性代数</span>
                         </a>
@@ -286,11 +286,11 @@ hide:
                     <input type="radio" name="course-tabs" id="tab2" class="tab-input">
                     <label for="tab2" class="toggle">通识必修课</label>
                     <div class="tab-content">
-                        <a href="docs/xi-mind/intro/main.md" class="course-card">
+                        <a href="docs/xi-mind/intro/main" class="course-card">
                             <span class="course-icon">📖</span>
                             <span class="course-title">习概</span>
                         </a>
-                        <a href="docs/mao-mind/intro/main.md" class="course-card">
+                        <a href="docs/mao-mind/intro/main" class="course-card">
                             <span class="course-icon">📚</span>
                             <span class="course-title">毛概</span>
                         </a>
@@ -299,27 +299,27 @@ hide:
                     <input type="radio" name="course-tabs" id="tab3" class="tab-input">
                     <label for="tab3" class="toggle">编程/数据/开发</label>
                     <div class="tab-content">
-                        <a href="docs/database/intro/main.md" class="course-card">
+                        <a href="docs/database/intro/main" class="course-card">
                             <span class="course-icon">🗄️</span>
                             <span class="course-title">数据库</span>
                         </a>
-                        <a href="docs/python/intro/main.md" class="course-card">
+                        <a href="docs/python/intro/main" class="course-card">
                             <span class="course-icon">🐍</span>
                             <span class="course-title">Python</span>
                         </a>
-                        <a href="docs/linux/intro/main.md" class="course-card">
+                        <a href="docs/linux/intro/main" class="course-card">
                             <span class="course-icon">🐧</span>
                             <span class="course-title">Linux</span>
                         </a>
-                        <a href="docs/assembly-language/intro/main.md" class="course-card">
+                        <a href="docs/assembly-language/intro/main" class="course-card">
                             <span class="course-icon">⚙️</span>
                             <span class="course-title">汇编语言</span>
                         </a>
-                        <a href="docs/android-dev/intro/main.md" class="course-card">
+                        <a href="docs/android-dev/intro/main" class="course-card">
                             <span class="course-icon">📱</span>
                             <span class="course-title">Android 开发</span>
                         </a>
-                        <a href="docs/emb-linux/intro/main.md" class="course-card">
+                        <a href="docs/emb-linux/intro/main" class="course-card">
                             <span class="course-icon">🔧</span>
                             <span class="course-title">嵌入式</span>
                         </a>
@@ -328,11 +328,11 @@ hide:
                     <input type="radio" name="course-tabs" id="tab4" class="tab-input">
                     <label for="tab4" class="toggle">408课程</label>
                     <div class="tab-content">
-                        <a href="docs/principles-of-computer-composition/intro/main.md" class="course-card">
+                        <a href="docs/principles-of-computer-composition/intro/main" class="course-card">
                             <span class="course-icon">💻</span>
                             <span class="course-title">计算机组成原理</span>
                         </a>
-                        <a href="docs/computer-operating-system/intro/main.md" class="course-card">
+                        <a href="docs/computer-operating-system/intro/main" class="course-card">
                             <span class="course-icon">🖥️</span>
                             <span class="course-title">计算机操作系统</span>
                         </a>
@@ -341,15 +341,15 @@ hide:
                     <input type="radio" name="course-tabs" id="tab5" class="tab-input">
                     <label for="tab5" class="toggle">理论课程</label>
                     <div class="tab-content">
-                        <a href="docs/algorithm/intro/main.md" class="course-card">
+                        <a href="docs/algorithm/intro/main" class="course-card">
                             <span class="course-icon">📊</span>
                             <span class="course-title">算法设计与分析</span>
                         </a>
-                        <a href="docs/software-engineering/intro/main.md" class="course-card">
+                        <a href="docs/software-engineering/intro/main" class="course-card">
                             <span class="course-icon">⚙️</span>
                             <span class="course-title">软件工程</span>
                         </a>
-                        <a href="docs/compile-theory/intro/main.md" class="course-card">
+                        <a href="docs/compile-theory/intro/main" class="course-card">
                             <span class="course-icon">🔄</span>
                             <span class="course-title">编译原理</span>
                         </a>
@@ -358,11 +358,11 @@ hide:
                     <input type="radio" name="course-tabs" id="tab6" class="tab-input">
                     <label for="tab6" class="toggle">硬件与信号</label>
                     <div class="tab-content">
-                        <a href="docs/circuits-analog-electronics/intro/main.md" class="course-card">
+                        <a href="docs/circuits-analog-electronics/intro/main" class="course-card">
                             <span class="course-icon">🔌</span>
                             <span class="course-title">电路与模电</span>
                         </a>
-                        <a href="docs/signal-analysis/intro/main.md" class="course-card">
+                        <a href="docs/signal-analysis/intro/main" class="course-card">
                             <span class="course-icon">📡</span>
                             <span class="course-title">信号与系统分析基础</span>
                         </a>
@@ -374,7 +374,7 @@ hide:
                     <h2 class="section-title">📌 重要</h2>
 
                     <div class="admonition info">
-                        <p class="admonition-title">ℹ️ 绝对避雷</p>
+                        <p class="admonition-title">绝对避雷</p>
                         <ul>
                             <li><strong>丁东风（计算机学院）</strong> ← 事情贼多，给分非常低。但是确实有点东西，不过只有一点</li>
                             <li><strong>秦继伟（计算机学院）</strong> ← 爱装，实际啥也不懂，连一点东西都没有，同样事情多，给分贼低</li>
@@ -384,7 +384,7 @@ hide:
                     </div>
 
                     <div class="admonition warning">
-                        <p class="admonition-title">📋 声明</p>
+                        <p class="admonition-title">声明</p>
                         <p>这里是个人创建创建的课程资料 Wiki，任何内容<strong>不代表新疆大学立场</strong>，<strong>均为本人胡言乱语</strong>，仅供参考。<br>
                         本站任何资料、内容如有侵权，请立即联系本人删除：<strong>sunsealucky@qq.com</strong>。</p>
                     </div>
