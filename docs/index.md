@@ -2,7 +2,7 @@
 hide:
   - navigation
   - toc
-class: homepage
+  - title
 ---
 
 <!DOCTYPE html>
