@@ -2,7 +2,7 @@
 hide:
   - navigation
   - toc
-  - header
+class: homepage
 ---
 
 <!DOCTYPE html>
@@ -273,11 +273,11 @@ hide:
                     <input type="radio" name="course-tabs" id="tab1" class="tab-input" checked>
                     <label for="tab1" class="toggle">理论基础课</label>
                     <div class="tab-content">
-                        <a href="docs/discrete-math/intro/main" class="course-card">
+                        <a href="discrete-math/intro/main" class="course-card">
                             <span class="course-icon">📐</span>
                             <span class="course-title">离散数学</span>
                         </a>
-                        <a href="docs/linear-algebra/intro/main" class="course-card">
+                        <a href="linear-algebra/intro/main" class="course-card">
                             <span class="course-icon">📏</span>
                             <span class="course-title">线性代数</span>
                         </a>
@@ -286,11 +286,11 @@ hide:
                     <input type="radio" name="course-tabs" id="tab2" class="tab-input">
                     <label for="tab2" class="toggle">通识必修课</label>
                     <div class="tab-content">
-                        <a href="docs/xi-mind/intro/main" class="course-card">
+                        <a href="xi-mind/intro/main" class="course-card">
                             <span class="course-icon">📖</span>
                             <span class="course-title">习概</span>
                         </a>
-                        <a href="docs/mao-mind/intro/main" class="course-card">
+                        <a href="mao-mind/intro/main" class="course-card">
                             <span class="course-icon">📚</span>
                             <span class="course-title">毛概</span>
                         </a>
@@ -299,27 +299,27 @@ hide:
                     <input type="radio" name="course-tabs" id="tab3" class="tab-input">
                     <label for="tab3" class="toggle">编程/数据/开发</label>
                     <div class="tab-content">
-                        <a href="docs/database/intro/main" class="course-card">
+                        <a href="database/intro/main" class="course-card">
                             <span class="course-icon">🗄️</span>
                             <span class="course-title">数据库</span>
                         </a>
-                        <a href="docs/python/intro/main" class="course-card">
+                        <a href="python/intro/main" class="course-card">
                             <span class="course-icon">🐍</span>
                             <span class="course-title">Python</span>
                         </a>
-                        <a href="docs/linux/intro/main" class="course-card">
+                        <a href="linux/intro/main" class="course-card">
                             <span class="course-icon">🐧</span>
                             <span class="course-title">Linux</span>
                         </a>
-                        <a href="docs/assembly-language/intro/main" class="course-card">
+                        <a href="assembly-language/intro/main" class="course-card">
                             <span class="course-icon">⚙️</span>
                             <span class="course-title">汇编语言</span>
                         </a>
-                        <a href="docs/android-dev/intro/main" class="course-card">
+                        <a href="android-dev/intro/main" class="course-card">
                             <span class="course-icon">📱</span>
                             <span class="course-title">Android 开发</span>
                         </a>
-                        <a href="docs/emb-linux/intro/main" class="course-card">
+                        <a href="emb-linux/intro/main" class="course-card">
                             <span class="course-icon">🔧</span>
                             <span class="course-title">嵌入式</span>
                         </a>
@@ -328,11 +328,11 @@ hide:
                     <input type="radio" name="course-tabs" id="tab4" class="tab-input">
                     <label for="tab4" class="toggle">408课程</label>
                     <div class="tab-content">
-                        <a href="docs/principles-of-computer-composition/intro/main" class="course-card">
+                        <a href="principles-of-computer-composition/intro/main" class="course-card">
                             <span class="course-icon">💻</span>
                             <span class="course-title">计算机组成原理</span>
                         </a>
-                        <a href="docs/computer-operating-system/intro/main" class="course-card">
+                        <a href="computer-operating-system/intro/main" class="course-card">
                             <span class="course-icon">🖥️</span>
                             <span class="course-title">计算机操作系统</span>
                         </a>
@@ -341,15 +341,15 @@ hide:
                     <input type="radio" name="course-tabs" id="tab5" class="tab-input">
                     <label for="tab5" class="toggle">理论课程</label>
                     <div class="tab-content">
-                        <a href="docs/algorithm/intro/main" class="course-card">
+                        <a href="algorithm/intro/main" class="course-card">
                             <span class="course-icon">📊</span>
                             <span class="course-title">算法设计与分析</span>
                         </a>
-                        <a href="docs/software-engineering/intro/main" class="course-card">
+                        <a href="software-engineering/intro/main" class="course-card">
                             <span class="course-icon">⚙️</span>
                             <span class="course-title">软件工程</span>
                         </a>
-                        <a href="docs/compile-theory/intro/main" class="course-card">
+                        <a href="compile-theory/intro/main" class="course-card">
                             <span class="course-icon">🔄</span>
                             <span class="course-title">编译原理</span>
                         </a>
@@ -358,11 +358,11 @@ hide:
                     <input type="radio" name="course-tabs" id="tab6" class="tab-input">
                     <label for="tab6" class="toggle">硬件与信号</label>
                     <div class="tab-content">
-                        <a href="docs/circuits-analog-electronics/intro/main" class="course-card">
+                        <a href="circuits-analog-electronics/intro/main" class="course-card">
                             <span class="course-icon">🔌</span>
                             <span class="course-title">电路与模电</span>
                         </a>
-                        <a href="docs/signal-analysis/intro/main" class="course-card">
+                        <a href="signal-analysis/intro/main" class="course-card">
                             <span class="course-icon">📡</span>
                             <span class="course-title">信号与系统分析基础</span>
                         </a>

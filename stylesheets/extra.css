@@ -1,3 +1,8 @@
+/* 仅隐藏首页的首个h1标题 */
+.homepage .md-content h1:first-child {
+    display: none !important;
+}
+
 /* 重置和基础样式 */
 .custom-homepage {
     font-family: var(--md-text-font-family);
