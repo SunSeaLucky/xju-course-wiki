@@ -213,7 +213,7 @@ hide:
     /* ======================= 右侧概览区 ======================= */
     .overview-section {
         background: var(--background-color);
-        padding: 25px;
+        padding: 10px 25px;
         border-radius: 12px;
         box-shadow: 0 4px 20px var(--shadow);
     }
