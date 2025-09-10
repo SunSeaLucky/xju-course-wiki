@@ -1,0 +1,72 @@
+/* 首页布局样式 */
+.homepage-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.course-navigation {
+    flex: 1;
+    min-width: 300px;
+}
+
+.overview-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .homepage-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* 隐藏首页在导航中的显示 - 只对首页生效 */
+body[data-md-component="container"] .md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+    display: none;
+}
+
+/* 调整内容区域，减少右侧空白 */
+.md-main__inner {
+    max-width: none;
+}
+
+.md-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 确保选项卡功能正常工作 */
+.tabbed-set {
+    margin-bottom: 1rem;
+}
+
+.tabbed-content {
+    padding: 1rem;
+}
+
+/* 美化链接列表 */
+.course-navigation ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.course-navigation li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-left: 3px solid var(--md-primary-fg-color);
+    background-color: var(--md-code-bg-color);
+    border-radius: 0.2rem;
+}
+
+.course-navigation a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.course-navigation a:hover {
+    text-decoration: underline;
+}

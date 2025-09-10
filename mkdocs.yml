@@ -56,6 +56,8 @@ extra_javascript:
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css
+  - stylesheets/extra.css
+
 nav:
     - 首页: index.md
     - 理论基础课:
@@ -120,9 +122,8 @@ nav:
     - 硬件与信号:
         - 电路与模电:
             - 课程简介: circuits-analog-electronics/intro/main.md
-            - 笔记 
+            - 笔记: circuits-analog-electronics/note/main.md
         - 信号与系统分析基础:
             - 课程简介: signal-analysis/intro/main.md
             - 笔记: signal-analysis/note/main.md
             - 笔记（导图版）: signal-analysis/note/markmap.html
-       
