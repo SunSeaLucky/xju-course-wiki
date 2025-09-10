@@ -6,791 +6,453 @@ hide:
 
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XJU Course Wiki</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
-    <style>
-        /* CSS 变量定义 */
-        :root {
-            --primary-color: #1976d2;
-            --accent-color: #ff4081;
-            --background-color: #ffffff;
-            --text-color: #333333;
-            --text-light: #666666;
-            --border-color: #e0e0e0;
-            --shadow: rgba(0,0,0,0.1);
-            --gradient-primary: linear-gradient(135deg, #1976d2, #42a5f5);
-            --gradient-accent: linear-gradient(135deg, #ff4081, #ff80ab);
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XJU Course Wiki</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <style>
+/* ======================= 全局变量（黑白灰配色）======================= */
+:root {
+    --primary-color: #333;      /* 主色：深灰，用于标题、强调 */
+    --accent-color: #666;       /* 辅助色：中灰 */
+    --background-color: #fff;   /* 背景色：白色 */
+    --text-color: #333;         /* 正文文字颜色 */
+    --border-color: #e0e0e0;    /* 边框/分隔线颜色 */
+    --hover-bg: #f5f5f5;        /* 悬停背景 */
+    --shadow: rgba(0,0,0,0.08);  /* 阴影：浅黑 */
+}
 
-        /* 暗色主题 */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --primary-color: #42a5f5;
-                --accent-color: #ff80ab;
-                --background-color: #1a1a1a;
-                --text-color: #e0e0e0;
-                --text-light: #b0b0b0;
-                --border-color: #404040;
-                --shadow: rgba(0,0,0,0.3);
-            }
-        }
+    /* ======================= !!!note样式 ======================= */
+    .admonition {
+        border: 2px solid;
+        border-radius: 6px;
+        margin: 1em 0;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        font-size: 0.95em;
+        overflow: hidden;
+    }
 
-        /* 重置和基础样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    .admonition-title {
+        margin: 0;
+        padding: 10px 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background: var(--background-color);
-            transition: all 0.3s ease;
-        }
+    .admonition p {
+        margin: 0;
+        padding: 10px 14px;
+    }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-            min-height: 100vh;
-        }
+    /* === info 信息框 === */
+    .admonition.info {
+        border-color: #00b8d4;
+    }
+    .admonition.info .admonition-title {
+        background: #e5f8fb;
+        color: #000;
+    }
 
-        /* 页面标题 */
-        .main-title {
-            font-size: 3rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
+    /* === warning 警告框 === */
+    .admonition.warning {
+        border-color: #ff9100;
+    }
+    .admonition.warning .admonition-title {
+        background: #fff4e5;
+        color: #000;
+    }
 
-        .main-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--gradient-accent);
-            border-radius: 2px;
-        }
+    /* === success 成功框 === */
+    .admonition.success {
+        border-color: #00c853;
+    }
+    .admonition.success .admonition-title {
+        background: #e5f9ed;
+        color: #000;
+    }
 
-        /* 网格布局 */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-        }
+    /* ======================= 基础样式 ======================= */
+    body { /* 页面主体 */
+        font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+        background: var(--background-color);
+        color: var(--primary-color);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 2rem 0 1.5rem 0;
+    h1, h2, h3 {
+        font-weight: 500;
+        color: var(--primary-color);
+    }
+
+    a {
+        font-size: 1.2em
             color: var(--primary-color);
-            position: relative;
-            padding-left: 1.5rem;
-        }
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+    a:hover {
+        color: var(--accent-color);
+    }
 
-        .section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 5px;
-            background: var(--gradient-accent);
-            border-radius: 3px;
-        }
+    p, li {
+        font-size: 1.2em
+    }
 
-        /* 左侧导航样式 */
-        .navigation-section {
-            background: var(--background-color);
-        }
+    /* ======================= 主标题（XJU Course Wiki）======================= */
+    .main-title {
+        text-align: center;
+        font-size: 2.8em;
+        margin: 20px 0;
+        font-weight: 700;
+        color: var(--primary-color);
+        position: relative;
+    }
+    .main-title::after { /* 主标题下方灰条 */
+        content: '';
+        display: block;
+        width: 100px;
+        height: 4px;
+        background: #ccc;
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
 
-        /* 标签容器 */
-        .course-tabs {
-            margin: 2rem 0;
-        }
+    /* ======================= 网格布局 ======================= */
+    .grid-container { /* 左右两栏布局容器 */
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 24px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        .tab-container {
-            background: var(--background-color);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px var(--shadow);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
+    /* ======================= 左侧导航容器 ======================= */
+    .tab-container {
+        background: var(--background-color);
+        border-radius: 12px;
+        box-shadow: 0 8px 32px var(--shadow);
+    }
 
-        .tab-input {
-            display: none;
-        }
+    /* 隐藏 radio */
 
-        .tab-label {
-            display: block;
-            padding: 1.5rem 2rem;
-            background: var(--background-color);
-            color: var(--text-color);
-            cursor: pointer;
+    /* 标签（如 通识选修课  */
+    .toggle {
+        display: block;
+        padding: 10px 14px;
+        margin: 6px 0;
+        font-weight: 500;
+        font-size: 1.3em;
+        color: var(--text-color);
+        cursor: pointer;
+        border-radius: 6px
             border-bottom: 1px solid var(--border-color);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 600;
-            font-size: 1.1rem;
-            user-select: none;
-            position: relative;
-            overflow: hidden;
-        }
+        transition: all 0.25s ease;
+    }
+    .toggle:hover { /* 悬停时微微放大 */
+        transform: scale(1.05);
+        box-shadow: 0 2px 6px var(--shadow);
+    }
 
-        .tab-label:last-of-type {
-            border-bottom: none;
-        }
+    /* 标签内容区 */
+    .tab-content {
+        display: none;
+        padding: 20px;
+    }
+    .tab-input { display: none; }
+    .tab-input:checked + .toggle { /* 选中时高亮 */
+        font-weight: 700;
+        transform: scale(1.02);
+        box-shadow: 0 2px 8px var(--shadow);
+        transition: all 0.25s ease;
+    }
+    .tab-input:checked + .toggle + .tab-content {
+        display: block;
+    }
 
-        .tab-label::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.6s;
-        }
+    /* ======================= 课程卡片（左侧内容）======================= */
+    .course-card {
+        font-size: 1.2em;
+        display: block;
+        background: var(--background-color);
+        border-radius: 12px;
+        padding: 5px 20px;
+        margin: 15px 0;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px var(--shadow);
+    }
+    .course-card:hover { /* 悬停时高亮 */
+        border-color: var(--primary-color);
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px var(--shadow);
+        color: var(--primary-color);
+    }
+    .course-icon { /* 卡片里的图标（emoji） */
+        font-size: 2em;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
 
-        .tab-label:hover::before {
-            left: 100%;
-        }
+    /* ======================= 小节标题（右侧内容）======================= */
+    .section-title {
+        font-size: 1.8em;
+        margin: 20px 0 15px;
+        padding-left: 15px;
+        color: var(--primary-color);
+    }
 
-        .tab-label:hover {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-            transform: translateX(8px);
-            box-shadow: 0 4px 20px var(--shadow);
-        }
+    /* ======================= 右侧概览区 ======================= */
+    .overview-section {
+        background: var(--background-color);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px var(--shadow);
+    }
+    .overview-section strong { color: var(--primary-color); }
+    .overview-section p { color: var(--text-color); }
 
-        .tab-input:checked + .tab-label {
-            background: var(--gradient-primary);
-            color: white;
-            font-weight: 700;
-            transform: translateX(8px);
-            box-shadow: 0 4px 20px var(--shadow);
-        }
+    /* ======================= 资源列表 & 引用框 ======================= */
+    .resource-list {
+        list-style: none;
+        padding: 0;
+    }
+    .resource-list li {
+        margin: 10px 0;
+    }
+    .resource-list a {
+        text-decoration: none;
+        color: var(--primary-color);
+        position: relative;
+    }
+    .resource-list a:hover {
+        color: var(--accent-color);
+    }
 
-        .tab-input:checked + .tab-label::after {
-            content: "▼";
-            position: absolute;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1rem;
-            animation: bounce 2s infinite;
-        }
+    .card {
+        background: var(--background-color);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 16px;
+        margin: 12px 0;
+        transition: all 0.25s ease;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px var(--shadow);
+    }
+    .card::before {
+        content: "“";
+        font-size: 3em;
+        color: #ccc;
+        position: absolute;
+        left: 10px;
+        top: -10px;
+    }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(-50%); }
-            40% { transform: translateY(-60%); }
-            60% { transform: translateY(-55%); }
+    /* ======================= 响应式 ======================= */
+    @media (max-width: 1024px) {
+        .grid-container {
+            grid-template-columns: 1fr;
         }
+    }
+        </style>
+    </head>
+    <body>
 
-        .tab-content {
-            display: none;
-            padding: 2.5rem;
-            background: var(--background-color);
-            border-top: 1px solid var(--border-color);
-        }
+            <h1 class="main-title">XJU Course Wiki</h1>
 
-        .tab-input:checked + .tab-label + .tab-content {
-            display: block;
-            animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+            <div class="grid-container">
+                <!-- 左侧：课程导航 -->
+                <div class="tab-container">
+                    <h2 class="section-title">📚 课程导航</h2>
+                    <input type="radio" name="course-tabs" id="tab1" class="tab-input" checked>
+                    <label for="tab1" class="toggle">理论基础课</label>
+                    <div class="tab-content">
+                        <a href="docs/discrete-math/intro/main.md" class="course-card">
+                            <span class="course-icon">📐</span>
+                            <span class="course-title">离散数学</span>
+                        </a>
+                        <a href="docs/linear-algebra/intro/main.md" class="course-card">
+                            <span class="course-icon">📏</span>
+                            <span class="course-title">线性代数</span>
+                        </a>
+                    </div>
 
-        @keyframes slideIn {
-            from { 
-                opacity: 0; 
-                transform: translateY(-20px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
+                    <input type="radio" name="course-tabs" id="tab2" class="tab-input">
+                    <label for="tab2" class="toggle">通识必修课</label>
+                    <div class="tab-content">
+                        <a href="docs/xi-mind/intro/main.md" class="course-card">
+                            <span class="course-icon">📖</span>
+                            <span class="course-title">习概</span>
+                        </a>
+                        <a href="docs/mao-mind/intro/main.md" class="course-card">
+                            <span class="course-icon">📚</span>
+                            <span class="course-title">毛概</span>
+                        </a>
+                    </div>
 
-        /* 课程卡片网格 */
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
+                    <input type="radio" name="course-tabs" id="tab3" class="tab-input">
+                    <label for="tab3" class="toggle">编程/数据/开发</label>
+                    <div class="tab-content">
+                        <a href="docs/database/intro/main.md" class="course-card">
+                            <span class="course-icon">🗄️</span>
+                            <span class="course-title">数据库</span>
+                        </a>
+                        <a href="docs/python/intro/main.md" class="course-card">
+                            <span class="course-icon">🐍</span>
+                            <span class="course-title">Python</span>
+                        </a>
+                        <a href="docs/linux/intro/main.md" class="course-card">
+                            <span class="course-icon">🐧</span>
+                            <span class="course-title">Linux</span>
+                        </a>
+                        <a href="docs/assembly-language/intro/main.md" class="course-card">
+                            <span class="course-icon">⚙️</span>
+                            <span class="course-title">汇编语言</span>
+                        </a>
+                        <a href="docs/android-dev/intro/main.md" class="course-card">
+                            <span class="course-icon">📱</span>
+                            <span class="course-title">Android 开发</span>
+                        </a>
+                        <a href="docs/emb-linux/intro/main.md" class="course-card">
+                            <span class="course-icon">🔧</span>
+                            <span class="course-title">嵌入式</span>
+                        </a>
+                    </div>
 
-        .course-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2.5rem 2rem;
-            background: var(--background-color);
-            border: 2px solid var(--border-color);
-            border-radius: 16px;
-            text-decoration: none;
-            color: var(--text-color);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
+                    <input type="radio" name="course-tabs" id="tab4" class="tab-input">
+                    <label for="tab4" class="toggle">408课程</label>
+                    <div class="tab-content">
+                        <a href="docs/principles-of-computer-composition/intro/main.md" class="course-card">
+                            <span class="course-icon">💻</span>
+                            <span class="course-title">计算机组成原理</span>
+                        </a>
+                        <a href="docs/computer-operating-system/intro/main.md" class="course-card">
+                            <span class="course-icon">🖥️</span>
+                            <span class="course-title">计算机操作系统</span>
+                        </a>
+                    </div>
 
-        .course-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, var(--accent-color), transparent);
-            opacity: 0;
-            transition: opacity 0.4s;
-            animation: rotate 4s linear infinite;
-            z-index: -1;
-        }
+                    <input type="radio" name="course-tabs" id="tab5" class="tab-input">
+                    <label for="tab5" class="toggle">理论课程</label>
+                    <div class="tab-content">
+                        <a href="docs/algorithm/intro/main.md" class="course-card">
+                            <span class="course-icon">📊</span>
+                            <span class="course-title">算法设计与分析</span>
+                        </a>
+                        <a href="docs/software-engineering/intro/main.md" class="course-card">
+                            <span class="course-icon">⚙️</span>
+                            <span class="course-title">软件工程</span>
+                        </a>
+                        <a href="docs/compile-theory/intro/main.md" class="course-card">
+                            <span class="course-icon">🔄</span>
+                            <span class="course-title">编译原理</span>
+                        </a>
+                    </div>
 
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+                    <input type="radio" name="course-tabs" id="tab6" class="tab-input">
+                    <label for="tab6" class="toggle">硬件与信号</label>
+                    <div class="tab-content">
+                        <a href="docs/circuits-analog-electronics/intro/main.md" class="course-card">
+                            <span class="course-icon">🔌</span>
+                            <span class="course-title">电路与模电</span>
+                        </a>
+                        <a href="docs/signal-analysis/intro/main.md" class="course-card">
+                            <span class="course-icon">📡</span>
+                            <span class="course-title">信号与系统分析基础</span>
+                        </a>
+                    </div>
+                </div>
 
-        .course-card:hover::before {
-            opacity: 0.1;
-        }
+                <!-- 右侧：概述内容 -->
+                <div class="overview-section">
+                    <h2 class="section-title">📌 重要</h2>
 
-        .course-card:hover {
-            transform: translateY(-12px) scale(1.03);
-            box-shadow: 0 20px 40px var(--shadow);
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
+                    <div class="admonition info">
+                        <p class="admonition-title">ℹ️ 绝对避雷</p>
+                        <ul>
+                            <li><strong>丁东风（计算机学院）</strong> ← 事情贼多，给分非常低。但是确实有点东西，不过只有一点</li>
+                            <li><strong>秦继伟（计算机学院）</strong> ← 爱装，实际啥也不懂，连一点东西都没有，同样事情多，给分贼低</li>
+                            <li><strong>李延冰（计算机学院）</strong> ← 喜欢虐待、阴阳、辱骂学生，给分贼低</li>
+                            <li><strong>范永强（数学院）</strong> ← 事情不算多，给分很低</li>
+                        </ul>
+                    </div>
 
-        .course-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-            filter: drop-shadow(4px 4px 8px var(--shadow));
-            transition: transform 0.4s ease;
-        }
+                    <div class="admonition warning">
+                        <p class="admonition-title">📋 声明</p>
+                        <p>这里是个人创建创建的课程资料 Wiki，任何内容<strong>不代表新疆大学立场</strong>，<strong>均为本人胡言乱语</strong>，仅供参考。<br>
+                        本站任何资料、内容如有侵权，请立即联系本人删除：<strong>sunsealucky@qq.com</strong>。</p>
+                    </div>
 
-        .course-card:hover .course-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
+                    <h2 class="section-title">🔗 推荐资源</h2>
+                    <div style="margin-left: 20px;">
+                        <p style="text-indent: 2em;">因众所周知的原因，我无法给大家介绍更多除课程以外的知识与技巧。<strong>如果你的目标不是寻找课程资源，请查看下面的推荐资源部分</strong>。下面的每一本手册都值得你细细体会，希望学弟、学妹们可以规划好自己的大学生涯。</p>
 
-        .course-title {
-            font-weight: 600;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.4;
-            transition: color 0.3s;
-        }
-
-        /* 右侧内容样式 */
-        .overview-section {
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-
-        .overview-section p {
-            margin: 2rem 0;
-            text-align: justify;
-            color: var(--text-color);
-        }
-
-        .overview-section strong {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        /* 信息框样式 */
-        .info-box {
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2.5rem 0;
-            position: relative;
-            backdrop-filter: blur(10px);
-        }
-
-        .warning-box {
-            background: linear-gradient(135deg, #ffebee, #fce4ec);
-            border: 1px solid #f8bbd9;
-            border-left: 6px solid #e91e63;
-        }
-
-        .notice-box {
-            background: linear-gradient(135deg, #e3f2fd, #e1f5fe);
-            border: 1px solid #81d4fa;
-            border-left: 6px solid #2196f3;
-        }
-
-        .quote-box {
-            background: linear-gradient(135deg, #f5f5f5, #eeeeee);
-            border-left: 6px solid var(--accent-color);
-            position: relative;
-            font-style: italic;
-        }
-
-        .quote-box::before {
-            content: '"';
-            font-size: 5rem;
-            color: var(--accent-color);
-            position: absolute;
-            top: -20px;
-            left: 30px;
-            opacity: 0.3;
-            font-family: Georgia, serif;
-        }
-
-        .info-box h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 0 0 1.5rem 0;
-        }
-
-        .warning-box h3 { color: #c2185b; }
-        .notice-box h3 { color: #1976d2; }
-
-        .info-box ul {
-            margin: 0;
-            padding-left: 2rem;
-        }
-
-        .info-box li {
-            margin: 1rem 0;
-            font-size: 1.1rem;
-        }
-
-        /* 资源列表 */
-        .resource-list ol {
-            padding-left: 2rem;
-            margin: 2rem 0;
-        }
-
-        .resource-list li {
-            margin: 1.2rem 0;
-            font-size: 1.2rem;
-            line-height: 1.7;
-        }
-
-        .resource-list a, .quote-box a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .resource-list a::after, .quote-box a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--gradient-accent);
-            transition: width 0.3s ease;
-        }
-
-        .resource-list a:hover::after, .quote-box a:hover::after {
-            width: 100%;
-        }
-
-        .resource-list a:hover, .quote-box a:hover {
-            color: var(--accent-color);
-        }
-
-        /* 主题切换按钮 */
-        .theme-toggle {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 20px var(--shadow);
-            font-size: 1.5rem;
-            color: white;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 30px var(--shadow);
-        }
-
-        /* 响应式设计 */
-        @media screen and (max-width: 1200px) {
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .container {
-                padding: 1.5rem;
-            }
-            
-            .main-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.7rem;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .course-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem;
-            }
-            
-            .course-card {
-                padding: 2rem 1.5rem;
-            }
-            
-            .course-icon {
-                font-size: 2.5rem;
-            }
-            
-            .main-title {
-                font-size: 2rem;
-            }
-            
-            .overview-section {
-                font-size: 1.1rem;
-            }
-            
-            .theme-toggle {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-                top: 1rem;
-                right: 1rem;
-            }
-        }
-
-        /* 暗色主题手动切换 */
-        body.dark-theme {
-            --primary-color: #42a5f5;
-            --accent-color: #ff80ab;
-            --background-color: #1a1a1a;
-            --text-color: #e0e0e0;
-            --text-light: #b0b0b0;
-            --border-color: #404040;
-            --shadow: rgba(0,0,0,0.3);
-        }
-
-        .dark-theme .warning-box {
-            background: linear-gradient(135deg, #3e2723, #4e342e);
-            border-color: #8d6e63;
-        }
-
-        .dark-theme .notice-box {
-            background: linear-gradient(135deg, #1a237e, #283593);
-            border-color: #5c6bc0;
-        }
-
-        .dark-theme .quote-box {
-            background: linear-gradient(135deg, #37474f, #455a64);
-        }
-
-        /* 滚动条样式 */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--border-color);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--gradient-primary);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--gradient-accent);
-        }
-
-        /* 加载动画 */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .container {
-            animation: fadeIn 1s ease-out;
-        }
-    </style>
-</head>
-<body>
-    <button class="theme-toggle" onclick="toggleTheme()" title="切换主题">🌓</button>
-    
-    <div class="container">
-        <h1 class="main-title">XJU Course Wiki</h1>
-        
-        <div class="content-grid">
-            <!-- 左侧：课程导航 -->
-            <div class="navigation-section">
-                <h2 class="section-title">📚 课程导航</h2>
-                
-                <div class="course-tabs">
-                    <div class="tab-container">
-                        <input type="radio" name="course-tabs" id="tab1" class="tab-input" checked>
-                        <label for="tab1" class="tab-label">理论基础课</label>
-                        <div class="tab-content">
-                            <div class="course-grid">
-                                <a href="discrete-math/intro/main.md" class="course-card">
-                                    <span class="course-icon">📐</span>
-                                    <span class="course-title">离散数学</span>
-                                </a>
-                                <a href="linear-algebra/intro/main.md" class="course-card">
-                                    <span class="course-icon">📏</span>
-                                    <span class="course-title">线性代数</span>
-                                </a>
-                            </div>
+                        <div class="resource-list" style="margin-left: 1em">
+                            <ol>
+                                <li><a href="https://github.com/Indolent-Kawhi/XJU-Computing-Heart" target="_blank">新疆大学 · 期末资料仓库</a></li>
+                                <li><a href="https://csdiy.wiki/" target="_blank">北京大学 · CS 自学指南</a></li>
+                                <li><a href="https://sustech-application.com/" target="_blank">南方科技大学 · 经验分享网</a></li>
+                                <li><a href="https://survivesjtu.gitbook.io/survivesjtumanual" target="_blank">上海交通大学 · 生存手册</a></li>
+                                <li><a href="https://qsctech.github.io/zju-icicles/" target="_blank">浙江大学 · 课程攻略共享计划</a></li>
+                            </ol>
                         </div>
+                    </div>
 
-                        <input type="radio" name="course-tabs" id="tab2" class="tab-input">
-                        <label for="tab2" class="tab-label">通识必修课</label>
-                        <div class="tab-content">
-                            <div class="course-grid">
-                                <a href="xi-mind/intro/main.md" class="course-card">
-                                    <span class="course-icon">📖</span>
-                                    <span class="course-title">习概</span>
-                                </a>
-                                <a href="mao-mind/intro/main.md" class="course-card">
-                                    <span class="course-icon">📚</span>
-                                    <span class="course-title">毛概</span>
-                                </a>
-                            </div>
-                        </div>
+                    <h2 class="section-title">📖 如何使用</h2>
+                    <div style="margin-left: 20px;">
+                        <p style="text-indent: 2em;">本站核心内容有两块，一个是对课程的大致介绍，帮助你选择自己喜欢的老师；二是面向期末的笔记总结。这里主要针对第二部分进行补充，<strong>由于这里的笔记都是我个人的总结，面向的人肯定只有我自己，只是顺便开放</strong>。不过，我非常推荐你查看<strong>笔记（导图版）</strong>，这是原 Markdown 笔记的导图形式，能够帮助你快速梳理整本书的知识体系！</p>
+                        <p style="text-indent: 2em;">本站的主要任务是帮助你选择一个 <strong>正常人</strong>（这很重要）作为你的课程老师，次要任务是帮助你对课程去魅。</p>
+                    </div>
 
-                        <input type="radio" name="course-tabs" id="tab3" class="tab-input">
-                        <label for="tab3" class="tab-label">编程/数据/开发</label>
-                        <div class="tab-content">
-                            <div class="course-grid">
-                                <a href="database/intro/main.md" class="course-card">
-                                    <span class="course-icon">🗄️</span>
-                                    <span class="course-title">数据库</span>
-                                </a>
-                                <a href="python/intro/main.md" class="course-card">
-                                    <span class="course-icon">🐍</span>
-                                    <span class="course-title">Python</span>
-                                </a>
-                                <a href="linux/intro/main.md" class="course-card">
-                                    <span class="course-icon">🐧</span>
-                                    <span class="course-title">Linux</span>
-                                </a>
-                                <a href="assembly-language/intro/main.md" class="course-card">
-                                    <span class="course-icon">⚙️</span>
-                                    <span class="course-title">汇编语言</span>
-                                </a>
-                                <a href="android-dev/intro/main.md" class="course-card">
-                                    <span class="course-icon">📱</span>
-                                    <span class="course-title">Android 开发</span>
-                                </a>
-                                <a href="emb-linux/intro/main.md" class="course-card">
-                                    <span class="course-icon">🔧</span>
-                                    <span class="course-title">嵌入式</span>
-                                </a>
-                            </div>
-                        </div>
+                    <h2 class="section-title">⚖️ 刑不可知，则威不可测</h2>
 
-                        <input type="radio" name="course-tabs" id="tab4" class="tab-input">
-                        <label for="tab4" class="tab-label">408课程</label>
-                        <div class="tab-content">
-                            <div class="course-grid">
-                                <a href="principles-of-computer-composition/intro/main.md" class="course-card">
-                                    <span class="course-icon">💻</span>
-                                    <span class="course-title">计算机组成原理</span>
-                                </a>
-                                <a href="computer-operating-system/intro/main.md" class="course-card">
-                                    <span class="course-icon">🖥️</span>
-                                    <span class="course-title">计算机操作系统</span>
-                                </a>
-                            </div>
-                        </div>
+                    <h2 class="section-title">💭 闲话</h2>
+                    <div class="info-box card">
+                        <p style="text-indent: 2em;">试问谁不想在课堂上和那么多优秀的同学济济一堂，热烈讨论呢？谁不想遇到问题直接找老师答疑解惑呢？谁不想辛苦学习的成果可以直接化作学校承认的学分绩点呢？可如果一个兢兢业业、按时到堂的学生收获的却是痛苦，而那个一学期只有考试会出席的学生却学得自得其乐，这公平吗？我不知道。</p>
 
-                        <input type="radio" name="course-tabs" id="tab5" class="tab-input">
-                        <label for="tab5" class="tab-label">理论课程</label>
-                        <div class="tab-content">
-                            <div class="course-grid">
-                                <a href="algorithm/intro/main.md" class="course-card">
-                                    <span class="course-icon">📊</span>
-                                    <span class="course-title">算法设计与分析</span>
-                                </a>
-                                <a href="software-engineering/intro/main.md" class="course-card">
-                                    <span class="course-icon">⚙️</span>
-                                    <span class="course-title">软件工程</span>
-                                </a>
-                                <a href="compile-theory/intro/main.md" class="course-card">
-                                    <span class="course-icon">🔄</span>
-                                    <span class="course-title">编译原理</span>
-                                </a>
-                            </div>
-                        </div>
+                        <p style="text-indent: 2em;">我只是不甘，不甘心这些通过高考战胜无数人进入高校的学子本可以收获一个更快乐的本科生涯，但现实却留给了他们遗憾。我反问自己，本科教育究竟应该带给我们什么呢？是学完所有这些课程吗？倒也未必，它也许只适合我这种nerd。但我觉得，<strong>本科教育至少得展现它应有的诚意，一种分享知识的诚意，一种以人为本的诚意，一种注重学生体验的诚意。它至少不应该是一种恶意，一种拼比知识的恶意，一种胜者为王的恶意，一种让人学无所得的恶意</strong>。但这一切能改变吗？我不知道。</p>
 
-                        <input type="radio" name="course-tabs" id="tab6" class="tab-input">
-                        <label for="tab6" class="tab-label">硬件与信号</label>
-                        <div class="tab-content">
-                            <div class="course-grid">
-                                <a href="circuits-analog-electronics/intro/main.md" class="course-card">
-                                    <span class="course-icon">🔌</span>
-                                    <span class="course-title">电路与模电</span>
-                                </a>
-                                <a href="signal-analysis/intro/main.md" class="course-card">
-                                    <span class="course-icon">📡</span>
-                                    <span class="course-title">信号与系统分析基础</span>
-                                </a>
-                            </div>
-                        </div>
+                        <p><em>—— 选自 <a href="https://csdiy.wiki/%E5%90%8E%E8%AE%B0/" target="_blank">CS 自学指南</a></em></p>
+                    </div>
+
+                    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border-color);">
+                        <script src="https://giscus.app/client.js"
+                                data-repo="SunSeaLucky/xju-course-wiki"
+                                data-repo-id="R_kgDONf4gSg"
+                                data-category="Announcements"
+                                data-category-id="DIC_kwDONf4gSs4ClXwK"
+                                data-mapping="pathname"
+                                data-strict="0"
+                                data-reactions-enabled="1"
+                                data-emit-metadata="0"
+                                data-input-position="bottom"
+                                data-theme="light"
+                                data-lang="zh-CN"
+                                crossorigin="anonymous"
+                                async>
+                        </script>
                     </div>
                 </div>
             </div>
 
-            <!-- 右侧：概述内容 -->
-            <div class="overview-section">
-                <h2 class="section-title">重要</h2>
-                
-                <div class="info-box warning-box">
-                    <h3>⚠️ 绝对避雷</h3>
-                    <ul>
-                        <li><strong>丁东风（计算机学院）</strong> ← 事情贼多，给分非常低。但是确实有点东西，不过只有一点</li>
-                        <li><strong>秦继伟（计算机学院）</strong> ← 爱装，实际啥也不懂，连一点东西都没有，同样事情多，给分贼低</li>
-                        <li><strong>李延冰（计算机学院）</strong> ← 喜欢虐待、阴阳、辱骂学生，给分贼低</li>
-                        <li><strong>范永强（数学院）</strong> ← 事情不算多，给分很低</li>
-                    </ul>
-                </div>
-
-                <div class="info-box notice-box">
-                    <h3>📋 声明</h3>
-                    <p>这里是个人创建创建的课程资料 Wiki，任何内容<strong>不代表新疆大学立场</strong>，<strong>均为本人胡言乱语</strong>，仅供参考。本站任何资料、内容如有侵权，请立即联系本人删除：<strong>sunsealucky@qq.com</strong>。</p>
-                    <p>另外，现在该网站急需传承。请有意者联系sunsealucky@qq.com。</p>
-                </div>
-
-                <h2 class="section-title">🔗 推荐资源</h2>
-                <p>因众所周知的原因，我无法给大家介绍更多除课程以外的知识与技巧。<strong>如果你的目标不是寻找课程资源，请查看下面的推荐资源部分</strong>。下面的每一本手册都值得你细细体会，希望学弟、学妹们可以规划好自己的大学生涯。</p>
-
-                <div class="resource-list">
-                    <ol>
-                        <li><a href="https://github.com/Indolent-Kawhi/XJU-Computing-Heart" target="_blank">新疆大学 · 期末资料仓库</a></li>
-                        <li><a href="https://csdiy.wiki/" target="_blank">北京大学 · CS 自学指南</a></li>
-                        <li><a href="https://sustech-application.com/" target="_blank">南方科技大学 · 经验分享网</a></li>
-                        <li><a href="https://survivesjtu.gitbook.io/survivesjtumanual" target="_blank">上海交通大学 · 生存手册</a></li>
-                        <li><a href="https://qsctech.github.io/zju-icicles/" target="_blank">浙江大学 · 课程攻略共享计划</a></li>
-                    </ol>
-                </div>
-
-                <h2 class="section-title">📖 如何使用</h2>
-                <p>本站核心内容有两块，一个是对课程的大致介绍，帮助你选择自己喜欢的老师；二是面向期末的笔记总结。这里主要针对第二部分进行补充，<strong>由于这里的笔记都是我个人的总结，面向的人肯定只有我自己，只是顺便开放</strong>。不过，我非常推荐你查看<strong>笔记（导图版）</strong>，这是原 Markdown 笔记的导图形式，能够帮助你快速梳理整本书的知识体系！</p>
-                <p>本站的主要任务是帮助你选择一个 <strong>正常人</strong>（这很重要）作为你的课程老师，次要任务是帮助你对课程去魅。</p>
-
-                <h2 class="section-title">⚖️ 刑不可知，则威不可测</h2>
-
-                <h2 class="section-title">💭 闲话</h2>
-                <div class="info-box quote-box">
-                    <p>试问谁不想在课堂上和那么多优秀的同学济济一堂，热烈讨论呢？谁不想遇到问题直接找老师答疑解惑呢？谁不想辛苦学习的成果可以直接化作学校承认的学分绩点呢？可如果一个兢兢业业、按时到堂的学生收获的却是痛苦，而那个一学期只有考试会出席的学生却学得自得其乐，这公平吗？我不知道。</p>
-                    
-                    <p>我只是不甘，不甘心这些通过高考战胜无数人进入高校的学子本可以收获一个更快乐的本科生涯，但现实却留给了他们遗憾。我反问自己，本科教育究竟应该带给我们什么呢？是学完所有这些课程吗？倒也未必，它也许只适合我这种nerd。但我觉得，<strong>本科教育至少得展现它应有的诚意，一种分享知识的诚意，一种以人为本的诚意，一种注重学生体验的诚意。它至少不应该是一种恶意，一种拼比知识的恶意，一种胜者为王的恶意，一种让人学无所得的恶意</strong>。但这一切能改变吗？我不知道。</p>
-                    
-                    <p><em>—— 选自 <a href="https://csdiy.wiki/%E5%90%8E%E8%AE%B0/" target="_blank">CS 自学指南</a></em></p>
-                </div>
-
-                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border-color);">
-                    <script src="https://giscus.app/client.js"
-                            data-repo="SunSeaLucky/xju-course-wiki"
-                            data-repo-id="R_kgDONf4gSg"
-                            data-category="Announcements"
-                            data-category-id="DIC_kwDONf4gSs4ClXwK"
-                            data-mapping="pathname"
-                            data-strict="0"
-                            data-reactions-enabled="1"
-                            data-emit-metadata="0"
-                            data-input-position="bottom"
-                            data-theme="light"
-                            data-lang="zh-CN"
-                            crossorigin="anonymous"
-                            async>
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // 主题切换功能
-        function toggleTheme() {
-            document.body.classList.toggle('dark-theme');
-            const isDark = document.body.classList.contheme');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            
-            // 更新 Giscus 主题
-            const giscusFrame = document.querySelector('iframe.giscus-frame');
-            if (giscusFrame) {
-                const theme = isDark ? 'dark' : 'light';
-                giscusFrame.contentWindow.postMessage({
-                    giscus: { setConfig: { theme } }
-                }, 'https://giscus.app');
-            }
-        }
-
-        // 页面加载时应用保存的äment.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.body.classList.add('dark-theme');
-            }
-
-            // 监听系统主题变化
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-                if (!localStorage.getItem('theme')) {
-                    if (e.matches) {
-                        document.body.classList.add('dark-theme');
-                    } else {
-                        document.body.classList.remove('dark-theme');
-                    }
-                }
-            });
-
-            // 添加平滑滚动
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = rySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+        <script>
+            // 添加页面加载动画
+            window.addEventListener('load', function() {
+                            document.body.style.opacity = '0';
+                            setTimeout(() => {
+                                            document.body.style.transition = 'opacity 0.5s ease';
+                                            document.body.style.opacity = '1';
+                                        }, 100);
                         });
-                    }
-                });
-            });
-        });
-
-        // 添加页面加载动画
-        window.addEventListener('load', function() {
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s ease';
-                document.body.style.opacity = '1';
-            }, 100);
-        });
-    </script>
-</body>
+        </script>
+    </body>
 </html>
