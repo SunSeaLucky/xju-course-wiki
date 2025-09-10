@@ -1,44 +1,56 @@
-/* 隐藏侧边栏后的布局调整 */
-.md-main__inner {
-    max-width: none;
-}
-
-.md-content {
+/* 重置和基础样式 */
+.custom-homepage {
+    font-family: var(--md-text-font-family);
+    line-height: 1.6;
+    color: var(--md-default-fg-color);
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 2rem;
 }
 
-/* 确保网格在首页正常显示为两列 */
-.md-typeset .grid {
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--md-primary-fg-color);
+    border-bottom: 3px solid var(--md-primary-fg-color);
+    padding-bottom: 1rem;
+}
+
+/* 网格布局 */
+.content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
     margin-top: 2rem;
 }
 
-/* 响应式：小屏幕时变为单列 */
-@media screen and (max-width: 76.25em) {
-    .md-typeset .grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .md-content {
-        padding: 0 1rem;
-    }
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 2rem 0 1.5rem 0;
+    color: var(--md-primary-fg-color);
+    border-left: 4px solid var(--md-accent-fg-color);
+    padding-left: 1rem;
 }
 
-/* 自定义标签样式 */
+/* 左侧导航样式 */
+.navigation-section {
+    background: var(--md-default-bg-color);
+}
+
+/* 标签样式 */
 .course-tabs {
     margin: 1rem 0;
 }
 
 .tab-container {
     background: var(--md-default-bg-color);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     overflow: hidden;
+    border: 1px solid var(--md-default-fg-color--lighter);
 }
 
 .tab-input {
@@ -47,41 +59,61 @@
 
 .tab-label {
     display: block;
-    padding: 1rem 1.5rem;
+    padding: 1.2rem 1.8rem;
     background: var(--md-default-fg-color--lightest);
     color: var(--md-default-fg-color);
     cursor: pointer;
     border-bottom: 1px solid var(--md-default-fg-color--lighter);
     transition: all 0.3s ease;
     font-weight: 500;
+    font-size: 1rem;
     user-select: none;
+    position: relative;
 }
 
 .tab-label:hover {
     background: var(--md-accent-fg-color--transparent);
     color: var(--md-accent-fg-color);
+    transform: translateX(4px);
 }
 
 .tab-input:checked + .tab-label {
-    background: var(--md-primary-fg-color);
-    color: var(--md-primary-bg-color);
+    background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+    color: white;
+    font-weight: 600;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.tab-input:checked + .tab-label::after {
+    content: "▼";
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .tab-content {
     display: none;
-    padding: 1.5rem;
+    padding: 2rem;
     background: var(--md-default-bg-color);
+    border-top: 1px solid var(--md-default-fg-color--lighter);
 }
 
 .tab-input:checked + .tab-label + .tab-content {
     display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* 课程卡片网格 */
 .course-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 1rem;
 }
 
@@ -89,57 +121,242 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem;
-    background: var(--md-default-bg-color);
-    border: 1px solid var(--md-default-fg-color--lighter);
-    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    background: white;
+    border: 2px solid var(--md-default-fg-color--lighter);
+    border-radius: 12px;
     text-decoration: none;
     color: var(--md-default-fg-color);
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+}
+
+.course-card:hover::before {
+    left: 100%;
 }
 
 .course-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     border-color: var(--md-primary-fg-color);
     color: var(--md-primary-fg-color);
-    text-decoration: none;
 }
 
 .course-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
 }
 
 .course-title {
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
-    font-size: 0.9rem;
-    line-height: 1.3;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* 右侧内容样式 */
+.overview-section {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.overview-section p {
+    margin: 1.5rem 0;
+    text-align: justify;
+}
+
+.overview-section strong {
+    color: var(--md-primary-fg-color);
+    font-weight: 600;
+}
+
+/* 警告框 */
+.warning-box {
+    background: linear-gradient(135deg, #ffebee, #fce4ec);
+    border: 1px solid #f8bbd9;
+    border-left: 5px solid #e91e63;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.warning-box h3 {
+    color: #c2185b;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+}
+
+.warning-box ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.warning-box li {
+    margin: 0.8rem 0;
+    font-size: 1rem;
+}
+
+/* 通知框 */
+.notice-box {
+    background: linear-gradient(135deg, #e3f2fd, #e1f5fe);
+    border: 1px solid #81d4fa;
+    border-left: 5px solid #2196f3;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.notice-box h3 {
+    color: #1976d2;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+}
+
+.notice-box p {
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+/* 资源列表 */
+.resource-list ol {
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.resource-list li {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.resource-list a {
+    color: var(--md-primary-fg-color);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.resource-list a:hover {
+    color: var(--md-accent-fg-color);
+    border-bottom-color: var(--md-accent-fg-color);
+}
+
+/* 引用框 */
+.quote-box {
+    background: linear-gradient(135deg, #f5f5f5, #eeeeee);
+    border-left: 5px solid var(--md-accent-fg-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+    position: relative;
+}
+
+.quote-box::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--md-accent-fg-color);
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    opacity: 0.3;
+}
+
+.quote-box p {
+    margin: 1.5rem 0;
+    font-size: 1.05rem;
+}
+
+.quote-box a {
+    color: var(--md-primary-fg-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 1200px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .custom-homepage {
+        padding: 1rem;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    
+    .course-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .course-icon {
+        font-size: 2rem;
+    }
+    
+    .course-title {
+        font-size: 0.9rem;
+    }
 }
 
 /* 暗色主题适配 */
-[data-md-color-scheme="slate"] .tab-container {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
 [data-md-color-scheme="slate"] .course-card {
     background: var(--md-code-bg-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-[data-md-color-scheme="slate"] .course-card:hover {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+[data-md-color-scheme="slate"] .tab-container {
+    background: var(--md-code-bg-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* 确保 admonition 在网格中正常显示 */
-.md-typeset .grid .admonition {
-    margin: 1rem 0;
+[data-md-color-scheme="slate"] .warning-box {
+    background: linear-gradient(135deg, #3e2723, #4e342e);
+    border-color: #8d6e63;
 }
 
-/* 调整右侧内容的间距 */
-.md-typeset .grid > div:last-child h2 {
-    margin-top: 0;
+[data-md-color-scheme="slate"] .notice-box {
+    background: linear-gradient(135deg, #1a237e, #283593);
+    border-color: #5c6bc0;
+}
+
+[data-md-color-scheme="slate"] .quote-box {
+    background: linear-gradient(135deg, #37474f, #455a64);
+}
+
+/* Giscus 容器 */
+.giscus-container {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--md-default-fg-color--lighter);
 }
