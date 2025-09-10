@@ -266,9 +266,6 @@ hide:
         </style>
     </head>
     <body>
-
-            <h1 class="main-title">XJU Course Wiki</h1>
-
             <div class="grid-container">
                 <!-- 左侧：课程导航 -->
                 <div class="tab-container">
