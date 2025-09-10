@@ -5,7 +5,7 @@ hide:
 ---
 
 <script>
-window.location.href = 'homepage.html';
+window.location.href = 'docs/homepage.html';
 </script>
 
 <meta http-equiv="refresh" content="0; url=homepage.html">
