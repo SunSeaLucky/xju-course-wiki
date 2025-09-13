@@ -1,0 +1,3950 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../intro/main/">
+      
+      
+        <link rel="next" href="../../../android-dev/intro/main/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>笔记 - XJU Course Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="XJU Course Wiki" class="md-header__button md-logo" aria-label="XJU Course Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XJU Course Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              笔记
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SunSeaLucky/xju-course-wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  副页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../discrete-math/intro/main/" class="md-tabs__link">
+          
+  
+  
+  理论基础课
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../xi-mind/intro/main/" class="md-tabs__link">
+          
+  
+  
+  通识必修课
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../database/intro/main/" class="md-tabs__link">
+          
+  
+  
+  编程/数据/开发
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../principles-of-computer-composition/intro/main/" class="md-tabs__link">
+          
+  
+  
+  408课程
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../algorithm/intro/main/" class="md-tabs__link">
+          
+  
+  
+  理论课程
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../circuits-analog-electronics/intro/main/" class="md-tabs__link">
+          
+  
+  
+  硬件与信号
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="XJU Course Wiki" class="md-nav__button md-logo" aria-label="XJU Course Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    XJU Course Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SunSeaLucky/xju-course-wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    副页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    理论基础课
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            理论基础课
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    离散数学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            离散数学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discrete-math/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discrete-math/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    线性代数
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            线性代数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linear-algebra/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linear-algebra/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    通识必修课
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            通识必修课
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    习概
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            习概
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../xi-mind/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../xi-mind/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    毛泽东思想和中国特色社会主义理论体系概论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            毛泽东思想和中国特色社会主义理论体系概论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mao-mind/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mao-mind/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mao-mind/note/markmap.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记（导图版）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mao-mind/note/important.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    老师划重点（2025）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    编程/数据/开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            编程/数据/开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../database/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/lab/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    汇编语言程序设计
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            汇编语言程序设计
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 汇编语言基础知识
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-8086" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 8086 的指令系统
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 8086 的指令系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      各种指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      状态标志
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      算术指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      符号拓展
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      十进制调整指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      位操作指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      转移类指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      中断指令
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 汇编语言程序格式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 汇编语言程序格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      汇编语言程序的开发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数、变量、标号
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 基本汇编语言程序设计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 基本汇编语言程序设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      循环程序设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      串操作类指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序的参数传递
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序的嵌套、递归和重入
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 高级汇编语言程序设计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 高级汇编语言程序设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      宏结构程序设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOS 功能调用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 32 位指令及其编程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      做试卷遇到的
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Android 开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Android 开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android-dev/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android-dev/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android-dev/note/markmap.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记（导图版）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    嵌入式
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            嵌入式
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emb-linux/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emb-linux/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    408课程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            408课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机组成原理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            计算机组成原理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principles-of-computer-composition/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principles-of-computer-composition/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principles-of-computer-composition/note/markmap.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记（导图版）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机操作系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            计算机操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-operating-system/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-operating-system/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-operating-system/note/markmap.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记（导图版）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-operating-system/lab/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    理论课程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            理论课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    算法设计与分析
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            算法设计与分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    软件工程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            软件工程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software-engineering/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software-engineering/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software-engineering/pre/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    编译原理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            编译原理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../compile-theory/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../compile-theory/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../compile-theory/note/markmap.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记（导图版）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    硬件与信号
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            硬件与信号
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    电路与模电
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            电路与模电
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../circuits-analog-electronics/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../circuits-analog-electronics/note/main.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    信号与系统分析基础
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            信号与系统分析基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../signal-analysis/intro/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../signal-analysis/note/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../signal-analysis/note/markmap.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    笔记（导图版）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 汇编语言基础知识
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-8086" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 8086 的指令系统
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 8086 的指令系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      各种指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      状态标志
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      算术指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      符号拓展
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      十进制调整指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      位操作指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      转移类指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      中断指令
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 汇编语言程序格式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 汇编语言程序格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      汇编语言程序的开发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数、变量、标号
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 基本汇编语言程序设计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 基本汇编语言程序设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      循环程序设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      串操作类指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序的参数传递
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      子程序的嵌套、递归和重入
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 高级汇编语言程序设计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 高级汇编语言程序设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      宏结构程序设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOS 功能调用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 32 位指令及其编程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      做试卷遇到的
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">汇编语言程序设计笔记</h1>
+<h2 id="1">1 汇编语言基础知识</h2>
+<p>本章是概念性章节，内容较少，直接列一个概念列表：</p>
+<ul>
+<li>由冯 · 诺伊曼设计思想的计算机由五大部件组成：<strong>运算器、控制器、存储器</strong>、输入设备、输出设备。</li>
+<li>数制：<strong>二进制、八进制、十进制、十六进制</strong>。</li>
+<li>数制转换：低转高，乘权法；高转低，除基取余法。</li>
+<li>数值的编码（计组的噩梦之一）：定点整数、原码、反码、补码、定点小数、浮点数。</li>
+<li>数值编码：BCD码、ASCII码、Unicode编码。</li>
+<li>寄存器：通用寄存器、段寄存器、指针寄存器、变址寄存器、控制寄存器、状态寄存器。</li>
+<li>通用寄存器：数据寄存器（AX、BX、CX、DX）、指针寄存器（SP、BP）、变址寄存器（SI、DI）。</li>
+<li>标志寄存器：状态标志（CF、PF、AF、ZF、SF）、控制标志（TF -&gt; 单步标志、IF、DF、OF）、<em>系统标志（NT、IOPL、VM、RF）</em>。</li>
+<li>存储格式：<ul>
+<li>数据的存储格式：小端方式（8086 采用的方式），低对低、高对高；大端方式：低对高、高对低。</li>
+<li>同一个地址既可以看作<strong>字节单元</strong>的地址，也可以看作<strong>字单元</strong>的地址，还可以看作<strong>双字单元</strong>的地址。                </li>
+</ul>
+</li>
+<li>存储器的分段管理：8086 把存储器分成若干段，每段的大小最大为 64KB，每个存储单元可表示为“段基地址 ：偏移地址”。<strong>段基地址</strong>是段的起始地址除以 16 后的值，即必须形如“XXXX0H”，<strong>偏移地址</strong>是段内偏移量（也称有效地址，EA），可以用 16 位表示。</li>
+<li>
+<p>段寄存器的作用：</p>
+<ul>
+<li>CS：代码段寄存器，存放代码段的段基地址。指令寄存器 IP 存放指令的偏移地址，处理器利用 “CS:IP” 访问下一条指令。</li>
+<li>SS：堆栈段寄存器，存放堆栈段的段基地址。堆栈指针 SP 存放栈顶的偏移地址，处理器利用 “SS:SP” 访问堆栈段。</li>
+<li>DS：数据段寄存器，存放数据段的段基地址。</li>
+<li>ES：附加段寄存器，附加的数据段，也用于数据的保存。</li>
+</ul>
+</li>
+<li>
+<p><strong>（重要）寻址方式</strong>：</p>
+<ul>
+<li>立即数寻址（立即寻址）：指令中直接给出操作数。</li>
+<li>寄存器寻址：指令中直接给出寄存器名。</li>
+<li>储存器寻址：<strong>直接寻址</strong>（指令中直接包含了有效地址，如：mov ax, [1000H]）；<strong>寄存器间接寻址</strong>（指令中给出寄存器名，寄存器中存放有效地址，如：mov ax, [bx]）；<strong>寄存器相对寻址</strong>(指令中给出寄存器名和偏移量，寄存器中存放基地址，如：mov ax, [bx+10H])；<strong>基址变址寻址</strong>（指令中给出基址寄存器、变址寄存器和偏移量，如：mov ax, [bx+si]）；<strong>相对基址变址寻址</strong>（指令中给出基址寄存器、变址寄存器、偏移量和段寄存器，如：mov ax, [bx+si+10H]）。</li>
+</ul>
+</li>
+<li>隐含寻址方式</li>
+<li>
+<p>比例因子是386及其后继机型新增加的寻址方式中的一个术语，其值可为<strong>1，2，4或8</strong>。比例因子（1、2、4、8）只能与<strong>变址寄存器</strong>同时使用。</p>
+</li>
+<li>
+<p>外设中，每个接口包括一组寄存器：
+    数据寄存器
+    状态寄存器
+    命令寄存器</p>
+</li>
+<li>输入端口的 8 位数据
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="nf">mov</span><span class="w">  </span><span class="no">dx</span><span class="p">,</span><span class="mi">1234</span><span class="no">h</span>
+</span><span id="__span-0-2"><span class="nf">in</span><span class="w">   </span><span class="no">al</span><span class="p">,</span><span class="no">dx</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h2 id="2-8086">2 <code>8086</code> 的指令系统</h2>
+<h4 id="_2">各种指令</h4>
+<ul>
+<li>数据传送指令：<ul>
+<li>mov(reg/mem, imm; reg/mem/seg, reg; reg/seg, mem; reg/mem, seg)</li>
+<li>xchg(reg &harr; reg/mem 或 reg/mem &harr; reg)、xlat(al &larr; ds:[bx+al])；</li>
+</ul>
+</li>
+<li>堆栈操作指令：push、pop（注意 push 的时候地址减少，pop 的时候地址增加）；</li>
+<li>标志传送指令：lahf、sahf、pushf、popf；</li>
+<li>地址传送指令：lea、lds(Load Pointer Using DS)、les(Load Pointer Using ES)；</li>
+<li>算术运算指令：add、adc、inc、sub、sbb、dec、cmp<ul>
+<li>neg：用 0 减去操作数（会导致 <code>CF=1</code>），结果相当于按位取反加 1</li>
+<li>mul r8(16)/m8(16),<ul>
+<li>ax &larr; al(x) * r8(16)/m8(16)</li>
+</ul>
+</li>
+<li>imul r8(16)/m8(16) <ul>
+<li>ax &larr; al(x) * r8(16)/m8(16)</li>
+</ul>
+</li>
+<li>div r8(16)/m8(16)<ul>
+<li>al(ax) &larr; ax(dx.ax) 除 r8(16)/m8(16) 的商</li>
+<li>ah(dx) &larr; ax(dx.ax) 除 r8(16)/m8(16) 的余数</li>
+</ul>
+</li>
+<li>idiv</li>
+</ul>
+</li>
+<li>符号拓展指令：cbw（拓展到 AX）、cwd（拓展到 DX）；</li>
+<li>逻辑运算指令<ul>
+<li>影响标志位：and、or、xor、test、neg</li>
+<li>不影响标志位：not</li>
+<li>除了 NOT 不影响标志位外，其他所有逻辑运算指令执行完后，OF 和 CF 一定是 0</li>
+</ul>
+</li>
+<li>移位指令：shl、shr、sal、sar、rol、ror、rcl、rcr；</li>
+<li>控制转移指令：jmp，太多了，可查 55 页表 2-3。</li>
+<li>循环指令：loop、loopz、loopnz；</li>
+<li>子程序指令：call（调用子程序）、ret（从子程序返回主程序）</li>
+<li>中断指令：int（内部中断）、iret（外部中断）；</li>
+</ul>
+<h4 id="_3">状态标志</h4>
+<ul>
+<li>CF：进位标志，<strong>无符号数运算时</strong>，是否溢出，即最高位是否有进位或借位。检测最高有效位（MSB，Most Significant Bit）<strong>是否产生了进位或借位</strong></li>
+<li>OF：溢出标志，<strong>有符号数运算时</strong>，是否溢出，运算结果是否超出范围。检测最高有效位（MSB，符号位） 和 <strong>次高位的进位</strong> 是否不一致</li>
+<li>CF 和 OF 的区别：CF 表示无符号整数运算结果是否超出范围，超出范围后加上进位或借位运算结果依然<strong>正确</strong>；OF 表示有符号整数运算结果是否超出范围，超出范围后加上进位或借位运算结果<strong>不正确</strong>。</li>
+<li>SF：符号标志，结果的最高位。</li>
+<li>ZF：零标志，结果是否为 0。</li>
+<li>PF：奇偶标志，运算结果低八位中 1 的个数为 0 或者偶数时，PF=1；否则 PF=0。</li>
+<li>判断是否影响标志位原则：是否发生了<strong>算数、测试、比较、移位</strong>，发生了往往是影响标志位的</li>
+<li>特殊指令 <code>INC</code> 和 <code>DEC</code> 不会影响 <code>CF</code>。</li>
+<li>stx、clx 类是置位，cmc 是对 CF 的取反</li>
+</ul>
+<h4 id="_4">算术指令</h4>
+<ul>
+<li>加法指令 ADD、ADC、INC</li>
+<li>减法指令 SUB、SBB、DEC、NEG、CMP</li>
+<li>乘法指令 MUL、IMUL</li>
+<li>除法指令 DIV、IDIV</li>
+<li>add bx,es 是错误的</li>
+</ul>
+<h4 id="_5">符号拓展</h4>
+<p>对于无符号数，高位置 0 即可拓展；对于有符号数，分别用 CBW 或 CWD 指令进行符号拓展。</p>
+<h4 id="_6">十进制调整指令</h4>
+<p>为了实现在十六进制下进行十进制运算而进行的，比如 68h + 28h = 90h，执行 daa 后就会变成 96h，即十进制调整。</p>
+<p>类似还有减法调整指令，das。还分压缩 BCD 码和非压缩 BCD 码，区别是前者用半个字节表示一个十进制位，而后者用一个字节表示一个十进制位。</p>
+<h4 id="_7">位操作指令</h4>
+<ul>
+<li>逻辑运算指令 AND、OR、XOR、NOT、TEST(AND)</li>
+<li>移位指令 SHL、SHR、SAL、SAR、ROL、ROR、RCL、RCR</li>
+</ul>
+<h4 id="_8">转移类指令</h4>
+<ul>
+<li>无条件转移指令 JMP</li>
+<li>利用 ZF：JZ、JE、JNZ、JNE</li>
+<li>利用 SF：JS、JNS</li>
+<li>利用 OF：JO、JNO</li>
+<li>利用 PF：JP、JPE、JNP、JPO</li>
+<li>利用 CF：JC、JB、JNAE、JNC、JNB、JAE</li>
+<li>比较无符号数时用 Above 和 Blow，而有符号数时用 Greater 和 Less。</li>
+<li>循环指令：LOOP(CX!=0)、LOOPZ/LOOPE(CX!=0 &amp;&amp; ZF=1)、LOOPNZ/LOOPNE(CX!=0 &amp;&amp; ZF=0)、JCXZ(CX!=0)</li>
+</ul>
+<h4 id="_9">子程序指令</h4>
+<p>CALL、RET</p>
+<h4 id="_10">中断指令</h4>
+<ul>
+<li>
+<p>中断类型</p>
+<ul>
+<li>外部中断 <ul>
+<li>可屏蔽中断</li>
+<li>非屏蔽中断</li>
+</ul>
+</li>
+<li>内部中断（亦称“异常”） </li>
+<li>除法错中断</li>
+<li>指令中断</li>
+<li>溢出中断</li>
+<li>单步中断  </li>
+</ul>
+</li>
+<li>
+<p>中断过程</p>
+<ul>
+<li>中断向量表<ul>
+<li>每个中断的起始地址是 4 的倍数</li>
+<li>每个中断共两个字，低字存放中断服务程序的偏移地址 IP，高字存放段地址 CS</li>
+</ul>
+</li>
+<li>内存的地址区域从 00000H 开始为中断向量表</li>
+</ul>
+</li>
+</ul>
+<h2 id="3">3 汇编语言程序格式</h2>
+<h4 id="_11">汇编语言程序的开发</h4>
+<ul>
+<li>
+<p>标号规定</p>
+<ul>
+<li>最长 <strong>31</strong> 个字符</li>
+<li>第一个字符不能是数字</li>
+<li>? $ _ @可出现在标号的任意位置，但? $不能单独使用</li>
+<li>. 只能出现在起始位置</li>
+<li>一个程序中，每个标识符的定义是唯一的，且不能与任何保留字相同</li>
+<li>标号有三种属性：<strong>段、偏移量和类型</strong></li>
+</ul>
+</li>
+<li>
+<p>简化段定义</p>
+</li>
+</ul>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="na">.model</span><span class="w"> </span><span class="no">small</span>
+</span><span id="__span-1-2"><span class="na">.stack</span>
+</span><span id="__span-1-3"><span class="na">.data</span>
+</span><span id="__span-1-4"><span class="w">    </span><span class="c1">; 数据定义</span>
+</span><span id="__span-1-5"><span class="na">.code</span><span class="w">   </span>
+</span><span id="__span-1-6"><span class="w">    </span><span class="no">.startup</span>
+</span><span id="__span-1-7"><span class="w">    </span><span class="c1">; 代码定义</span>
+</span><span id="__span-1-8"><span class="w">    </span><span class="na">.exit</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-1-9"><span class="nf">end</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>完整段定义</li>
+</ul>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="nf">stack</span><span class="w"> </span><span class="no">segment</span><span class="w"> </span><span class="no">stack</span>
+</span><span id="__span-2-2"><span class="w">    </span><span class="c1">; 堆栈段定义</span>
+</span><span id="__span-2-3"><span class="nf">stack</span><span class="w"> </span><span class="no">ends</span>
+</span><span id="__span-2-4"><span class="nf">data</span><span class="w"> </span><span class="no">segment</span>
+</span><span id="__span-2-5"><span class="w">    </span><span class="c1">; 数据定义</span>
+</span><span id="__span-2-6"><span class="nf">data</span><span class="w"> </span><span class="no">ends</span>
+</span><span id="__span-2-7"><span class="nf">code</span><span class="w"> </span><span class="no">segment</span>
+</span><span id="__span-2-8"><span class="w">    </span><span class="nf">assume</span><span class="w"> </span><span class="no">cs</span><span class="p">:</span><span class="no">code</span><span class="p">,</span><span class="w"> </span><span class="no">ds</span><span class="p">:</span><span class="no">data</span><span class="p">,</span><span class="w"> </span><span class="no">ss</span><span class="p">:</span><span class="no">stack</span>
+</span><span id="__span-2-9"><span class="nl">start:</span><span class="w"> </span><span class="c1">; 程序入口</span>
+</span><span id="__span-2-10"><span class="w">    </span><span class="c1">; 程序代码    </span>
+</span><span id="__span-2-11"><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">ax</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="no">c00h</span>
+</span><span id="__span-2-12"><span class="w">    </span><span class="nf">int</span><span class="w"> </span><span class="mi">21</span><span class="no">h</span>
+</span><span id="__span-2-13"><span class="nf">code</span><span class="w"> </span><span class="no">ends</span>
+</span><span id="__span-2-14"><span class="w">    </span><span class="nf">end</span><span class="w"> </span><span class="no">start</span>
+</span></code></pre></div></td></tr></table></div>
+<p><img alt="可执行文件的开发过程" src="../1.png" /></p>
+<ul>
+<li>
+<p>主程序目录</p>
+<ul>
+<li>ml.exe，汇编程序</li>
+<li>ml.err，汇编错误信息文件</li>
+<li>link.exe，连接程序</li>
+<li>lib.exe，子程序库管理文件</li>
+</ul>
+</li>
+<li>
+<p>DOS 系统功能调用表</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>子功能号</th>
+<th>功能</th>
+<th>入口参数</th>
+<th>出口参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AH=01H</td>
+<td>从标准输入设备输入一个字符</td>
+<td>无</td>
+<td>AL=输入字符的ASCII码</td>
+</tr>
+<tr>
+<td>AH=02H</td>
+<td>向标准输出设备输出一个字符</td>
+<td>DL=字符的ASCII码</td>
+<td>无</td>
+</tr>
+<tr>
+<td>AH=09H</td>
+<td>向标准输出设备输出一个字符串</td>
+<td>DS:DX=字符串地址</td>
+<td>无</td>
+</tr>
+<tr>
+<td>AH=0AH</td>
+<td>从标准输入设备输入一个字符串</td>
+<td>DS:DX=缓冲区地址</td>
+<td>无</td>
+</tr>
+<tr>
+<td>AH=0BH</td>
+<td>判断键盘是否有键按下</td>
+<td>无</td>
+<td>AL=0，无；AL=FFH，有</td>
+</tr>
+<tr>
+<td>AH=4CH</td>
+<td>程序执行终止</td>
+<td>AL=返回代码</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_12">参数、变量、标号</h4>
+<ul>
+<li>运算符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>运算符类型</th>
+<th>运算符号及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算术运算符</td>
+<td><code>+</code> (加), <code>-</code> (减), <code>*</code> (乘), <code>/</code> (除), <code>MOD</code> (取余)</td>
+</tr>
+<tr>
+<td>逻辑运算符</td>
+<td><code>AND</code> (与), <code>OR</code> (或), <code>XOR</code> (异或), <code>NOT</code> (非)</td>
+</tr>
+<tr>
+<td>移位运算符</td>
+<td><code>SHL</code> (逻辑左移), <code>SHR</code> (逻辑右移)</td>
+</tr>
+<tr>
+<td>关系运算符</td>
+<td><code>EQ</code> (相等), <code>NE</code> (不相等), <code>GT</code> (大于), <code>LT</code> (小于), <code>GE</code> (大于等于), <code>LE</code> (小于等于)</td>
+</tr>
+<tr>
+<td>高低分离符</td>
+<td><code>HIGH</code> (高字节), <code>LOW</code> (低字节), <code>HIGHWORD</code> (高字), <code>LOWWORD</code> (低字)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>变量定义伪指令</p>
+<ul>
+<li>DB、DW、DD、DF、DQ、DT：字节、字、双字、三字、四字、十字</li>
+<li>ORG：使它后面的数据或指令从参数指定的地址开始</li>
+<li>EVEN：使它后面的数据或指令从偶地址开始</li>
+<li>ALIGN <span class="arithmatex">\(n\)</span>：使它后面的数据或指令从 <span class="arithmatex">\(n\)</span> 的整数倍地址开始</li>
+</ul>
+</li>
+<li>
+<p>伪操作：汇编程序对源程序进行汇编时处理的操作，完成处理器选择、存储模式定义、数据定义、存储器分配、指示程序开始结束等功能</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>伪操作名</th>
+<th>格式</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EQU</td>
+<td>名字 EQU 表达式</td>
+<td>给名字赋值</td>
+</tr>
+<tr>
+<td>=</td>
+<td>名字 = 表达式</td>
+<td>同上，但允许重复赋值</td>
+</tr>
+<tr>
+<td>LABEL</td>
+<td>名字 LABEL 表达式</td>
+<td>定义变量或标号的类型</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>LABEL</code> 的使用示例：</li>
+</ul>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="nf">AGAINF</span><span class="w"> </span><span class="no">LABEL</span><span class="w"> </span><span class="no">FAR</span>
+</span><span id="__span-3-2"><span class="nl">AGAIN:</span><span class="w"> </span><span class="nf">PUSH</span><span class="w"> </span><span class="no">BX</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><code>size</code> 和 <code>length</code><ul>
+<li><code>length</code> 对于变量定义使用 DUP 的情况，返回分配给其的元素数，<strong>其他情况返回 1</strong>，因此注意对于数组，<code>length</code> 并不等于数组的长度</li>
+<li><code>size</code> 满足 <span class="arithmatex">\(size=length\times type\)</span>，其实代表的就是字节数量</li>
+</ul>
+</li>
+</ul>
+<h2 id="4">4 基本汇编语言程序设计</h2>
+<h4 id="_13">循环程序设计</h4>
+<ul>
+<li>循环程序的三部分：<ul>
+<li>循环初始部分</li>
+<li>循环体部分</li>
+<li>循环控制部分</li>
+</ul>
+</li>
+</ul>
+<h4 id="_14">串操作类指令</h4>
+<ul>
+<li>源操作数用寄存器 <code>SI</code> 间接寻址，默认在数据段 <code>DS</code> 中，即 <code>DS:[SI]</code>，允许段超越</li>
+<li>目的操作数用寄存器 <code>DI</code> 间接寻址，默认在数据段 <code>ES</code> 中，即 <code>ES:[DI]</code>，不允许段超越</li>
+<li>
+<p>每执行一次串操作，源指针 <code>SI</code> 和目的指针 <code>DI</code> 都自动递增或递减</p>
+</li>
+<li>
+<p>串传送</p>
+<ul>
+<li>MOVSB es:[di] &larr; ds:[si], si &larr; si+1, di &larr; di+1</li>
+<li>MOVSW es:[di] &larr; ds:[si], si &larr; si+2, di &larr; di+2</li>
+<li>常用重复前缀：REP</li>
+</ul>
+</li>
+<li>串存储<ul>
+<li>STOSB es:[di] &larr; al, di &larr; di+1</li>
+<li>STOSW es:[di] &larr; ax, di &larr; di+2</li>
+<li>常用重复前缀：REP</li>
+</ul>
+</li>
+<li>串读取<ul>
+<li>LODSB al, ds:[si], si &larr; si+1</li>
+<li>LODSW ax, ds:[si], si &larr; si+2</li>
+<li>常用重复前缀：REP</li>
+</ul>
+</li>
+<li>串比较（CMPS）<ul>
+<li>CMPSB ds:[si]-es:[di], si+1, di+1</li>
+<li>CMPSW ds:[si]-es:[di], si+2, di+2</li>
+</ul>
+</li>
+<li>串扫描（SCAS，用 <code>AL</code> 或 <code>AX</code> 的内容减去目的数据串，以比较两者的关系）<ul>
+<li>SCASB ; al-es:[di], di &larr; di<span class="arithmatex">\(\pm\)</span>1</li>
+<li>SCASW ; ax-es:[di], di &larr; di<span class="arithmatex">\(\pm\)</span>2</li>
+</ul>
+</li>
+<li>CMPS 和 SCAS 都可以配合 REPE/REPZ/REPNE/REPNZ 前缀使用，通过 ZF 标志判断两数是否相等</li>
+</ul>
+<h4 id="_15">子程序的参数传递</h4>
+<p>寄存器传递、变量传递、地址表、栈传递</p>
+<h4 id="_16">子程序的嵌套、递归和重入</h4>
+<ul>
+<li>嵌套 子程序内包含有子程序的调用</li>
+<li>递归 子程序调用自身</li>
+<li>重入 子程序被中断后，又被终端服务程序所调用。能够重入的子程序称为<em>可重入子程序</em>。</li>
+<li>子程序近调用时，入栈 2B，出栈 2B，而子程序远调用时，入栈 4B，出栈 4B。</li>
+</ul>
+<h2 id="5">5 高级汇编语言程序设计</h2>
+<h4 id="_17">宏结构程序设计</h4>
+<ul>
+<li>定义</li>
+</ul>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="nf">macro</span><span class="w">  </span><span class="no">macro_name</span><span class="w"> </span><span class="no">arg1</span><span class="p">,</span><span class="w"> </span><span class="no">arg2</span><span class="p">,</span><span class="w"> </span><span class="no">...</span>
+</span><span id="__span-4-2"><span class="w">    </span><span class="c1">; 宏代码</span>
+</span><span id="__span-4-3"><span class="nf">endm</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>调用</li>
+</ul>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="nf">macro_name</span><span class="w"> </span><span class="no">arg1</span><span class="p">,</span><span class="w"> </span><span class="no">arg2</span><span class="p">,</span><span class="w"> </span><span class="no">...</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>宏定义允许嵌套、递归</li>
+<li>宏参数<ul>
+<li>数量 <span class="arithmatex">\(\in[0, +\infty)\)</span>，实际上肯定不是 <span class="arithmatex">\(+\infty\)</span>，主要是我也不知道是多少</li>
+<li>类型 可以是常数、变量、存储单元、指令、表达式</li>
+<li>传参 使用 <code>&amp;</code> 做变量替换。传字符串时有空格则要使用一对 <code>&lt;&gt;</code> 包裹。如果字符串中本身就有 <code>&lt;&gt;</code>，则使用 <code>!</code> 进行转义。传表达式时用 <code>%</code>，如 <code>%(1+2)</code></li>
+<li>宏中的标号要加上 <code>local</code> 关键字，在顶部声明</li>
+</ul>
+</li>
+<li>重复汇编
+<code>repear</code> 型：
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="na">rep</span><span class="nf">eat</span><span class="w"> </span><span class="no">count</span>
+</span><span id="__span-6-2"><span class="w">    </span><span class="c1">; 重复执行的代码</span>
+</span><span id="__span-6-3"><span class="nf">endm</span>
+</span></code></pre></div></td></tr></table></div>
+<code>for</code> 型：
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="nf">for</span><span class="w"> </span><span class="err">形参</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;实参表&gt;</span>
+</span><span id="__span-7-2"><span class="w">    </span><span class="c1">; 重复执行的代码</span>
+</span><span id="__span-7-3"><span class="nf">endm</span>
+</span></code></pre></div></td></tr></table></div>
+<code>forc</code> 型：
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="nf">forc</span><span class="w"> </span><span class="err">形参</span><span class="p">,</span><span class="w"> </span><span class="err">字符串</span>
+</span><span id="__span-8-2"><span class="w">    </span><span class="c1">; 重复执行的代码</span>
+</span><span id="__span-8-3"><span class="nf">endm</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>条件汇编
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="nf">ifxx</span><span class="w"> </span><span class="no">expression</span>
+</span><span id="__span-9-2"><span class="w">    </span><span class="c1">; 条件成立时执行的代码</span>
+</span><span id="__span-9-3"><span class="err">[</span><span class="nf">else</span>
+</span><span id="__span-9-4"><span class="w">    </span><span class="c1">; 条件不成立时执行的代码]</span>
+</span><span id="__span-9-5"><span class="nf">endif</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h4 id="dos">DOS 功能调用</h4>
+<ul>
+<li>步骤：<ul>
+<li>将调用参数装入指定寄存器</li>
+<li>如需功能号，将它装入 <code>AH</code></li>
+<li>如需子功能号，将它装入 <code>AL</code></li>
+<li>按中断类型号调用 <code>DOS</code> 或 <code>BIOS</code> 中断（<code>DOS</code> 功能调用 <code>INT 21H</code> ）</li>
+<li>检查返回参数是否正确</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-32">6 <code>32</code> 位指令及其编程</h2>
+<ul>
+<li>实方式<ul>
+<li>寻址 1MB 物理存储空间</li>
+<li>分段最大是 64KB</li>
+<li>可以使用 32 位寄存器和 32 位操作数</li>
+<li>可以采用 32 位寻址方式</li>
+</ul>
+</li>
+<li>保护方式<ul>
+<li>具有段式存储管理功能</li>
+<li>具有页式存储管理功能</li>
+<li>寻址 4GB 物理存储空间</li>
+</ul>
+</li>
+</ul>
+<h2 id="_18">做试卷遇到的</h2>
+<ol>
+<li>可屏蔽中断就是它的请求是否被 CPU 响应要受 IF 的控制</li>
+<li>引起中断的紧急事务称为<strong>中断源</strong></li>
+<li>键盘 I/O 、显示 I/O 和打印 I/O 分别对应 16H、10H、17H 号中断</li>
+<li>字符显示模式缓冲区中的一个字对应屏幕上的一个字符，字的低字节存放 ASCII 码，高字节存放属性（如颜色）</li>
+<li>在段定义时，如果定位类型用户未选择，就表示是隐含类型，即 <code>PARA</code></li>
+<li>通常主程序和子程序间参数传送的方法有三种：用寄存器传递、用存储单元传递、用堆栈传递</li>
+<li>当程序顺序执行时，每取一条指令语句，IP 指针增加的值是由<strong>指令长度决定的</strong></li>
+<li>MOV 指令不能直接在两个段寄存器之间传递数据、不允许两个内存地址之间直接传递数据、MOV 不可以向 CX 中传递地址（除非是两地址之差）</li>
+<li>AF（辅助进位标志，Auxiliary Flag）检测低 4 位的运算中是否发生了进位或借位</li>
+<li><code>NEG</code> 必然会导致 <code>CF</code> 为 1</li>
+<li><code>mov [bx+d/si], xx</code> 可以，但是 <code>mov [dx+d/si], xx</code> 不可以，这是因为 dx 寄存器不能作为基址寄存器</li>
+<li>注意 <strong>字符串存储</strong> 和 <strong>数字存储方式</strong> 的区别，字符串是<strong>左低右高</strong>，数字<strong>左高右低</strong>。字符串存储时是按照字节从左向右依次存储其 ASCII 码的</li>
+<li>段只能起始于 16 倍数的地址</li>
+<li>段内调用 <code>CALL</code>，<code>PUSH</code> 指令会压入偏移地址（IP，一个字），<code>SP</code> 会减 2</li>
+<li>段间调用 <code>CALL</code>，<code>PUSH</code> 指令会压入先压入段地址（CS），再压入偏移地址（IP），<code>SP</code> 会减 4</li>
+<li>标号定义（如 <code>EQU</code>、<code>=</code>）的数据，不占用主存，类似于宏</li>
+<li>段寄存器都不能直接赋立即数，必须用寄存器做中介；<code>CS</code> 是唯一不可以修改的段寄存器</li>
+<li>还能他妈的<strong>用别的变量</strong>来定义新变量</li>
+<li><code>SBB</code> 的作用 <code>结果 = 操作数1 - 操作数2 - CF</code></li>
+<li>在寻址时可以提供偏移地址的寄存器：<code>BX</code>、<code>BP</code>、<code>SI</code>、<code>DI</code></li>
+<li>8086/8088 CPU 的寄存器中，16 位的寄存器共有 14 个，通用寄存器（<code>AX</code>、<code>BX</code>、<code>CX</code>、<code>DX</code>）共 4 个，段寄存器 4 个，指针和变址寄存器（<code>SP</code>、<code>BP</code>、<code>SI</code>、<code>DI</code>）共 4 个，指令指针和标志寄存器（<code>IP</code>、<code>FLAG</code>）共 2 个</li>
+<li>段长度 <span class="arithmatex">\(\in[16B, 64KB]\)</span></li>
+<li>字相除时要拓展为双字</li>
+<li>寄存器有 16 位，编号是从 0~15 编号的</li>
+<li><code>mov ax, [si+di]</code> 是错的，不能只使用两个索引寄存器。</li>
+<li><code>NOT</code> 不影响 CF 和 OF 的值</li>
+<li>指令限制常用圈套（最 SB 的题型，行不行我上机看看不就知道了？天天 nm 考标号里不能出现什么符号还有这种，每个语言都要记一遍）：<ol>
+<li>长度不同型</li>
+<li>篡改 cs 型</li>
+<li>段地址参与运算型</li>
+<li>双地址做操作数型</li>
+<li>cx 做地址寄存器型</li>
+<li>div / mul 后面跟的不是寄存器型</li>
+<li>段地址赋立即数型</li>
+</ol>
+</li>
+<li>立即寻址：mov ax, offset array</li>
+<li>读入 DX 指定的端口的数据：<code>IN AL, DX</code>；输出数据到 DX 指定的端口：<code>OUT DX, AL</code></li>
+<li>显示字符串时，定义的字符串最后要有 '$'。</li>
+<li>INC/DEC 指令之后不可以使用加法调整指令</li>
+<li>INC/DEC 除了不影响 CF，剩下的都影响</li>
+<li>堆栈不能压入立即数</li>
+<li>loop 在判断 cx 前，cx 会减 1</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

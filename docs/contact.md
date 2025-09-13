@@ -32,10 +32,47 @@ hide:
     - **前端开发** 入门：HTML + CSS + JavaScript  
     - **Qt** 开发入门  
 
+## 闲话
+
+<style>
+:root {
+    --primary-color: #333;      /* 主色：深灰，用于标题、强调 */
+    --accent-color: #666;       /* 辅助色：中灰 */
+    --background-color: #fff;   /* 背景色：白色 */
+    --text-color: #333;         /* 正文文字颜色 */
+    --border-color: #e0e0e0;    /* 边框/分隔线颜色 */
+    --hover-bg: #f5f5f5;        /* 悬停背景 */
+    --shadow: rgba(0,0,0,0.08);  /* 阴影：浅黑 */
+}
+    .card {
+        background: var(--background-color);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 16px;
+        margin: 12px 0;
+        transition: all 0.25s ease;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px var(--shadow);
+    }
+    .card::before {
+        content: "“";
+        font-size: 3em;
+        color: #ccc;
+        position: absolute;
+        left: 10px;
+        top: -10px;
+    }
+</style>
+
+<div class="card">
+    <p style="text-indent: 2em;">若你觉得，当下“上课听一听、课后写作业、期末突击备考”的状态，能对得起十二年的寒窗，大可以继续这样；可 若你不想最后只攥着看似光鲜的绩点，却没半点真本事——不想在保研浪潮里焦虑迷茫，不想在考研与保研间反复挣扎，更不想未来工作时才遗憾“大学学的都用不上”，那便该早点清醒。</p>
+</div>
 ## 更新日志
-| 版本 | 时间 | 内容 | 
-| ---- | ---- | ---- |
-| 1.0.0 |2025 年 9 月 9 日 | 对 Wiki 整体架构进行了重构，将原来较长的目录归类到各个标签；优化 Github 的自动部署机制。 | 
-| 1.0.1 | 2025 年 9 月 10 日 | 对首页 `index.md` 样式进行了彻底改写：使用 HTML 与 CSS 替代原有内容；添加了左侧目录栏，并优化了右侧内容的缩进与卡片样式。 |
-| 1.1.0 | 2025 年 9 月 10 日 | 新增副页(本页)。 |
+    | 版本 | 时间 | 内容 | 
+    | ---- | ---- | ---- |
+    | 1.0.0 |2025 年 9 月 9 日 | 对 Wiki 整体架构进行了重构，将原来较长的目录归类到各个标签；优化 Github 的自动部署机制。 | 
+    | 1.0.1 | 2025 年 9 月 10 日 | 对首页 `index.md` 样式进行了彻底改写：使用 HTML 与 CSS 替代原有内容；添加了左侧目录栏，并优化了右侧内容的缩进与卡片样式。 |
+    | 1.1.0 | 2025 年 9 月 10 日 | 新增副页(本页)。 |
 

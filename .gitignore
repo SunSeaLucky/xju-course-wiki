@@ -1,1 +1,2 @@
 /site/  # 忽略根目录下的 site 文件夹
+!.gitignore
