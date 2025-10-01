@@ -1,0 +1,63 @@
+name: Deploy to Gitee Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 检出代码
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 同步到 Gitee
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:${{ github.repository }}.git
+          destination-repo: git@gitee.com:${{ secrets.GITEE_USERNAME }}/xju-course-wiki.git
+
+      # 安装 Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # 安装依赖
+      - name: Install dependencies
+        run: |
+          pip install mkdocs
+          pip install mkdocs-material
+          pip install pymdown-extensions
+
+      # 构建文档
+      - name: Build MkDocs
+        run: mkdocs build --clean
+
+      # 部署到 Gitee Pages 分支
+      - name: Deploy to gh-pages branch
+        run: |
+          cd site
+          git init
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Deploy from GitHub Actions"
+          git push -f git@gitee.com:${{ secrets.GITEE_USERNAME }}/xju-course-wiki.git main:gh-pages
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+
+      # 触发 Gitee Pages 更新
+      - name: Trigger Gitee Pages
+        uses: yanglbme/gitee-pages-action@main
+        with:
+          gitee-username: ${{ secrets.GITEE_USERNAME }}
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: xju-course-wiki
+          branch: gh-pages

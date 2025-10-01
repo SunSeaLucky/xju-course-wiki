@@ -1,0 +1,41 @@
+name: Deploy MkDocs to Gitee Pages
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs
+          pip install mkdocs-material
+          pip install pymdown-extensions
+
+      - name: Build MkDocs
+        run: mkdocs build
+
+      - name: Deploy to Gitee Pages
+        run: |
+          cd site
+          git init
+          git config user.name "Gitee Go"
+          git config user.email "gitee-go@gitee.com"
+          git add -A
+          git commit -m "Deploy to Gitee Pages"
+          git push -f https://oauth2:${GITEE_TOKEN}@gitee.com/${GITEE_REPO}.git main:gitee-pages
+        env:
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+          GITEE_REPO: ${{ secrets.GITEE_REPO }}
