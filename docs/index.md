@@ -375,11 +375,11 @@ hide:
                 <div class="overview-section">
                     <h2 class="section-title">📌 重要</h2>
 
-                    <div class="admonition info">
+                    <!-- <div class="admonition info">
                         <p class="admonition-title">绝对避雷</p>
                         <ul>
                         </ul>
-                    </div>
+                    </div> -->
 
                     <div class="admonition warning">
                         <p class="admonition-title">声明</p>
