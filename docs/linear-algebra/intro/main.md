@@ -21,7 +21,7 @@
         data-category="Announcements"
         data-category-id="DIC_kwDONf4gSs4ClXwK"
         data-mapping="pathname"
-        data-strict="0"
+        data-strict="1"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
